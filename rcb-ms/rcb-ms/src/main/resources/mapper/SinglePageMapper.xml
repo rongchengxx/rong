@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.rcb.dao.SinglePageDao">
+	<select id="findSinglePageAll" 
+			  resultType="Map">
+			  
+		select  
+			id,
+			one_menu_id as oneMenuId,
+			two_menu_id as twoMenuId,
+			title,
+			picture,
+			sort_title as sortTitle,
+			narration,
+			content,
+			key_word_title as keyWordTitle,
+			key_word as keyWord,
+			key_word_desc as keyWordDesc,
+			seq,
+			create_time as createTime,
+			change_time as changeTime,
+			author,
+			clicks,
+			isshow			
+		from 
+			single_page
+		
+	</select>
+	
+	<insert id="addSinglePage" 
+			parameterType="com.rcb.entity.SinglePage">
+			  
+		insert into single_page 
+		(  
+			id,
+			one_menu_id,
+			two_menu_id,
+			title,
+			picture,
+			sort_title,
+			narration,
+			content,
+			key_word_title,
+			key_word,
+			key_word_desc,
+			seq,
+			create_time,
+			change_time,
+			author,
+			clicks,
+			isshow 
+		)			
+		values 
+		(
+			#{id},
+			#{oneMenuId},
+			#{twoMenuId},
+			#{title},
+			#{picture},
+			#{sortTitle},
+			#{narration},
+			#{content},
+			#{keyWordTitle},
+			#{keyWord},
+			#{keyWordDesc},
+			#{seq},
+			#{createTime},
+			#{changeTime},
+			#{author},
+			#{clicks},
+			#{isshow}
+		) 
+		
+	</insert>
+	
+	<select id="findSinglePageById" 
+			parameterType="String"
+			resultType="com.rcb.entity.SinglePage">
+			  
+		select  
+			id,
+			one_menu_id as oneMenuId,
+			two_menu_id as twoMenuId,
+			title,
+			picture,
+			sort_title as sortTitle,
+			narration,
+			content,
+			key_word_title as keyWordTitle,
+			key_word as keyWord,
+			key_word_desc as keyWordDesc,
+			seq,
+			create_time as createTime,
+			change_time as changeTime,
+			author,
+			clicks,
+			isshow 			
+		from 
+			single_page  
+		where id=#{id}
+		
+	</select>
+	
+	<update id="modifySinglePage" 
+			parameterType="com.rcb.entity.SinglePage">
+		   
+		update single_page set
+			one_menu_id=#{oneMenuId},
+			two_menu_id=#{twoMenuId},
+			title=#{title},
+			picture=#{picture},
+			sort_title=#{sortTitle},
+			narration=#{narration},
+			content=#{content},
+			key_word_title=#{keyWordTitle},
+			key_word=#{keyWord},
+			key_word_desc=#{keyWordDesc},
+			seq=#{seq},
+			create_time=#{createTime},
+			change_time=#{changeTime},
+			author=#{author},
+			clicks=#{clicks},
+			isshow=#{isshow}
+		where id=#{id}
+		
+	</update>
+	
+	
+	<delete id="delSinglePageById"
+			parameterType="String">
+		delete from single_page
+		where id=#{id}
+	</delete>
+	
+	<!--   分页查询：
+		page:从第几条内容开始
+		pageSize：，每页的条目数
+		start :(page-1)*pageSize+1
+		end: pageSize*page 
+		
+	 -->
+	<select id="findSinglePageByPage" 
+			parameterType="int"
+			resultType="Map">
+	
+		select  
+			id,
+			one_menu_id as oneMenuId,
+			two_menu_id as twoMenuId,
+			title,
+			picture,
+			sort_title as sortTitle,
+			narration,
+			content,
+			key_word_title as keyWordTitle,
+			key_word as keyWord,
+			key_word_desc as keyWordDesc,
+			seq,
+			create_time as createTime,
+			change_time as changeTime,
+			author,
+			clicks,
+			isshow			
+		from 
+			single_page
+		order by 
+			seq asc
+		limit #{page},10 
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
