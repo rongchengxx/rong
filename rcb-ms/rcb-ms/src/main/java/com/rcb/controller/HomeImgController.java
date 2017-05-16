@@ -21,7 +21,7 @@ import com.rcb.utils.JsonResult;
 		@Resource
 		private HomeImgDao homeImgDao;
 		@ResponseBody
-		@RequestMapping("/adv.do")
+		@RequestMapping("/adv")
 		public Object findHomeImgAll(){
 			List<HomeImg> list=	homeImgDao.findHomeImgAll();
 				return new JsonResult(list);	

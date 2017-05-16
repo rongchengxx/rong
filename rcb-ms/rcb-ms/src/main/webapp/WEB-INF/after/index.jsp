@@ -1,3 +1,4 @@
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -6,15 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="renderer" content="webkit">
     <title>后台管理中心</title>  
-    <link rel="stylesheet" href="css/pintuer.css">
-    <link rel="stylesheet" href="css/admin.css">
-    <script src="js/jquery.js"></script>   
+    <link rel="stylesheet" href="../css/pintuer.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../js/cookie_util.js"></script>
+    <script type="text/javascript">
+    	$(function(){
+    		// alert("JS调用");
+    		// 获取参数userId
+    		var userId=getCookie("userId");
+    		alert(userId);
+    		//判断userId是否有效
+    		if(userId==null){
+    			window.location.href="../";
+    		}else{
+	    		$.ajax({
+	    			
+	    		});
+    		}
+    	});
+    
+    </script>
 </head>
 <body style="background-color:#f2f9fd;">
   <div class="header bg-main">
     <div class="logo margin-big-left fadein-top">
       <h1>
-        <img src="images/y.jpg" class="radius-circle rotate-hover" height="50" alt="" />
+        <img src="../images/y.jpg" class="radius-circle rotate-hover" height="50" alt="" />
         后台管理中心
       </h1>
     </div>
@@ -46,7 +65,7 @@
   </h2>
   <ul style="display:block">
     <li>
-      <a href="info.html" target="right">
+      <a href="info.jsp" target="right">
         <span class="icon-caret-right"></span>
         网站设置
       </a>

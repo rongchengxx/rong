@@ -14,26 +14,33 @@ import com.rcb.service.user.UserService;
 import com.rcb.utils.JsonResult;
 
 @Controller
+@RequestMapping("/user")
 public class UserController 
 			 extends ExceptionController{
 	@Resource
 	private UserService userService;
-	@RequestMapping("/toLogin.do")
-	public String toLogin(){
-		System.out.println("toLogin()");
-		return "login";
+
+	@ResponseBody
+	@RequestMapping("/login.do")
+	public Object login(String name,String password){
+		System.out.println(name+","+password);
+		User user=userService.login(name, password);
+		return new JsonResult(user);
+		
+	}
+	
+	@RequestMapping("/index")
+	public String toIndex(){
+		return "index";
 	}
 	
 
-
+/*
 @RequestMapping("/modify.do")
 public String modify(){
 	return "pass";
 }
-//@RequestMapping("/index.do")
-//public String toIndex(){
-//	return "index";
-//}
+}
 
 	@RequestMapping("/adv1.do")
 	public String adv(){
@@ -104,5 +111,6 @@ public String modify(){
 		e.printStackTrace();
 		return new JsonResult(3,e);
 	}
+*/
 	
 }
