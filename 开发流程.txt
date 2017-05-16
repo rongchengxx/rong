@@ -1,0 +1,130 @@
+看原始密码成功-两次输入-修改提交
+--DML语句
+数据操作语言
+用于增删改表中的数据，伴随事务。
+1：插入新数据
+INSERT INTO myemp
+(id,name,salary,deptno)
+VALUES 
+(1,'JACK',3000,10)
+SELECT * FROM myemp
+COMMIT
+ROlLBACK
+插入日期推荐使用TO_DATE函数
+INSERT INTO myemp
+(id,name,birth,salary,deptno)
+VALUES
+(2,'ROSE',
+TO_DATE('1992-08-02','YYYY-MM-DD'),
+5000,10)
+delete myemp 删除表中数据
+
+2:修改表中数据
+在修改时通常要添加WHERE子句来限定要修改的记录的条件，这样只会将满足WHERE要求的条件的记录进行修改，否则全表所有数据都会被修改！
+UPDATE myemp
+SET salary = 6000,deptno=20
+WHERE name='JACK'
+
+3:删除语句
+删除通常也要添加WHERE子句，否则是清空表操作！
+delete from myemp
+where name='JACK'
+--DDL DML
+
+
+
+
+分页查询后如何显示的问题
+
+
+String...id   可以当数组用
+
+jsp中如何实现图片上传
+拉伸网页出现的问
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 定义扫描根路径为leot.test，不使用默认的扫描方式 -->
+<context:component-scan base-package="leot.test" use-default-filters="false">
+  <!-- 扫描符合@Service @Repository的类 -->
+  <context:include-filter type="annotation" expression="org.springframework.stereotype.Service" />
+  <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository" />
+</context:component-scan>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15条 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+原始密码数据库比对
+
+
+视图层向下传质调方法 ，抛异常
+本项目少个controller。jsp 因为报错
+mapper中查询字段为null,加as
