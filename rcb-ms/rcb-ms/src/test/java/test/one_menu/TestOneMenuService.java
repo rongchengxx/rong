@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import com.rcb.entity.OneMenu;
 import com.rcb.service.one_menu.OneMenuService;
+import com.rcb.utils.CreateUUID;
 
 import test.TestBase;
 
@@ -18,13 +19,28 @@ public class TestOneMenuService
 		oneMenuService = super.getContext().getBean(
 				"oneMenuService", OneMenuService.class);
 	}
-	@Test
+	@Test	//findOneMenuAll
 	public void test1(){
 		
 		List<OneMenu> list = oneMenuService.findOneMenuAll();
-		
-		
 		System.out.println(list);
+	}
+	@Test 	//addOneMenu
+	public void test2(){
+		int row = oneMenuService.addOneMenu("asd", "asd", "asd", 5, 1);
+		System.out.println(row);
+	}
+	
+	@Test 	//modifyOneMenu
+	public void test3(){
+		int row = oneMenuService.modifyOneMenu("11", "f", "f", "ff", 2, 1);
+		System.out.println(row);
+	}
+	
+	@Test 	//delOneMenuById
+	public void test4(){
+		int row = oneMenuService.delOneMenuById("11");
+		System.out.println(row);
 	}
 	
 }

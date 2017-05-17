@@ -11,7 +11,7 @@ public class Settings implements Serializable {
 	private String title;//标题 varchar(255)
 	private String logo; //logo varchar(255)
 	private String uri;//域名 varchar(255)
-	private String key_word;//关键字 varchar(255)
+	private String keyWord;//关键字 varchar(255)
 	private String contacts;//联系人 varchar(255)
 	private int tel;//电话 varchar(255)
 	private int phone;//手机 varchar(255)
@@ -23,14 +23,14 @@ public class Settings implements Serializable {
 	public Settings() {
 		// TODO Auto-generated constructor stub
 	}
-	public Settings(String id, String title, String logo, String uri, String key_word, String contacts, int tel, int phone,
+	public Settings(String id, String title, String logo, String uri, String keyWord, String contacts, int tel, int phone,
 			int fax, int qq, String email, String site, String content) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.logo = logo;
 		this.uri = uri;
-		this.key_word = key_word;
+		this.keyWord = keyWord;
 		this.contacts = contacts;
 		this.tel = tel;
 		this.phone = phone;
@@ -58,11 +58,11 @@ public class Settings implements Serializable {
 	public void setUri(String uri) {
 		this.uri = uri;
 	}
-	public String getkey_word() {
-		return key_word;
+	public String getkeyWord() {
+		return keyWord;
 	}
-	public void setkey_word(String key_word) {
-		this.key_word = key_word;
+	public void setkeyWord(String keyWord) {
+		this.keyWord = keyWord;
 	}
 	public String getContacts() {
 		return contacts;
@@ -137,7 +137,7 @@ public class Settings implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Settings [id=" + id + ", title=" + title + ", logo=" + logo + ", uri=" + uri + ", key_word=" + key_word
+		return "Settings [id=" + id + ", title=" + title + ", logo=" + logo + ", uri=" + uri + ", keyWord=" + keyWord
 				+ ", contacts=" + contacts + ", tel=" + tel + ", phone=" + phone + ", fax=" + fax + ", qq=" + qq
 				+ ", email=" + email + ", site=" + site + ", content=" + content + "]";
 	}

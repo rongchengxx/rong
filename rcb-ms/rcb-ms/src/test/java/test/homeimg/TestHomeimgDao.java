@@ -28,7 +28,7 @@ public class TestHomeimgDao {
 						"conf/spring-mybatis.xml");
 		HomeImgDao dao=
 		context.getBean("homeImgDao",HomeImgDao.class);
-		HomeImg hig = new HomeImg("2", "127.0.0.1", "标题", 1, 5, "今天天气不错", "www.123.com", 2, 1);
+		HomeImg hig = new HomeImg("23", "127.0.0.1", "标题", 1, 5, "今天天气不错", "www.123.com", 2, 1);
 		dao.addHomeImg(hig);
 		
 		

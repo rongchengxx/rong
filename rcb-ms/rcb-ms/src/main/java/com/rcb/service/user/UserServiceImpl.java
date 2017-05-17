@@ -3,16 +3,14 @@ package com.rcb.service.user;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.rcb.dao.UserDao;
 import com.rcb.entity.User;
-import com.rcb.service.NameException;
-import com.rcb.service.PasswordException;
+import com.rcb.exception.NameException;
+import com.rcb.exception.PasswordException;
 
 
 @Service("userService")
-@Transactional
 public class UserServiceImpl 
 			implements UserService{
 	@Resource
@@ -38,13 +36,14 @@ public class UserServiceImpl
 		}
 	}
 
-	public User alter(String account, String password) throws NameException, PasswordException {
+	public int modifyUser(String account, String password,String newPassword) throws NameException, PasswordException {
 		User user=userDao.findByName(account);
 		if(!user.getPassword().equals(password)){
 			throw new PasswordException("原始密码错误");
 		}else{
-			return user;
-			
+			user.setPassword(newPassword);
+			int row = userDao.modifyUser(user);
+			return row;
 		}
 	}
 

@@ -1,4 +1,4 @@
-package com.rcb.service;
+package com.rcb.exception;
 
 public class NameException extends RuntimeException {
 

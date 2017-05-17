@@ -1,4 +1,4 @@
-package com.rcb.service;
+package com.rcb.exception;
 
 public class PasswordException extends RuntimeException{
 	private static final long serialVersionUID = -8009014461939096259L;

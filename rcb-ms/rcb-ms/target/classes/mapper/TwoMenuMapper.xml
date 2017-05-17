@@ -6,17 +6,22 @@
 	<select id="findTwoMenuAll" 
 			resultType="Map">
 			  
-		select  
-			id,
-			one_menu_id,
-			title,
-			thumb,
-			content,
-			seq,
-			isshow,
-			intro 			
-		from 
-			two_menu 
+			  
+			 select
+			   t.id,
+			   t.one_menu_id,
+			   CONCAT(t.title,'(',o.title,')') as title,
+			   t.thumb,
+			   t.content,
+			   t.seq,
+			   t.isshow,
+		       t.intro
+			 from 
+			  	two_menu as t  
+			 left join 
+			  	one_menu as o  
+			 on 
+			  	(t.one_menu_id = o.id)
 		
 	</select>
 	

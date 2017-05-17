@@ -29,8 +29,8 @@ public class TestUserDao {
 		UserDao dao=
 				context.getBean("userDao",UserDao.class);
 		User user = dao.findByName("caocao");
-		user.setPassword("中文z");
-		dao.modifyUserById(user);
+		user.setPassword("中2");
+		dao.modifyUser(user);
 		System.out.println(user);
 	}
 

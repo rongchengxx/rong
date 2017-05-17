@@ -29,11 +29,11 @@ function loginAction(){
 		$("#account_span").html("");
 		$("#password_span").html("");
 		//获取请求参数
-		var name=$("#admin_account").val().trim();
+		var account=$("#admin_account").val().trim();
 		var password=$("#admin_password").val().trim();
 		var ok=true; //所有参数均有效
 		//格式的校验
-		if(name==""){
+		if(account==""){
 			$("#account_span").html("用户名为空");
 			ok=false;
 		}
@@ -41,8 +41,8 @@ function loginAction(){
 			$("#password_span").html("密码为空");
 			ok=false;
 		}
+/*		alert(account);*/
 		
-		$("#admin_account").blur('ccc')
 		//发送ajax请求
 		if(ok){
 			$.ajax({
@@ -50,7 +50,7 @@ function loginAction(){
 				url:path +"/login.do",
 				type:"post",
 				dataType:"json",
-				data:{"name":name,"password":password},
+				data:{"account":account,"password":password},
 				 success:function(result){
 					if(result.state==0){//成功
 						var user=result.data;

@@ -15,7 +15,7 @@
 		where account=#{account}
 		
 	</select>
-	<update id="modifyUserById" parameterType="com.rcb.entity.User">
+	<update id="modifyUser" parameterType="com.rcb.entity.User">
 		update user 
 			set 
 				password=#{password}

@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.rcb.entity.User;
-import com.rcb.service.NameException;
-import com.rcb.service.PasswordException;
+import com.rcb.exception.NameException;
+import com.rcb.exception.PasswordException;
 import com.rcb.service.user.UserService;
 import com.rcb.utils.JsonResult;
 
@@ -34,11 +34,10 @@ public class UserController
 	
 	@ResponseBody
 	@RequestMapping("/login.do")
-	public Object login(String name,String password){
-		System.out.println(name+","+password);
-		User user=userService.login(name, password);
+	public Object login(String account,String password){
+		System.out.println(account+","+password);
+		User user=userService.login(account, password);
 		return new JsonResult(user);
-		
 	}
 	
 	@RequestMapping("/index.do")
@@ -46,7 +45,7 @@ public class UserController
 		return "index";
 	}
 	
-
+/*
 
 	@RequestMapping("/modify.do")
 	public String modify(){
@@ -99,14 +98,14 @@ public class UserController
 	}
 	
 	
-		
+		*/
 	
-	@RequestMapping("/add.do")
+/*	@RequestMapping("/add.do")
 	@ResponseBody
 	public JsonResult alter(String account,String password){
 		User user=userService.alter(account, password);
 		return new JsonResult(user);
-	}
+	}*/
 	
 	
 
