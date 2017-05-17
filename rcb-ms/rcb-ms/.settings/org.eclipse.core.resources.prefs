@@ -1,4 +1,12 @@
 eclipse.preferences.version=1
 encoding//src/main/resources/log4j.properties=UTF-8
+encoding//src/main/webapp/WEB-INF/after/add.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/after/adv.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/after/book.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/after/cate.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/after/column.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/after/index.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/after/info.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/after/list.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/after/pass.jsp=UTF-8
 encoding/<project>=UTF-8

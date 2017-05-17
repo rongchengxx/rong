@@ -21,4 +21,24 @@ public class OneMenuServiceImpl implements OneMenuService {
 		return list;
 	}
 
+	public int addOneMenu(OneMenu oneMenu) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public OneMenu findOneMenuById(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public int modifyOneMenu(OneMenu oneMenu) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int delOneMenuById(String id) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

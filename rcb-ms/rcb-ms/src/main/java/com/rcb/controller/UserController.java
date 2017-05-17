@@ -14,12 +14,24 @@ import com.rcb.service.user.UserService;
 import com.rcb.utils.JsonResult;
 
 @Controller
-@RequestMapping("/user")
 public class UserController 
 			 extends ExceptionController{
 	@Resource
 	private UserService userService;
-
+	
+	@ExceptionHandler(NameException.class)
+	@ResponseBody
+	public JsonResult nameexp(NameException e){
+		e.printStackTrace();
+		return new JsonResult(2,e);
+	}
+	@ExceptionHandler(PasswordException.class)
+	@ResponseBody
+	public JsonResult pwdexp(PasswordException e){
+		e.printStackTrace();
+		return new JsonResult(3,e);
+	}
+	
 	@ResponseBody
 	@RequestMapping("/login.do")
 	public Object login(String name,String password){
@@ -29,22 +41,25 @@ public class UserController
 		
 	}
 	
-	@RequestMapping("/index")
+	@RequestMapping("/index.do")
 	public String toIndex(){
 		return "index";
 	}
 	
 
-/*
-@RequestMapping("/modify.do")
-public String modify(){
-	return "pass";
-}
-}
+
+	@RequestMapping("/modify.do")
+	public String modify(){
+		return "pass";
+	}
 
 	@RequestMapping("/adv1.do")
 	public String adv(){
 		return "adv";
+	}
+	@RequestMapping("/add1.do")
+	public String add(){
+		return "add";
 	}
 	@RequestMapping("/book1.do")
 	public String book(){
@@ -84,33 +99,16 @@ public String modify(){
 	}
 	
 	
-	@ResponseBody
-	@RequestMapping("/login.do")
-	public Object login(String account,
-			String password){
-			System.out.println("执行login方法");
-			User user=
-				userService.login(account, password);
-			return new JsonResult(user);	
-	}
+		
+	
 	@RequestMapping("/add.do")
 	@ResponseBody
 	public JsonResult alter(String account,String password){
 		User user=userService.alter(account, password);
 		return new JsonResult(user);
 	}
-	@ExceptionHandler(NameException.class)
-	@ResponseBody
-	public Object nameexp(NameException e){
-		e.printStackTrace();
-		return new JsonResult(2,e);
-	}
-	@ExceptionHandler(PasswordException.class)
-	@ResponseBody
-	public Object pwdexp(PasswordException e){
-		e.printStackTrace();
-		return new JsonResult(3,e);
-	}
-*/
+	
+	
+
 	
 }

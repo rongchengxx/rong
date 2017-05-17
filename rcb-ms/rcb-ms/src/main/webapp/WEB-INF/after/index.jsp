@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="renderer" content="webkit">
     <title>后台管理中心</title>  
-    <link rel="stylesheet" href="../css/pintuer.css">
-    <link rel="stylesheet" href="../css/admin.css">
-    <script src="../js/jquery.js"></script>
-    <script src="../js/cookie_util.js"></script>
+    <link rel="stylesheet" href="css/pintuer.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/cookie_util.js"></script>
     <script type="text/javascript">
-    	$(function(){
+    	$(function(){/* 
     		// alert("JS调用");
     		// 获取参数userId
     		var userId=getCookie("userId");
@@ -24,7 +24,7 @@
 	    		$.ajax({
 	    			
 	    		});
-    		}
+    		} */
     	});
     
     </script>
@@ -33,7 +33,7 @@
   <div class="header bg-main">
     <div class="logo margin-big-left fadein-top">
       <h1>
-        <img src="../images/y.jpg" class="radius-circle rotate-hover" height="50" alt="" />
+        <img src="images/y.jpg" class="radius-circle rotate-hover" height="50" alt="" />
         后台管理中心
       </h1>
     </div>
@@ -47,7 +47,7 @@
         清除缓存
       </a> &nbsp;&nbsp;
       <a class="button button-little bg-red" href="login.html">
-        <span class="icon-power-off"></span> 
+        <span class="icon-power-off"></span>
         退出登录
       </a> 
     </div>
@@ -65,31 +65,31 @@
   </h2>
   <ul style="display:block">
     <li>
-      <a href="info.jsp" target="right">
+      <a href="info1.do" target="right">
         <span class="icon-caret-right"></span>
         网站设置
       </a>
     </li>
     <li>
-      <a href="pass.html" target="right">
+      <a href="modify.do" target="right">
         <span class="icon-caret-right"></span>
         修改密码
       </a>
     </li>
     <li>
-      <a href="adv.html" target="right">
+      <a href="adv1.do" target="right">
         <span class="icon-caret-right"></span>
         首页轮播
       </a>
     </li>   
     <li>
-      <a href="book.html" target="right">
+      <a href="book1.do" target="right">
         <span class="icon-caret-right"></span>
         留言管理
       </a>
     </li>     
     <li>
-      <a href="column.html" target="right">
+      <a href="column1.do" target="right">
         <span class="icon-caret-right"></span>
         栏目管理
       </a>
@@ -101,29 +101,29 @@
   </h2>
   <ul>
     <li>
-      <a href="list.html" target="right">
+      <a href="list1.do" target="right">
         <span class="icon-caret-right"></span>
         内容管理
       </a>
     </li>
     <li>
-      <a href="add.html" target="right">
+      <a href="add1.do" target="right">
         <span class="icon-caret-right"></span>
         添加内容
       </a>
     </li>
     <li>
-      <a href="cate.html" target="right">
+      <a href="cate1.do" target="right">
         <span class="icon-caret-right"></span>
         分类管理
       </a>
-    </li>        
-  </ul>  
+    </li>
+  </ul>
 </div>
 <script type="text/javascript">
 $(function(){
   $(".leftnav h2").click(function(){
-	  $(this).next().slideToggle(200);	
+	  $(this).next().slideToggle(200);
 	  $(this).toggleClass("on"); 
   })
   $(".leftnav ul li a").click(function(){
@@ -142,7 +142,7 @@ $(function(){
   </li>
 </ul>
 <div class="admin">
-  <iframe scrolling="auto" rameborder="0" src="info.html" name="right" width="100%" height="100%"></iframe>
+  <iframe scrolling="auto" rameborder="0" src="info1.do" name="right" width="100%" height="100%"></iframe>
 </div>
 <div style="text-align:center;">
   <p>来源:
