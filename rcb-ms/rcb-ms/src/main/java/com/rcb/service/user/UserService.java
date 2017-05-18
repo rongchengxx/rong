@@ -9,7 +9,7 @@ public interface UserService {
 	User login(String account,String password)
 			throws NameException,PasswordException;
 	
-	int modifyUser(String account,String password,String newPassword)
+	User modifyUser(String id,String password,String newPassword)
 			throws NameException,PasswordException;
 
 }

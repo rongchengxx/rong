@@ -36,14 +36,20 @@ public class UserServiceImpl
 		}
 	}
 
-	public int modifyUser(String account, String password,String newPassword) throws NameException, PasswordException {
-		User user=userDao.findByName(account);
+	//修改user
+	public User modifyUser(String userId, String password,String newPassword) throws NameException, PasswordException {
+		//查找user
+		User user=userDao.findById(userId);
+		//判断原始密码
 		if(!user.getPassword().equals(password)){
 			throw new PasswordException("原始密码错误");
 		}else{
+			//重置密码
 			user.setPassword(newPassword);
-			int row = userDao.modifyUser(user);
-			return row;
+			//返回更新行数，虽然没用上吧
+			userDao.modifyUser(user);
+			//return一个啥，一个user
+			return user;
 		}
 	}
 

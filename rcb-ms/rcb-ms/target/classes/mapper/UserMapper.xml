@@ -22,6 +22,18 @@
 		where 
 			id=#{id}
 	</update>	
+	<select id="findById" 
+			  parameterType="String"
+			  resultType="com.rcb.entity.User">
+		select 
+			id,
+			account,
+			password			
+		from
+			user
+		where id=#{id}
+		
+	</select>
 </mapper>
 
 

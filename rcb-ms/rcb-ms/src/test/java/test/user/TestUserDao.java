@@ -34,6 +34,16 @@ public class TestUserDao {
 		System.out.println(user);
 	}
 
+	@Test
+	public void testFindById(){
+		ApplicationContext context=
+				new ClassPathXmlApplicationContext(
+						"conf/spring-mybatis.xml");
+		UserDao dao=
+		context.getBean("userDao",UserDao.class);
+		User user=dao.findById("1");
+		System.out.println(user);
+	}
 }
 
 

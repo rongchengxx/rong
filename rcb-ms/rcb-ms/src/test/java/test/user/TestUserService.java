@@ -27,7 +27,7 @@ public class TestUserService {
 	}
 	@Test 
 	public void test2(){
-		int user=service.modifyUser("libai", "123", "234");
+		User user=service.modifyUser("1", "123", "234");
 		System.out.println(user);
 	}
 	
