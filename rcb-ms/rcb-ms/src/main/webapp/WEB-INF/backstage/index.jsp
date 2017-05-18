@@ -65,31 +65,31 @@
   </h2>
   <ul style="display:block">
     <li>
-      <a href="info1.do" target="right">
+      <a href="info.do" target="right">
         <span class="icon-caret-right"></span>
         网站设置
       </a>
     </li>
     <li>
-      <a href="modify.do" target="right">
+      <a href="pass.do" target="right">
         <span class="icon-caret-right"></span>
         修改密码
       </a>
     </li>
     <li>
-      <a href="adv1.do" target="right">
+      <a href="adv.do" target="right">
         <span class="icon-caret-right"></span>
         首页轮播
       </a>
     </li>   
     <li>
-      <a href="book1.do" target="right">
+      <a href="book.do" target="right">
         <span class="icon-caret-right"></span>
         留言管理
       </a>
     </li>     
     <li>
-      <a href="column1.do" target="right">
+      <a href="column.do" target="right">
         <span class="icon-caret-right"></span>
         栏目管理
       </a>
@@ -101,19 +101,19 @@
   </h2>
   <ul>
     <li>
-      <a href="list1.do" target="right">
+      <a href="list.do" target="right">
         <span class="icon-caret-right"></span>
         内容管理
       </a>
     </li>
     <li>
-      <a href="add1.do" target="right">
+      <a href="add.do" target="right">
         <span class="icon-caret-right"></span>
         添加内容
       </a>
     </li>
     <li>
-      <a href="cate1.do" target="right">
+      <a href="cate.do" target="right">
         <span class="icon-caret-right"></span>
         分类管理
       </a>
@@ -142,7 +142,7 @@ $(function(){
   </li>
 </ul>
 <div class="admin">
-  <iframe scrolling="auto" rameborder="0" src="info1.do" name="right" width="100%" height="100%"></iframe>
+  <iframe scrolling="auto" rameborder="0" src="info.do" name="right" width="100%" height="100%"></iframe>
 </div>
 <div style="text-align:center;">
   <p>来源:

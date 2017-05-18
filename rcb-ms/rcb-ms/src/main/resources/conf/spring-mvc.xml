@@ -17,7 +17,7 @@
 
 	<!-- 定义跳转的文件的前后缀 ，视图模式配置 视图解析 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/after/" />
+		<property name="prefix" value="/WEB-INF/backstage/" />
 		<property name="suffix" value=".jsp"/>
 	</bean>
 

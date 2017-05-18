@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class GbookController {/*
+public class GbookController {
 	@Resource
 	private GbookService service;
 	@RequestMapping("/book.do")
-	public String bookx() {
+	public String book() {
 		return "book";
 	}
-	@ResponseBody
+	/*	@ResponseBody
 	@RequestMapping("/book1.do")
 	public Object del(String id) {
 		int n=service.delGbookById(id);

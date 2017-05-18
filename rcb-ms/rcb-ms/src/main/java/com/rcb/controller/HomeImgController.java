@@ -17,15 +17,15 @@ import com.rcb.utils.JsonResult;
 
 
 	@Controller
-	public class HomeImgController{/*
+	public class HomeImgController{
 		@Resource
 		private HomeImgService service;
 		
 		@RequestMapping("/adv.do")
-		public String advx() {
+		public String adv() {
 			return "adv";
 		}
-
+		/*
 		@ResponseBody
 		@RequestMapping("/adv1.do")
 		public Object findall(){

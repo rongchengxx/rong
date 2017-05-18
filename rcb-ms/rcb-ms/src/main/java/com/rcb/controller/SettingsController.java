@@ -13,15 +13,15 @@ import com.rcb.utils.JsonResult;
 
 
 	@Controller
-	public class SettingsController{/*
+	public class SettingsController{
 		@Resource
 		private SettingsService service;
 
 		@RequestMapping("/info.do")
-		public String infox() {
+		public String info() {
 			return "info";
 		}
-		@ResponseBody
+		/*@ResponseBody
 		@RequestMapping("/info1.do")
 		public Object addSettings(String name,
 				String password){
