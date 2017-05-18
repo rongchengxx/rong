@@ -50,7 +50,13 @@ public class UserController
 	public String pass(){
 		return "pass";
 	}
-	
 
+	//修改密码controller的修改动态操作
+	@RequestMapping("/pass/modify.do")
+	@ResponseBody
+	public Object passModefy(String userId, String password,String newPassword){
+		User user = userService.modifyUser(userId, password, newPassword);
+		return new JsonResult(user);
+	}
 	
 }

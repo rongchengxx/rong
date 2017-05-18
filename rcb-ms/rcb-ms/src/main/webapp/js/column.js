@@ -8,7 +8,7 @@ $(function(){
 });
 
 function addColum(){
-	alert(123);
+	/*alert(123);*/
 };
 
 function loadColumn(){
@@ -18,11 +18,10 @@ function loadColumn(){
 	if(userId==null){
 		window.location.href="../rcb-ms";
 	}else{
-		var formData = new FormData($( "#form1" )[0]);
 		$.ajax({
 			url:path+"/column/loadColumn.do",
 			type:"post",
-			data:formData,
+			data:{},
 			dataType:"json",
 			success : function(result) {
 				if (result.state == 0){

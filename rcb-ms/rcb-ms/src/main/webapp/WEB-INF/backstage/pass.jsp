@@ -10,9 +10,14 @@
 <title></title>
 <link rel="stylesheet" href="css/pintuer.css">
 <link rel="stylesheet" href="css/admin.css">
+
 <script src="js/jquery.js"></script>
 <script src="js/pintuer.js"></script>
+
     <script src="js/cookie_util.js"></script>
+    <script src="js/pass.js"></script>  
+    <script src="js/basevalue.js"></script>
+    
     <script type="text/javascript">
     $(function(){
     	// 获取参数userId
@@ -39,9 +44,9 @@
           <label for="sitename">管理员帐号：</label>
         </div>
         <div class="field">
-          <label style="line-height:33px;">
-           admin
-          </label>
+          <span style="line-height:33px;" id="pass_account_span">
+           
+          </span>
         </div>
       </div>      
       <div class="form-group">
@@ -57,7 +62,7 @@
           <label for="sitename">新密码：</label>
         </div>
         <div class="field">
-          <input type="password" class="input w50" name="newpass" size="50" placeholder="请输入新密码" data-validate="required:请输入新密码,length#>=5:新密码不能小于5位" />         
+          <input type="password" class="input w50" id="newpass" name="newpass" size="50" placeholder="请输入新密码" data-validate="required:请输入新密码,length#>=5:新密码不能小于5位" />         
         </div>
       </div>
       <div class="form-group">
@@ -65,7 +70,7 @@
           <label for="sitename">确认新密码：</label>
         </div>
         <div class="field">
-          <input type="password" class="input w50" name="renewpass" size="50" placeholder="请再次输入新密码" data-validate="required:请再次输入新密码,repeat#newpass:两次输入的密码不一致" />          
+          <input type="password" class="input w50" id="renewpass" name="renewpass" size="50" placeholder="请再次输入新密码" data-validate="required:请再次输入新密码,repeat#newpass:两次输入的密码不一致" />          
         </div>
       </div>
   <!-- 提交按钮     -->
@@ -74,7 +79,7 @@
           <label></label>
         </div>
         <div class="field">
-          <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>   
+          <button class="button bg-main icon-check-square-o" type="submit" id="pass_submit"> 提交</button>   
         </div>
       </div>      
     </form>

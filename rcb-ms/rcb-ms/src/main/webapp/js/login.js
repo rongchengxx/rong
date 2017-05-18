@@ -1,5 +1,4 @@
 $(function(){
-
 			//绑定登录单击事件
 			$("#login").click(loginAction);
 			//失去焦点
@@ -21,10 +20,11 @@ $(function(){
 					$("#password_span").html("密码为空");
 				}
 			});
+			
+			
 	});
 
 function loginAction(){
-
 		//清空提示信息
 		$("#account_span").html("");
 		$("#password_span").html("");
@@ -54,7 +54,9 @@ function loginAction(){
 				 success:function(result){
 					if(result.state==0){//成功
 						var user=result.data;
+						
 						addCookie("userId",user.id,2);
+						addCookie("userAccount",user.account,2);
 						window.location.href=path+"/index.do";
 					}else if(result.state==2){//用户名错误
 						$("#account_span").html(result.message);
@@ -69,40 +71,3 @@ function loginAction(){
 		}
 	
 	}
-function subAction(){/*
-	
-	var mpass=$("#mpass").val().trim();
-	var newpass=$("#newpass").val().trim();
-	var renewpass=$("#renewpass").val().trim();
-	var ok=true;
-
-	if(mpass==""){
-		ok=false;
-	}
-	if(newpass==""){
-		ok=false;
-	}
-	if(renewpass==""){
-		ok=false;
-	}
-	if(ok){
-		$.ajax({
-			url:path+"/modify.do",
-			type:"post",
-			data:{"mpass":mpass,"newpass":newpass,"renewpass":renewpass},
-			dataType:"json",
-			success:function(result){
-				if(result.state==0){ 
-					var password=result.data;
-					
-					window.location.href="/modify.do";
-				}else if(result.state==2||result.state==3){
-					$("#c1").html(result.message);
-				}
-			},
-			error:function(){
-				alert("修改密码失败");
-			}
-		});
-	}
-*/}
