@@ -43,7 +43,7 @@ function del(id){
 <div class="panel admin-panel margin-top">
   <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>增加内容</strong></div>
   <div class="body-content">
-    <form method="post" class="form-x" action="" id = form1>   
+    <form method="post" class="form-x" action="" id = "form1">   
       <input type="hidden" name="id"  value="" />  
       <div class="form-group">
         <div class="label">
@@ -63,7 +63,7 @@ function del(id){
           <button type="button" class="btn btn-warning btn-s file-button" id="btn1" onclick="myfile.click();" style="float: left;">
             <span class="glyphicon glyphicon-ban-circle"></span>十上传
           </button>
-          <input type="file" id="myfile" uploader="uploader" nv-file-select="" onchange="tips.value=this.value" class="file-btn">
+          <input type="file" id="myfile" uploader="uploader" nv-file-select="" class="file-btn">
           <div class="tipss">图片尺寸：1920*200</div>
         </div>
       </div>
