@@ -1,5 +1,4 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -16,13 +15,10 @@
 <body>
 <div class="panel admin-panel">
   <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong></div>
-  <div class="padding border-bottom">
-    <button type="button" class="button border-yellow" onclick="window.location.href='#add'"><span class="icon-plus-square-o"></span> 添加分类</button>
-  </div>
   <table class="table table-hover text-center">
     <tr>
       <th width="5%">ID</th>
-      <th width="15%">一级分类</th>
+      <th width="15%">栏目名称</th>
       <th width="10%">排序</th>
       <th width="10%">操作</th>
     </tr>
@@ -30,37 +26,37 @@
       <td>1</td>
       <td>产品分类</td>
       <td>1</td>
-      <td><div class="button-group"> <a class="button border-main" href="cateedit.html"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+      <td><div class="button-group"> <a class="button border-main" href="cateedit.do"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
     </tr>
     <tr>
       <td>1</td>
       <td>产品分类</td>
       <td>1</td>
-      <td><div class="button-group"> <a class="button border-main" href="cateedit.html"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+      <td><div class="button-group"> <a class="button border-main" href="cateedit.do"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
     </tr>
     <tr>
       <td>1</td>
       <td>产品分类</td>
       <td>1</td>
-      <td><div class="button-group"> <a class="button border-main" href="cateedit.html"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+      <td><div class="button-group"> <a class="button border-main" href="cateedit.do"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
     </tr>
     <tr>
       <td>1</td>
       <td>产品分类</td>
       <td>1</td>
-      <td><div class="button-group"> <a class="button border-main" href="cateedit.html"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+      <td><div class="button-group"> <a class="button border-main" href="cateedit.do"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
     </tr>
     <tr>
       <td>1</td>
       <td>产品分类</td>
       <td>1</td>
-      <td><div class="button-group"> <a class="button border-main" href="cateedit.html"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+      <td><div class="button-group"> <a class="button border-main" href="cateedit.do"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
     </tr>
     <tr>
       <td>1</td>
       <td>产品分类</td>
       <td>1</td>
-      <td><div class="button-group"> <a class="button border-main" href="cateedit.html"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+      <td><div class="button-group"> <a class="button border-main" href="cateedit.do"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
     </tr>
   </table>
 </div>
@@ -87,7 +83,7 @@ function del(id,mid){
             <option value="">产品分类</option>
             <option value="">产品分类</option>
           </select>
-          <div class="tips">不选择上级分类默认为一级分类</div>
+
         </div>
       </div>
       <div class="form-group">
@@ -109,20 +105,30 @@ function del(id,mid){
       </div>
       <div class="form-group">
         <div class="label">
-          <label>分类关键字：</label>
-        </div>
-        <div class="field">
-          <input type="text" class="input" name="s_keywords" />
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="label">
           <label>关键字描述：</label>
         </div>
         <div class="field">
           <input type="text" class="input" name="s_desc"/>
         </div>
       </div>
+   	 <div class="form-group">
+	    <div class="label">
+	      <label>显示：</label>
+	    </div>
+	    <div class="field">
+	      <div class="button-group radio">
+	      
+	      <label class="button active">
+	     	  <span class="icon icon-check"></span>             
+	          <input name="isshow" value="1" type="radio" checked="checked">是             
+	      </label>             
+	    
+	      <label class="button active"><span class="icon icon-times"></span>          	
+	          <input name="isshow" value="0"  type="radio" checked="checked">否
+	      </label>         
+	       </div>       
+	    </div>
+	 </div>
       <div class="form-group">
         <div class="label">
           <label>排序：</label>

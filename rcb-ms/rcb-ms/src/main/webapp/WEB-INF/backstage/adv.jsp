@@ -1,5 +1,4 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -16,9 +15,6 @@
 <body>
 <div class="panel admin-panel">
   <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong></div>
-  <div class="padding border-bottom">  
-  <button type="button" class="button border-yellow" onclick="window.location.href='#add'"><span class="icon-plus-square-o"></span> 添加内容</button>
-  </div>
   <table class="table table-hover text-center">
     <tr>
       <th width="10%">ID</th>
@@ -36,7 +32,7 @@
       <td>描述文字....</td>
       <td>1</td>
       <td><div class="button-group">
-      <a class="button border-main" href="#add"><span class="icon-edit"></span> 修改</a>
+      <a class="button border-main" href="advpop.do"><span class="icon-edit"></span> 修改</a>
       <a class="button border-red" href="javascript:void(0)" onclick="return del(1,1)"><span class="icon-trash-o"></span> 删除</a>
       </div></td>
     </tr>
@@ -47,7 +43,7 @@
       <td>描述文字....</td>
       <td>1</td>
       <td><div class="button-group">
-      <a class="button border-main" href="#add"><span class="icon-edit"></span> 修改</a>
+      <a class="button border-main" href="advpop.do"><span class="icon-edit"></span> 修改</a>
       <a class="button border-red" href="javascript:void(0)" onclick="return del(1,1)"><span class="icon-trash-o"></span> 删除</a>
       </div></td>
     </tr>
@@ -58,7 +54,7 @@
       <td>描述文字....</td>
       <td>1</td>
       <td><div class="button-group">
-      <a class="button border-main" href="#add"><span class="icon-edit"></span> 修改</a>
+      <a class="button border-main" href="advpop.do"><span class="icon-edit"></span> 修改</a>
       <a class="button border-red" href="javascript:void(0)" onclick="return del(1,1)"><span class="icon-trash-o"></span> 删除</a>
       </div></td>
     </tr>
@@ -100,7 +96,10 @@ function del(id,mid){
         </div>
         <div class="field">
           <input type="text" id="url1" name="img" class="input tips" style="width:25%; float:left;"  value="" data-toggle="hover" data-place="right" data-image="" />
-          <input type="button" class="button bg-blue margin-left" id="image1" value="+ 浏览上传"  style="float:left;">
+          <button type="button" class="btn btn-warning btn-s file-button" id="btn1" onclick="myfile.click();" style="float: left;">
+            <span class="glyphicon glyphicon-ban-circle"></span>十上传
+          </button>
+          <input type="file" id="myfile" uploader="uploader" nv-file-select="" onchange="input1.value=this.value" style="/* display: block; */" class="file-btn">
           <div class="tipss">图片尺寸：1920*500</div>
         </div>
       </div>

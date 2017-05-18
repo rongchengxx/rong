@@ -19,7 +19,7 @@
     <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong> <a href="" style="float:right; display:none;">添加字段</a></div>
     <div class="padding border-bottom">
       <ul class="search" style="padding-left:10px;">
-        <li> <a class="button border-main icon-plus-square-o" href="add.html"> 添加内容</a> </li>
+        <li> <a class="button border-main icon-plus-square-o" href="add.do"> 添加内容</a> </li>
         <li>搜索：</li>
         <if condition="$iscid eq 1">
           <li>
@@ -58,7 +58,7 @@
           <td><font color="#00CC99">首页</font></td>
           <td>产品分类</td>
           <td>2016-07-01</td>
-          <td><div class="button-group"> <a class="button border-main" href="add.html"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,1,1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+          <td><div class="button-group"> <a class="button border-main" href="amend.do"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,1,1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
         </tr>
    		 <tr>
           <td style="text-align:left; padding-left:20px;"><input type="checkbox" name="id[]" value="" />
@@ -69,7 +69,7 @@
           <td><font color="#00CC99">首页</font></td>
           <td>产品分类</td>
           <td>2016-07-01</td>
-          <td><div class="button-group"> <a class="button border-main" href="add.html"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,1,1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+          <td><div class="button-group"> <a class="button border-main" href="amend.do"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,1,1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
         </tr>
          <tr>
           <td style="text-align:left; padding-left:20px;"><input type="checkbox" name="id[]" value="" />
@@ -80,7 +80,7 @@
           <td><font color="#00CC99">首页</font></td>
           <td>产品分类</td>
           <td>2016-07-01</td>
-          <td><div class="button-group"> <a class="button border-main" href="add.html"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,1,1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+          <td><div class="button-group"> <a class="button border-main" href="amend.do"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,1,1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
         </tr>
          <tr>
           <td style="text-align:left; padding-left:20px;"><input type="checkbox" name="id[]" value="" />
@@ -91,7 +91,7 @@
           <td><font color="#00CC99">首页</font></td>
           <td>产品分类</td>
           <td>2016-07-01</td>
-          <td><div class="button-group"> <a class="button border-main" href="add.html"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,1,1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+          <td><div class="button-group"> <a class="button border-main" href="amend.do"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,1,1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
         </tr>
          <tr>
           <td style="text-align:left; padding-left:20px;"><input type="checkbox" name="id[]" value="" />
@@ -102,7 +102,7 @@
           <td><font color="#00CC99">首页</font></td>
           <td>产品分类</td>
           <td>2016-07-01</td>
-          <td><div class="button-group"> <a class="button border-main" href="add.html"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,1,1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+          <td><div class="button-group"> <a class="button border-main" href="amend.do"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,1,1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
         </tr>
          <tr>
           <td style="text-align:left; padding-left:20px;"><input type="checkbox" name="id[]" value="" />
@@ -113,7 +113,7 @@
           <td><font color="#00CC99">首页</font></td>
           <td>产品分类</td>
           <td>2016-07-01</td>
-          <td><div class="button-group"> <a class="button border-main" href="add.html"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,1,1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+          <td><div class="button-group"> <a class="button border-main" href="amend.do"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,1,1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
         </tr>
       <tr>
         <td style="text-align:left; padding:19px 0;padding-left:20px;"><input type="checkbox" id="checkall"/>

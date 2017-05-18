@@ -16,5 +16,8 @@ public class TwoMenuController {
 	public String cate(){
 		return "cate";
 	}
-	
+	@RequestMapping("/cateedit.do")
+	public String cateedit(){
+		return "cateedit";
+	}
 }

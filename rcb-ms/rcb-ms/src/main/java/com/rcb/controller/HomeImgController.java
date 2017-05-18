@@ -25,6 +25,11 @@ import com.rcb.utils.JsonResult;
 		public String adv() {
 			return "adv";
 		}
+		
+		@RequestMapping("/advpop.do")
+		public String advpop() {
+			return "advpop";
+		}
 		/*
 		@ResponseBody
 		@RequestMapping("/adv1.do")

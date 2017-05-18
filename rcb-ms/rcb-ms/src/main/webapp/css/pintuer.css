@@ -1081,3 +1081,27 @@ a:focus,a:hover{color:#0ae;} /*链接-悬浮颜色*/
 {color:#333;border-color:#3bc;background-color:#3bc;} /*融合-文本色-边框-背景*/
 .button.border-dot:hover,.button.border-dot:focus,.button.bg-dot:hover,.button.bg-dot:focus
 {color:#fff;border-color:#f00;background-color:#f00;} /*点缀色-文本-边框-背景*/
+
+
+
+
+
+
+/*自己补充的*/
+.file-btn{
+	width:0px;
+	height: 0px;
+	border:1px solid red;
+	font-size: 0;
+	opacity:0;
+}
+.field .file-button{
+	width: 100px;
+	height: 40px;
+	margin-left: 10px;
+	background: #00AAEE;
+	border: 0px; 
+	border-radius: 5px;
+	font-size: 16px;
+	color: #fff;
+}

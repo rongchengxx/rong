@@ -22,4 +22,9 @@ public class SinglePageAController {
 	public String add(){
 		return "add";
 	}
+	
+	@RequestMapping("/amend.do")
+	public String amend(){
+		return "amend";
+	}
 }

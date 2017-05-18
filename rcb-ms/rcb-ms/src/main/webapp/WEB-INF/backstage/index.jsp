@@ -88,22 +88,22 @@
         留言管理
       </a>
     </li>     
-    <li>
-      <a href="column.do" target="right">
-        <span class="icon-caret-right"></span>
-        栏目管理
-      </a>
-    </li>
   </ul>   
   <h2>
     <span class="icon-pencil-square-o"></span>
-    栏目管理
+    内容管理
   </h2>
   <ul>
-    <li>
-      <a href="list.do" target="right">
+  	<li>
+      <a href="column.do" target="right">
         <span class="icon-caret-right"></span>
-        内容管理
+        一级菜单
+      </a>
+    </li>
+    <li>
+      <a href="cate.do" target="right">
+        <span class="icon-caret-right"></span>
+        二级菜单
       </a>
     </li>
     <li>
@@ -113,26 +113,13 @@
       </a>
     </li>
     <li>
-      <a href="cate.do" target="right">
+      <a href="list.do" target="right">
         <span class="icon-caret-right"></span>
-        分类管理
+        内容管理
       </a>
     </li>
   </ul>
 </div>
-<script type="text/javascript">
-$(function(){
-  $(".leftnav h2").click(function(){
-	  $(this).next().slideToggle(200);
-	  $(this).toggleClass("on"); 
-  })
-  $(".leftnav ul li a").click(function(){
-	    $("#a_leader_txt").text($(this).text());
-  		$(".leftnav ul li a").removeClass("on");
-		$(this).addClass("on");
-  })
-});
-</script>
 <ul class="bread">
   <li>
     <a href="{:U('Index/info')}" target="right" class="icon-home"> 首页</a>

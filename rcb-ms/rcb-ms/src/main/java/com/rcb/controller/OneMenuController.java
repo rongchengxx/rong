@@ -15,4 +15,9 @@ public class OneMenuController {
 	public String colume() {
 		return "column";
 	}
+	
+	@RequestMapping("/pub.do")
+	public String pub() {
+		return "pub";
+	}
 }

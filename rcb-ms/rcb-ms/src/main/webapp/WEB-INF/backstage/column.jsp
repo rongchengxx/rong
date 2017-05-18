@@ -1,5 +1,4 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -16,9 +15,6 @@
 <body>
 <div class="panel admin-panel">
   <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong></div>
-  <div class="padding border-bottom">  
-  <a class="button border-yellow" href=""><span class="icon-plus-square-o"></span> 添加内容</a>
-  </div> 
   <table class="table table-hover text-center">
     <tr>
       <th width="5%">ID</th>     
@@ -33,7 +29,7 @@
       <td>1</td>      
       <td>
       <div class="button-group">
-      <a type="button" class="button border-main" href="#"><span class="icon-edit"></span>修改</a>
+      <a type="button" class="button border-main" href="pub.do"><span class="icon-edit"></span>修改</a>
        <a class="button border-red" href="javascript:void(0)" onclick="return del(17)"><span class="icon-trash-o"></span> 删除</a>
       </div>
       </td>
@@ -45,7 +41,7 @@
       <td>1</td>      
       <td>
       <div class="button-group">
-      <a type="button" class="button border-main" href="#"><span class="icon-edit"></span>修改</a>
+      <a type="button" class="button border-main" href="pub.do"><span class="icon-edit"></span>修改</a>
        <a class="button border-red" href="javascript:void(0)" onclick="return del(17)"><span class="icon-trash-o"></span> 删除</a>
       </div>
       </td>
@@ -57,7 +53,7 @@
       <td>1</td>      
       <td>
       <div class="button-group">
-      <a type="button" class="button border-main" href="#"><span class="icon-edit"></span>修改</a>
+      <a type="button" class="button border-main" href="pub.do"><span class="icon-edit"></span>修改</a>
        <a class="button border-red" href="javascript:void(0)" onclick="return del(17)"><span class="icon-trash-o"></span> 删除</a>
       </div>
       </td>
@@ -69,7 +65,7 @@
       <td>1</td>      
       <td>
       <div class="button-group">
-      <a type="button" class="button border-main" href="#"><span class="icon-edit"></span>修改</a>
+      <a type="button" class="button border-main" href="pub.do"><span class="icon-edit"></span>修改</a>
        <a class="button border-red" href="javascript:void(0)" onclick="return del(17)"><span class="icon-trash-o"></span> 删除</a>
       </div>
       </td>
@@ -81,7 +77,7 @@
       <td>1</td>      
       <td>
       <div class="button-group">
-      <a type="button" class="button border-main" href="#"><span class="icon-edit"></span>修改</a>
+      <a type="button" class="button border-main" href="pub.do"><span class="icon-edit"></span>修改</a>
        <a class="button border-red" href="javascript:void(0)" onclick="return del(17)"><span class="icon-trash-o"></span> 删除</a>
       </div>
       </td>
@@ -115,19 +111,14 @@ function del(id){
         </div>
         <div class="field">
           <input type="text" id="url1" name="banner" class="input tips" style="width:25%; float:left;"  value="" data-toggle="hover" data-place="right" data-image="" />
-          <input type="button" class="button bg-blue margin-left" id="image1" value="+ 浏览上传"  style="float:left;">
+          <button type="button" class="btn btn-warning btn-s file-button" id="btn1" onclick="myfile.click();" style="float: left;">
+            <span class="glyphicon glyphicon-ban-circle"></span>十上传
+          </button>
+          <input type="file" id="myfile" uploader="uploader" nv-file-select="" onchange="input1.value=this.value" style="/* display: block; */" class="file-btn">
           <div class="tipss">图片尺寸：1920*200</div>
         </div>
       </div>
-       <div class="form-group">
-        <div class="label">
-          <label>英文标题：</label>
-        </div>
-        <div class="field">
-          <input type="text" class="input w50" name="entitle" value="" />         
-          <div class="tips"></div>
-        </div>
-      </div>       
+             
       <div class="form-group">
         <div class="label">
           <label>关键字标题：</label>
@@ -136,14 +127,7 @@ function del(id){
           <input type="text" class="input" name="s_title" value="" />         
         </div>
       </div>
-      <div class="form-group">
-        <div class="label">
-          <label>栏目关键字：</label>
-        </div>
-        <div class="field">
-          <input type="text" class="input" name="s_keywords" value=""/>         
-        </div>
-      </div>
+      
       <div class="form-group">
         <div class="label">
           <label>关键字描述：</label>

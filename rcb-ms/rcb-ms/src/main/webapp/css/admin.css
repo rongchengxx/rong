@@ -26,7 +26,7 @@ ul,li{ list-style-type:none;}
 .leftnav .border-bottom{ border-bottom:1px solid #b5cfd9;}
 .leftnav h2 span{ margin-right:10px;}
 .leftnav h2:hover{ color:#09c;}
-.leftnav ul {display:none; border-top:1px solid #b5cfd9; padding:5px 0; opacity:1;}
+.leftnav ul {border-top:1px solid #b5cfd9; padding:5px 0; opacity:1;}
 .leftnav ul li{ list-style-type:none;  }
 .leftnav ul li a{ display:block;padding-left:30px;line-height:30px; }
 .leftnav ul li span{ margin-right:8px;}
