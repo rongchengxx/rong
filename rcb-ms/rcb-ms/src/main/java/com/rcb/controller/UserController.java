@@ -35,9 +35,9 @@ public class UserController
 	@ResponseBody
 	@RequestMapping("/login.do")
 	public Object login(String account,String password){
-		System.out.println(account+","+password);
 		User user=userService.login(account, password);
-		return new JsonResult(user);
+/*		System.out.println("id:"+user.getId());
+*/		return new JsonResult(user);
 	}
 	
 	@RequestMapping("/index.do")

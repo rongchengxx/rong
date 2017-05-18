@@ -12,6 +12,17 @@
 <link rel="stylesheet" href="css/admin.css">
 <script src="js/jquery.js"></script>
 <script src="js/pintuer.js"></script>
+    <script src="js/cookie_util.js"></script>
+    <script type="text/javascript">
+    $(function(){
+    	// 获取参数userId
+		var userId=getCookie("userId");
+		//判断userId是否有效
+		if(userId==null){
+			window.location.href="../rcb-ms";
+		}
+    });
+    </script> 
 </head>
 <body>
 	<div class="panel admin-panel margin-top" id="add">

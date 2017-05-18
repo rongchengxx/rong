@@ -12,21 +12,14 @@
     <script src="js/jquery.js"></script>
     <script src="js/cookie_util.js"></script>
     <script type="text/javascript">
-    	$(function(){/* 
-    		// alert("JS调用");
-    		// 获取参数userId
-    		var userId=getCookie("userId");
-    		alert(userId);
-    		//判断userId是否有效
-    		if(userId==null){
-    			window.location.href="../";
-    		}else{
-	    		$.ajax({
-	    			
-	    		});
-    		} */
-    	});
-    
+    $(function(){
+    	// 获取参数userId
+		var userId=getCookie("userId");
+		//判断userId是否有效
+		if(userId==null){
+			window.location.href="/rcb-ms";
+		}
+    });
     </script>
 </head>
 <body style="background-color:#f2f9fd;">
