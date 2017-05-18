@@ -8,7 +8,7 @@ $(function(){
 });
 
 function addColum(){
-<<<<<<< HEAD
+
 	/*var formData = new FormData($( "#form1" )[0]);
 	$.ajax({
 		url:path+"/sub.do",
@@ -23,9 +23,9 @@ function addColum(){
 		}
 	});
 	alert(123);*/
-=======
+
 	/*alert(123);*/
->>>>>>> ce3baa5bb26dd0a3614f93088a3cd715465bdca3
+
 };
 
 function loadColumn(){
@@ -35,10 +35,7 @@ function loadColumn(){
 	if(userId==null){
 		window.location.href="../rcb-ms";
 	}else{
-<<<<<<< HEAD
 		
-=======
->>>>>>> ce3baa5bb26dd0a3614f93088a3cd715465bdca3
 		$.ajax({
 			url:path+"/column/loadColumn.do",
 			type:"post",
