@@ -14,8 +14,8 @@
     <script src="js/column.js"></script>
         <script src="js/basevalue.js"></script>
         <script src="js/cookie_util.js"></script>
-    
-    
+  
+  
 </head>
 <body>
 <div class="panel admin-panel">
@@ -27,7 +27,7 @@
       <th>排序</th>
       <th width="250">操作</th>
     </tr>
-   
+   <!-- 自动加载内容 -->
       
     
        
@@ -35,10 +35,7 @@
   </table>
 </div>
 <script>
-function del(id){
-	if(confirm("您确定要删除吗?")){	
-	}
-}
+
 </script>
 <div class="panel admin-panel margin-top">
   <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>增加内容</strong></div>
@@ -118,7 +115,7 @@ function del(id){
           <label></label>
         </div>
         <div class="field">
-          <button class="button bg-main icon-check-square-o" type="submit" id="column_submit"> 提交</button>
+          <button class="button bg-main icon-check-square-o" type="button" id="column_button"> 提交</button>
         </div>
       </div>
     </form>

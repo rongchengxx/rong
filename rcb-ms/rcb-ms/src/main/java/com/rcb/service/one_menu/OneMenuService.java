@@ -17,4 +17,7 @@ public interface OneMenuService {
 	
 	//删除OneMenu
 	public int delOneMenuById(String id);
+	
+	//查找OneMenu根据id，返回OneMenu对象
+	public OneMenu findOneMenuById(String id);
 }

@@ -3,11 +3,58 @@ $(function(){
 	loadColumn();
 	
 	//监听单击事件
-	$("#column_submit").click(addColum);
+	$("#column_button").click(addColumn);
 	
+	//监听删除事件
+	$("#column_table").on("click",".delete_button",deleteColumn);
+	
+	//监听修改事件
+	$("#column_table").on("click",".modify_button",modifyColumn);
 });
 
-function addColum(){
+function modifyColumn(){
+	
+	//获取顶级tr
+	var $tr = $(this).parent().parent().parent();
+	//获取id
+	var oneMenuId = $tr.data("oneMenuId");
+	//保存cookie
+	addCookie("columnId",oneMenuId,2);
+
+	/*alert(getCookie("columnId"));*/
+	
+}
+
+function deleteColumn(){
+	if(confirm("您确定要删除吗?")){
+		//获取顶级tr
+		var $tr = $(this).parent().parent().parent();
+		//获取id
+		var oneMenuId = $tr.data("oneMenuId");
+		/*console.log(oneMenuId);*/
+		//发送ajax
+		$.ajax({
+			url:path+"/column/delColume.do",
+			type:"post",
+			data:{"id":oneMenuId},
+			dataType:"json",
+			success:function(result){
+				if(result.state==0){
+					$tr.remove();
+					alert("删除栏目成功");
+				}
+			},
+			error:function(){
+				alert("删除栏目失败");
+			}
+		});
+		
+	}
+	
+}
+
+
+function addColumn(){
 	// 获取请求参数
 	var userId=getCookie("userId");
 	var columnTitle=$("#column_title").val().trim();
@@ -17,12 +64,7 @@ function addColum(){
 	var columnIsshow=$("input[name='isshow']:checked").val();
 	var columnSeq=$("#column_seq").val().trim();
 
-/*	console.log("columnTitle="+columnTitle,
-			"columnThumb="+columnThumb,
-			"columnIntro="+columnIntro,
-			"columnContent="+columnContent,
-			"columnIsshow="+columnIsshow,
-			"columnSeq="+columnSeq);*/
+
 	
 	// 参数格式校验
 	var ok = true;
@@ -50,18 +92,19 @@ function addColum(){
 			success : function(result) {
 				if (result.state == 0) {
 					var oneMenu = result.data;
-					//未完成
-					var id = book.id;
-					var name = book.name;
-					// 关闭对话框
-					closeAlertWindow();
-					// 创建笔记本li
-					createBookLi(id, name);
-					alert("笔记本创建成功");
+					console.log(oneMenu);
+					
+					var oneMenuId = oneMenu.id;
+					var oneMenuTitle = oneMenu.title;
+					var oneMenuSeq = oneMenu.seq;
+					
+					// 创建column
+					createColumn(oneMenuId,oneMenuTitle,oneMenuSeq);
+					alert("栏目添加成功");
 				}
 			},
 			error : function() {
-				alert("笔记本创建失败!!!");
+				alert("栏目添加失败!!!");
 			}
 		});
 	}
@@ -123,8 +166,9 @@ function createColumn(oneMenuId,oneMenuTitle,oneMenuSeq){
 	str+='</td>';      
 	str+='<td>';
 	str+='<div class="button-group">';
-	str+='<a type="button" class="button border-main" href="pub.do"><span class="icon-edit"></span>修改</a>';
-	str+='<a class="button border-red" href="javascript:void(0)" onclick="return del(17)"><span class="icon-trash-o"></span> 删除</a>';
+	str+='<a type="button" class="button border-main modify_button" href="pub.do"><span class="icon-edit"></span>修改</a>';
+	
+	str+='<a class="button border-red delete_button" href="javascript:void(0)" ><span class="icon-trash-o"></span> 删除</a>';
 	str+='</div>';
 	str+='</td>';
 	str+='</tr>';

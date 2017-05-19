@@ -1,6 +1,7 @@
 eclipse.preferences.version=1
 encoding//src/main/java/com/rcb/service/gbook/GbookService.java=UTF-8
 encoding//src/main/java/com/rcb/service/gbook/GbookServiceImpl.java=UTF-8
+encoding//src/main/java/com/rcb/utils/JsonResult.java=UTF-8
 encoding//src/main/resources/log4j.properties=UTF-8
 encoding//src/main/webapp/WEB-INF/backstage/add.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/backstage/adv.jsp=UTF-8

@@ -2,8 +2,8 @@ $(function(){
 	//自动加载
 	loadCate();
 	
-	//监听笔记本li单击事件
-	$("#column_submit").click(addColum);
+	//监听单击事件
+	$("#cate_submit").click(addCate);
 	
 });
 

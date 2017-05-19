@@ -42,6 +42,11 @@ public class TestOneMenuService
 		int row = oneMenuService.delOneMenuById("11");
 		System.out.println(row);
 	}
+	@Test  //findOneMenuById
+	public void test5(){
+		OneMenu oneMenu = oneMenuService.findOneMenuById("111");
+		System.out.println(oneMenu);
+	}
 	
 }
 

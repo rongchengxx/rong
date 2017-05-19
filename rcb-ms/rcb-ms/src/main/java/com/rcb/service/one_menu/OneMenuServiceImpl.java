@@ -49,6 +49,10 @@ public class OneMenuServiceImpl implements OneMenuService {
 		return row;
 	}
 
-	
+	//查找OneMenu根据id，返回OneMenu对象
+	public OneMenu findOneMenuById(String id){
+		OneMenu oneMenu = oneMenuDao.findOneMenuById(id);
+		return oneMenu;
+	}
 
 }
