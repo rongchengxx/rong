@@ -10,10 +10,10 @@ public interface OneMenuService {
 	public List<OneMenu> findOneMenuAll();
 	
 	//增加OneMenu
-	public int addOneMenu(String title,String thumb,String content,int seq,int isshow);
+	public OneMenu addOneMenu(String title,String thumb,String content,int seq,int isshow,String intro);
 	
 	//修改OneMenu
-	public int modifyOneMenu(String id,String title,String thumb,String content,int seq,int isshow);
+	public int modifyOneMenu(String id,String title,String thumb,String content,int seq,int isshow,String intro);
 	
 	//删除OneMenu
 	public int delOneMenuById(String id);

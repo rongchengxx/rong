@@ -43,14 +43,14 @@ function del(id){
 <div class="panel admin-panel margin-top">
   <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>增加内容</strong></div>
   <div class="body-content">
-    <form method="post" class="form-x" action="" id = form1>   
+    <form method="post" class="form-x" action="" id = "form1">   
       <input type="hidden" name="id"  value="" />  
       <div class="form-group">
         <div class="label">
           <label>栏目名称：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" name="title" value="" data-validate="required:请输入标题" />         
+          <input type="text" id="column_title" class="input w50" name="title" value="" data-validate="required:请输入标题" />         
           <div class="tips"></div>
         </div>
       </div> 
@@ -59,11 +59,11 @@ function del(id){
           <label>栏目图片：</label>
         </div>
         <div class="field">
-          <input type="text" id="url1" name="banner" class="input tips" style="width:25%; float:left;"  value="" data-toggle="hover" data-place="right" data-image="" />
-          <button type="button" class="btn btn-warning btn-s file-button" id="btn1" onclick="myfile.click();" style="float: left;">
+          <input type="text" id="column_thumb" name="banner" class="input tips" style="width:25%; float:left;"  value="" data-toggle="hover" data-place="right" data-image="" />
+          <button type="button" class="btn btn-warning btn-s file-button" id="btn1" onclick="column_myfile.click();" style="float: left;">
             <span class="glyphicon glyphicon-ban-circle"></span>十上传
           </button>
-          <input type="file" id="myfile" uploader="uploader" nv-file-select="" onchange="tips.value=this.value" class="file-btn">
+          <input type="file" id="column_myfile" uploader="uploader" nv-file-select="" class="file-btn">
           <div class="tipss">图片尺寸：1920*200</div>
         </div>
       </div>
@@ -73,7 +73,7 @@ function del(id){
           <label>关键字标题：</label>
         </div>
         <div class="field">
-          <input type="text" class="input" name="s_title" value="" />         
+          <input type="text" id="column_intro" class="input" name="s_title" value="" />         
         </div>
       </div>
       
@@ -82,7 +82,7 @@ function del(id){
           <label>关键字描述：</label>
         </div>
         <div class="field">
-          <textarea type="text" class="input" name="s_desc" style="height:100px;" ></textarea>        
+          <textarea type="text" id="column_content" class="input" name="s_desc" style="height:100px;" ></textarea>        
         </div>
      </div>
     
@@ -109,7 +109,7 @@ function del(id){
           <label>排序：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" name="sort" value="0"  data-validate="required:,number:排序必须为数字" />
+          <input type="text" id="column_seq" class="input w50" name="sort" value="0"  data-validate="required:,number:排序必须为数字" />
           <div class="tips"></div>
         </div>
       </div>

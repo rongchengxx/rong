@@ -12,63 +12,21 @@
 <script src="js/jquery.js"></script>
 <script src="js/pintuer.js"></script>
     <script src="js/cookie_util.js"></script>
-    <script type="text/javascript">
-    $(function(){
-    	// 获取参数userId
-		var userId=getCookie("userId");
-		//判断userId是否有效
-		if(userId==null){
-			window.location.href="../rcb-ms";
-		}
-    });
-    </script> 
+        <script src="js/basevalue.js"></script>
+        <script src="js/cate.js"></script>
+     
 </head>
 <body>
 <div class="panel admin-panel">
   <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong></div>
-  <table class="table table-hover text-center">
+  <table class="table table-hover text-center" id="cate_table">
     <tr>
       <th width="5%">ID</th>
       <th width="15%">栏目名称</th>
       <th width="10%">排序</th>
       <th width="10%">操作</th>
     </tr>
-    <tr>
-      <td>1</td>
-      <td>产品分类</td>
-      <td>1</td>
-      <td><div class="button-group"> <a class="button border-main" href="cateedit.do"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>产品分类</td>
-      <td>1</td>
-      <td><div class="button-group"> <a class="button border-main" href="cateedit.do"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>产品分类</td>
-      <td>1</td>
-      <td><div class="button-group"> <a class="button border-main" href="cateedit.do"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>产品分类</td>
-      <td>1</td>
-      <td><div class="button-group"> <a class="button border-main" href="cateedit.do"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>产品分类</td>
-      <td>1</td>
-      <td><div class="button-group"> <a class="button border-main" href="cateedit.do"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>产品分类</td>
-      <td>1</td>
-      <td><div class="button-group"> <a class="button border-main" href="cateedit.do"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
-    </tr>
+    
   </table>
 </div>
 <script type="text/javascript">
@@ -99,11 +57,24 @@ function del(id,mid){
       </div>
       <div class="form-group">
         <div class="label">
-          <label>分类标题：</label>
+          <label>栏目名称：</label>
         </div>
         <div class="field">
           <input type="text" class="input w50" name="title" />
           <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>栏目图片：</label>
+        </div>
+        <div class="field">
+          <input type="text" id="cate_thumb" name="banner" class="input tips" style="width:25%; float:left;"  value="" data-toggle="hover" data-place="right" data-image="" />
+          <button type="button" class="btn btn-warning btn-s file-button" id="btn1" onclick="cate_myfile.click();" style="float: left;">
+            <span class="glyphicon glyphicon-ban-circle"></span>十上传
+          </button>
+          <input type="file" id="cate_myfile" uploader="uploader" nv-file-select="" class="file-btn">
+          <div class="tipss">图片尺寸：1920*200</div>
         </div>
       </div>
       <div class="form-group">

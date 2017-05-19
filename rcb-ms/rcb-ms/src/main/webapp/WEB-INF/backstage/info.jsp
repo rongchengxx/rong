@@ -43,7 +43,7 @@
           <label>网站LOGO：</label>
         </div>
         <div class="field">
-          <input type="text" id="url1" name="slogo" class="input tips" style="width:25%; float:left;" value="" data-toggle="hover" data-place="right" data-image=""  />
+          <input type="text" id="logo"  name="slogo" class="input tips" style="width:25%; float:left;" value="" data-toggle="hover" data-place="right" data-image=""  />
           <input type="button" class="button bg-blue margin-left" id="image1" value="+ 浏览上传">
         </div>
       </div>

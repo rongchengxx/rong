@@ -11,10 +11,10 @@ public interface TwoMenuService {
 	public List<TwoMenu> findTwoMenuAll();
 	
 	//增加TwoMenu
-	public int addTwoMenu(String oneMenuId,String title,String thumb,String content,int seq,int isshow);
+	public TwoMenu addTwoMenu(String oneMenuId,String title,String thumb,String content,int seq,int isshow,String intro);
 	
 	//修改TwoMenu
-	public int modifyTwoMenu(String id,String oneMenuId,String title,String thumb,String content,int seq,int isshow);
+	public int modifyTwoMenu(String id,String oneMenuId,String title,String thumb,String content,int seq,int isshow,String intro);
 	
 	//删除TwoMenu
 	public int delTwoMenuById(String id);

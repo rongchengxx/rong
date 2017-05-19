@@ -17,48 +17,17 @@ public class GbookController {
 	public String book() {
 		return "book";
 	}
-	/*	@ResponseBody
-	@RequestMapping("/book1.do")
-	public Object del(String id) {
-		int n=service.delGbookById(id);
-		return new JsonResult(n);
-	}
-	@RequestMapping("/cate1.do")
-	public String cate() {
-		return "cate";
-	}
-
-	@RequestMapping("/cateedit1.do")
-	public String cateedit() {
-		return "cateedit";
-	}
-
-	@RequestMapping("/column1.do")
-	public String column() {
-		return "column";
-	}
-
-	@RequestMapping("/error1.do")
-	public String error() {
-		return "error";
-	}
-
-
-	@RequestMapping("/list1.do")
-	public String list() {
-		return "list";
-	}
-
-	@RequestMapping("/pic1.do")
-	public String pic() {
-		return "pic";
-	}
-
-	@RequestMapping("/tips1.do")
-	public String tips() {
-		return "tips";
-	}
-
+	
+	/*
+	 * 删除路径/book/delBook.do
+	 * 删除多条/book/delBooks.do
+	 * 自动加载/book/loadBook.do
+	 * 
+	 * 涉及jsp为book。jsp文件，请在js文件夹下面创建js文件
+	 * 请自行按照别的方法案例书写方法
+	 * 如需传递参数请参考service
+	 * 
+	 * */
 	
 	
 	
@@ -70,6 +39,4 @@ public class GbookController {
 	
 	
 	
-	
-	
-*/}
+}
