@@ -11,11 +11,11 @@ function loadPass(){
 
 function subAction(){
 	//原始密码
-	var password=$("#mpass").val();
+	var password=$("#password").val();
 	//新密码
-	var newpass=$("#newpass").val();
+	var newPassword=$("#newPassword").val();
 	//确认新密码
-	var newPassword=$("#renewpass").val();
+	var renewpass=$("#renewpass").val();
 	var ok=true;
 
 	if(password==""){
@@ -24,7 +24,7 @@ function subAction(){
 	if(newPassword==""){
 		ok=false;
 	}
-	if(newpass==""){
+	if(renewpass==""){
 		ok=false;
 	}
 	//从cookie中获取id
@@ -33,13 +33,19 @@ function subAction(){
 		$.ajax({
 			url:path+"/pass/modify.do",
 			type:"post",
+			dataType:"json",
 			data:{"userId":userId,
 				"password":password,
 				"newPassword":newPassword},
-			dataType:"json",
-			
-			success:function(){
+				success:function(result){
+				if(result.state==0){
+					var user=result.data;
+					console.log(user);
+
+					
 					alert("修改密码成功！");
+				}
+					
 			},
 			error:function(){
 				alert("修改密码失败");

@@ -38,17 +38,17 @@ public class UserServiceImpl
 
 	//修改user
 	public User modifyUser(String userId, String password,String newPassword) throws NameException, PasswordException {
-		//查找user
-		User user=userDao.findById(userId);
-		//判断原始密码
-		if(!user.getPassword().equals(password)){
+		
+		User user=userDao.findById(userId);//查找user
+		
+		if(!user.getPassword().equals(password)){//判断原始密码
 			throw new PasswordException("原始密码错误");
-		}else{
-			//重置密码
-			user.setPassword(newPassword);
-			//返回更新行数，虽然没用上吧
-			userDao.modifyUser(user);
-			//return一个啥，一个user
+		}else{//重置密码
+			
+			user.setPassword(newPassword);//返回更新行数，虽然没用上吧
+			
+			userDao.modifyUser(user);//return一个啥，一个user
+			
 			return user;
 		}
 	}
