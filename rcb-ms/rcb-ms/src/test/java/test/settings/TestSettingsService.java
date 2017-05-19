@@ -22,9 +22,8 @@ public class TestSettingsService{
 	}
 	@Test 
 	public void test1(){
-		Settings sett1 = new Settings("1111a", "中文t", "127.0.0.1", "io55", "长方", "孙膑", 65655, 7777777, 556565, 1234567, "123@qq.com", "北京", "我是内容，风景不错");
-		int n=service.addSettings(sett1);
-		System.out.println(n);
+		Settings s1=service.addSettings("这家伙", "127.0.0.1", "io55", "长方", "孙膑", 65655, 7777777, 556565, 1234567, "123@qq.com", "北京", "我是内容，风景不错");
+		System.out.println(s1);
 	}
 	@Test 
 	public void test2(){

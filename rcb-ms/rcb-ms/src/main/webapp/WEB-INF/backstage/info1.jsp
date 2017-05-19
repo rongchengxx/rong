@@ -1,5 +1,9 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<%-- <%
+out.clear();
+out = pageContext.pushBody();
+%> --%>
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -8,6 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="renderer" content="webkit">
     <title>网站信息</title>  
+    <link rel="stylesheet" href="css/pintuer.css">
+    <link rel="stylesheet" href="css/admin.css">
     <script src="js/jquery.js"></script>
     <script src="js/pintuer.js"></script> 
     <script src="js/basevalue.js"></script> 
@@ -22,13 +28,13 @@
 			window.location.href="/rcb-ms";
 		}
     });
-    </script>  
+    </script> 
 </head>
 <body>
 <div class="panel admin-panel">
   <div class="panel-head"><strong><span class="icon-pencil-square-o"></span> 网站信息</strong></div>
   <div class="body-content">
-    <form method="post" class="form-x" action="/infoaddsettings.do">
+    <form method="post" class="form-x" action="">
       <div class="form-group">
         <div class="label">
           <label>网站标题：</label>
@@ -43,7 +49,7 @@
           <label>网站LOGO：</label>
         </div>
         <div class="field">
-          <input type="text" id="logo"  name="slogo" class="input tips" style="width:25%; float:left;" value="" data-toggle="hover" data-place="right" data-image=""  />
+          <input type="text" id="logo" name="slogo" class="input tips" style="width:25%; float:left;" value="" data-toggle="hover" data-place="right" data-image=""  />
           <input type="button" class="button bg-blue margin-left" id="image1" value="+ 浏览上传">
         </div>
       </div>
@@ -52,7 +58,7 @@
           <label>网站域名：</label>
         </div>
         <div class="field">
-          <input type="text" class="input" name="surl" value="" />
+          <input type="text" id="uri" class="input" name="surl" value="" />
         </div>
       </div>
       <div class="form-group" style="display:none">
@@ -69,25 +75,17 @@
           <label>网站关键字：</label>
         </div>
         <div class="field">
-          <textarea class="input" name="skeywords" style="height:80px"></textarea>
+          <textarea class="input" id="key_word" name="skeywords" style="height:80px"></textarea>
           <div class="tips"></div>
         </div>
       </div>
-      <div class="form-group">
-        <div class="label">
-          <label>网站描述：</label>
-        </div>
-        <div class="field">
-          <textarea class="input" name="sdescription"></textarea>
-          <div class="tips"></div>
-        </div>
-      </div>
+    
       <div class="form-group">
         <div class="label">
           <label>联系人：</label>
         </div>
         <div class="field">
-          <input type="text" class="input" name="s_name" value="" />
+          <input type="text" id="contacts" class="input" name="s_name" value="" />
           <div class="tips"></div>
         </div>
       </div>
@@ -96,7 +94,7 @@
           <label>手机：</label>
         </div>
         <div class="field">
-          <input type="text" class="input" name="s_phone" value="" />
+          <input type="text" id="tel" class="input" name="s_phone" value="" />
           <div class="tips"></div>
         </div>
       </div>
@@ -105,7 +103,7 @@
           <label>电话：</label>
         </div>
         <div class="field">
-          <input type="text" class="input" name="s_tel" value="" />
+          <input type="text" id="phone" class="input" name="s_tel" value="" />
           <div class="tips"></div>
         </div>
       </div>
@@ -123,7 +121,7 @@
           <label>传真：</label>
         </div>
         <div class="field">
-          <input type="text" class="input" name="s_fax" value="" />
+          <input type="text" id="fax" class="input" name="s_fax" value="" />
           <div class="tips"></div>
         </div>
       </div>
@@ -132,7 +130,7 @@
           <label>QQ：</label>
         </div>
         <div class="field">
-          <input type="text" class="input" name="s_qq" value="" />
+          <input type="text" id="qq" class="input" name="s_qq" value="" />
           <div class="tips"></div>
         </div>
       </div>
@@ -151,7 +149,7 @@
           <label>Email：</label>
         </div>
         <div class="field">
-          <input type="text" class="input" name="s_email" value="" />
+          <input type="text" class="input" id="email" name="s_email" value="" />
           <div class="tips"></div>
         </div>
       </div>
@@ -160,16 +158,26 @@
           <label>地址：</label>
         </div>
         <div class="field">
-          <input type="text" class="input" name="s_address" value="" />
+          <input type="text" class="input" id="site" name="s_address" value="" />
           <div class="tips"></div>
         </div>
       </div>  
+        <div class="form-group">
+        <div class="label">
+          <label>网站描述：</label>
+        </div>
+        <div class="field">
+          <textarea class="input" id="contacts" name="sdescription"></textarea>
+          <div class="tips"></div>
+        </div>
+      </div>
+      
       <div class="form-group">
         <div class="label">
           <label></label>
         </div>
         <div class="field">
-          <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+          <button class="button bg-main icon-check-square-o" type="submit" id="set_info"> 提交</button>
         </div>
       </div>
     </form>
