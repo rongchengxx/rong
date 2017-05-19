@@ -27,13 +27,13 @@ public class TestOneMenuService
 	}
 	@Test 	//addOneMenu
 	public void test2(){
-		int row = oneMenuService.addOneMenu("asd", "asd", "asd", 5, 1);
+		OneMenu row = oneMenuService.addOneMenu("asd", "asd", "asd", 5, 1,"asd");
 		System.out.println(row);
 	}
 	
 	@Test 	//modifyOneMenu
 	public void test3(){
-		int row = oneMenuService.modifyOneMenu("11", "f", "f", "ff", 2, 1);
+		int row = oneMenuService.modifyOneMenu("123", "f", "f", "ff", 2, 1,"asd");
 		System.out.println(row);
 	}
 	

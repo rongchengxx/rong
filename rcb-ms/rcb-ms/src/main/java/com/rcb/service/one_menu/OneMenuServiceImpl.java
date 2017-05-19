@@ -24,20 +24,21 @@ public class OneMenuServiceImpl implements OneMenuService {
 	}
 	
 	//增加OneMenu,返回行数
-	public int addOneMenu(String title, String thumb, String content, int seq, int isshow) {
+	public OneMenu addOneMenu(String title, String thumb, String content, int seq, int isshow,String intro) {
 		String id = CreateUUID.createId();
-		OneMenu oneMenu = new OneMenu(id, title, thumb, content, seq, isshow, "");
+		OneMenu oneMenu = new OneMenu(id, title, thumb, content, seq, isshow,intro);
 		int row = oneMenuDao.addOneMenu(oneMenu);
-		return row;
+		return oneMenu;
 	}
 	//修改OneMenu,返回行数
-	public int modifyOneMenu(String id, String title, String thumb, String content, int seq, int isshow) {
+	public int modifyOneMenu(String id, String title, String thumb, String content, int seq, int isshow,String intro) {
 		OneMenu oneMenu = oneMenuDao.findOneMenuById(id);
 		oneMenu.setTitle(title);
 		oneMenu.setThumb(thumb);
 		oneMenu.setContent(content);
 		oneMenu.setSeq(seq);
 		oneMenu.setIsshow(isshow);
+		oneMenu.setIntro(intro);
 		int row = oneMenuDao.modifyOneMenu(oneMenu);
 		return row;
 	}

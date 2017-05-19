@@ -106,11 +106,11 @@ function del(id,mid){
           <label>图片：</label>
         </div>
         <div class="field">
-          <input type="text" id="url1" name="img" class="input tips" style="width:25%; float:left;"  value="" data-toggle="hover" data-place="right" data-image="" />
-          <button type="button" class="btn btn-warning btn-s file-button" id="btn1" onclick="myfile.click();" style="float: left;">
+          <input type="text" id="adv_thumb" name="img" class="input tips" style="width:25%; float:left;"  value="" data-toggle="hover" data-place="right" data-image="" />
+          <button type="button" class="btn btn-warning btn-s file-button" id="btn1" onclick="adv_myfile.click();" style="float: left;">
             <span class="glyphicon glyphicon-ban-circle"></span>十上传
           </button>
-          <input type="file" id="myfile" uploader="uploader" nv-file-select="" onchange="input1.value=this.value" style="/* display: block; */" class="file-btn">
+          <input type="file" id="adv_myfile" uploader="uploader" nv-file-select="" onchange="input1.value=this.value" style="/* display: block; */" class="file-btn">
           <div class="tipss">图片尺寸：1920*500</div>
         </div>
       </div>

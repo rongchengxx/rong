@@ -45,13 +45,26 @@
       </div>        
       <div class="form-group">
         <div class="label">
-          <label>分类标题：</label>
+          <label>栏目名称：</label>
         </div>
         <div class="field">
           <input type="text" class="input w50" name="title" value="" />
           <div class="tips"></div>
         </div>
-      </div>        
+      </div>    
+      <div class="form-group">
+        <div class="label">
+          <label>栏目图片：</label>
+        </div>
+        <div class="field">
+          <input type="text" id="cateedit_thumb" name="banner" class="input tips" style="width:25%; float:left;"  value="" data-toggle="hover" data-place="right" data-image="" />
+          <button type="button" class="btn btn-warning btn-s file-button" id="btn1" onclick="cateedit_myfile.click();" style="float: left;">
+            <span class="glyphicon glyphicon-ban-circle"></span>十上传
+          </button>
+          <input type="file" id="cateedit_myfile" uploader="uploader" nv-file-select="" class="file-btn">
+          <div class="tipss">图片尺寸：1920*200</div>
+        </div>
+      </div>    
       <div class="form-group">
         <div class="label">
           <label>关键字标题：</label>

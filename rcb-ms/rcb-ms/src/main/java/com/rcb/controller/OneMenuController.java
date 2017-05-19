@@ -37,13 +37,13 @@ public class OneMenuController extends ExceptionController{
 				=oneMenuService.findOneMenuAll();
 		return new JsonResult(result);
 	}
-	
-	/*@RequestMapping("/column/add.do")
+	//增加oneMenu
+	@RequestMapping("/column/add.do")
 	@ResponseBody
-	public JsonResult addColume(){
-		
-		return null;
-	}*/
+	public JsonResult addColume(String title,String thumb,String content,int seq,int isshow,String intro){
+		OneMenu result = oneMenuService.addOneMenu(title, thumb, content, seq, isshow, intro);
+		return new JsonResult(result);
+	}
 	
 	@RequestMapping("/pub.do")
 	public String pub() {

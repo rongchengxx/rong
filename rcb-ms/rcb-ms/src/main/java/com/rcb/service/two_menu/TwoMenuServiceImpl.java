@@ -24,16 +24,16 @@ public class TwoMenuServiceImpl implements TwoMenuService {
 	}
 
 	//增加TwoMenu,返回行数
-	public int addTwoMenu(String oneMenuId,String title, String thumb, String content, int seq, int isshow) {
+	public TwoMenu addTwoMenu(String oneMenuId,String title, String thumb, String content, int seq, int isshow,String intro) {
 		
 		String id = CreateUUID.createId();
-		TwoMenu twoMenu = new TwoMenu(id, oneMenuId, title, thumb, content, seq, isshow, "");
+		TwoMenu twoMenu = new TwoMenu(id, oneMenuId, title, thumb, content, seq, isshow,intro);
 		int row = twoMenuDao.addTwoMenu(twoMenu);
-		return row;
+		return twoMenu;
 	}
 
 	//修改TwoMenu,返回行数
-	public int modifyTwoMenu(String id, String oneMenuId,String title, String thumb, String content, int seq, int isshow) {
+	public int modifyTwoMenu(String id, String oneMenuId,String title, String thumb, String content, int seq, int isshow,String intro) {
 		TwoMenu twoMenu = twoMenuDao.findTwoMenuById(id);
 		twoMenu.setOneMenuId(oneMenuId);
 		twoMenu.setTitle(title);
@@ -41,6 +41,7 @@ public class TwoMenuServiceImpl implements TwoMenuService {
 		twoMenu.setContent(content);
 		twoMenu.setSeq(seq);
 		twoMenu.setIsshow(isshow);
+		twoMenu.setIntro(intro);
 		int row = twoMenuDao.modifyTwoMenu(twoMenu);
 		return row;
 	}

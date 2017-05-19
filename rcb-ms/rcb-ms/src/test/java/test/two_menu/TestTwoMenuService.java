@@ -28,13 +28,13 @@ public class TestTwoMenuService
 	}
 	@Test 	//addTwoMenu
 	public void test2(){
-		int row = twoMenuService.addTwoMenu("65", "a", "a", "a", 1, 1);
+		TwoMenu row = twoMenuService.addTwoMenu("65", "a", "a", "a", 1, 1,"asd");
 		System.out.println(row);
 	}
 	
 	@Test 	//modifyTwoMenu
 	public void test3(){
-		int row = twoMenuService.modifyTwoMenu("a", "xiugai", "xiugai", "xiugai", "xiugai", 1, 1);
+		int row = twoMenuService.modifyTwoMenu("2", "xiugai", "xiugai", "xiugai", "xiugai", 1, 1,"asd");
 		System.out.println(row);
 	}
 	

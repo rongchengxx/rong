@@ -43,10 +43,15 @@
           <label>网站LOGO：</label>
         </div>
         <div class="field">
-          <input type="text" id="url1" name="slogo" class="input tips" style="width:25%; float:left;" value="" data-toggle="hover" data-place="right" data-image=""  />
-          <input type="button" class="button bg-blue margin-left" id="image1" value="+ 浏览上传">
+          <input type="text" id="info_thumb" name="img" class="input tips" style="width:25%; float:left;"  value=""  data-toggle="hover" data-place="right" data-image="" />
+          <button type="button" class="btn btn-warning btn-s file-button" id="btn1" onclick="info_myfile.click();" style="float: left;">
+            <span class="glyphicon glyphicon-ban-circle"></span>十上传
+          </button>
+          <input type="file" id="info_myfile" uploader="uploader" nv-file-select="" onchange="input1.value=this.value" style="/* display: block; */" class="file-btn">
+          <div class="tipss">图片尺寸：500*500</div>
         </div>
       </div>
+     
       <div class="form-group">
         <div class="label">
           <label>网站域名：</label>
