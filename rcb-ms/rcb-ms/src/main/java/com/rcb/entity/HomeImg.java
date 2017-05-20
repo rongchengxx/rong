@@ -13,6 +13,12 @@ public class HomeImg implements Serializable{
 	private int type;//类型（） int 1
 	private String content;//内容 text
 	private String link;//链接 varchar(255)
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	private int source;//来源 int 1
 	private int isshow;//是否显示 int 1
 	public HomeImg() {
@@ -104,9 +110,10 @@ public class HomeImg implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "homeimg [id=" + id + ", url=" + url + ", title=" + title + ", seq=" + seq + ", type=" + type
+		return "HomeImg [id=" + id + ", url=" + url + ", title=" + title + ", seq=" + seq + ", type=" + type
 				+ ", content=" + content + ", link=" + link + ", source=" + source + ", isshow=" + isshow + "]";
 	}
+	
 	
 
 }

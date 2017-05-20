@@ -31,6 +31,7 @@ import com.rcb.utils.JsonResult;
 		@ResponseBody
 		@RequestMapping("/adv/add.do")
 		public Object add(String title,String url,String link,String content,int seq){
+//			HomeImg hig= new HomeImg("", url, title, seq, 1, content, link,1 , 1);
 			HomeImg hig= new HomeImg();
 			hig.setTitle(title);
 			hig.setUrl(url);
@@ -43,14 +44,8 @@ import com.rcb.utils.JsonResult;
 		@ResponseBody
 		@RequestMapping("/advpop/modify.do")
 		public Object modify(String id,String title, String url,String  link,String content,int seq){
-//			HomeImg h1= new HomeImg();
-//			h1.setTitle(title);
-//			h1.setUrl(url);
-//			h1.setLink(link);
-//			h1.setContent(content);
-//			h1.setSeq(seq);
-			HomeImg hig=service.modifyHomeImg(id,title, url, link, content, seq);
-			return new JsonResult(hig);	
+			int row=service.modifyHomeImg(id,title, url, link, content, seq);
+			return new JsonResult(row);	
 		}
 		
 		@ResponseBody

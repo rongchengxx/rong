@@ -40,6 +40,13 @@ public class Settings implements Serializable {
 		this.site = site;
 		this.content = content;
 	}
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public String getTitle() {
 		return title;
 	}

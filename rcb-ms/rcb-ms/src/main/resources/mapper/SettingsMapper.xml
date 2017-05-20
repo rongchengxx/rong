@@ -71,6 +71,7 @@
 		email=#{email},
 		site=#{site},
 		content=#{content}
+		where id=#{id}
 	</update>
 </mapper>
 

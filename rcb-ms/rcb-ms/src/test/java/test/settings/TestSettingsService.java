@@ -30,4 +30,9 @@ public class TestSettingsService{
 		Settings sett=service.findSettingsById("进");
 		System.out.println(sett);
 	}
+	@Test 
+	public void test3(){
+		Boolean b=service.modifySettings("1","这人", "127.0.0.1", "io55", "长方", "孙膑", 65655, 7777777, 556565, 1234567, "123@qq.com", "北京", "我是内容，风景不错");
+		System.out.println(b);
+	}
 }

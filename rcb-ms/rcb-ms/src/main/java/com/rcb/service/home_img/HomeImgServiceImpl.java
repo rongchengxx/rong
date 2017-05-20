@@ -29,28 +29,20 @@ public class HomeImgServiceImpl implements HomeImgService {
 		
 	}
 
-	public HomeImg modifyHomeImg(String id,String title, String url,String  link,String content,int seq) {
-//		HomeImg hig =dao.findHomeImgById(id);
-		
-		HomeImg hig= new HomeImg();
+	public int modifyHomeImg(String id,String title, String url,String  link,String content,int seq) {
+		HomeImg hig =dao.findHomeImgById(id);
 		hig.setTitle(title);
 		hig.setUrl(url);
 		hig.setLink(link);
 		hig.setContent(content);
 		hig.setSeq(seq);
-		dao.modifyHomeImg(hig);
-		return hig;
+		int n=dao.modifyHomeImg(hig);
+		return n;
 	}
 
 	public List<HomeImg> findHomeImgAll() {
 		 List<HomeImg> list=dao.findHomeImgAll();
 		return list;
 	}
-
-	public int modifyHomeImg(HomeImg hig) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 
 }

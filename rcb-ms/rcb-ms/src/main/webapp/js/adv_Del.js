@@ -3,16 +3,6 @@ $(function(){
 	$("#adv_table").on("click",".delete_button",deleteColumn);
 });
 
-/*function modifyColumn(){
-	// 获取参数columnId
-	var columnId=getCookie("columnId");
-	
-	//获取顶级tr
-	var $tr = $(this).parent().parent().parent();
-	//获取id
-	var oneMenuId = $tr.data("oneMenuId");
-	
-}*/
 
 function deleteColumn(){
 	if(confirm("您确定要删除吗?")){

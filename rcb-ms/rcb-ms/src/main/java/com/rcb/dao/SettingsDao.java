@@ -7,5 +7,5 @@ public interface SettingsDao {
 	
 	public void addSettings(Settings settings);//添加设置
 	
-	public void modifySettings(Settings settings);//修改
+	public int modifySettings(Settings settings);//修改
 }

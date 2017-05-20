@@ -5,6 +5,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.UUID;
 
 import org.apache.commons.codec.binary.Base64;
+import org.junit.Test;
 
 public class NoteUtil {
 	public static String md5(String src){
@@ -26,13 +27,15 @@ public class NoteUtil {
 		}
 
 	}
-	//利用UUID生成主键�??
+	//利用UUID生成主键�??
 	public static String createId(){
 		String id=UUID.randomUUID().toString();
 		return id;	
 	}
 	public static void main(String[] args){
 		System.out.println(createId());
+		System.out.println(md5("123"));
+		System.out.println(md5("123456"));
 	}
 }
 
