@@ -37,11 +37,11 @@ import com.rcb.utils.JsonResult;
 
 		@ResponseBody
 		@RequestMapping("/info/modify.do")
-		public Object modifySettings(String title, String logo, String uri, String key_word, String contacts, int tel, int phone,
+		public Object modifySettings(String id,String title, String logo, String uri, String key_word, String contacts, int tel, int phone,
 				int fax, int qq, String email, String site, String content){
 			
-			Settings s2=service.modifySettings(title, logo, uri, key_word, contacts, tel, phone, fax, qq, email, site, content);
-			return new JsonResult(s2);	
+			Boolean b1=service.modifySettings(id,title, logo, uri, key_word, contacts, tel, phone, fax, qq, email, site, content);
+			return new JsonResult(b1);	
 		
 		}
 }

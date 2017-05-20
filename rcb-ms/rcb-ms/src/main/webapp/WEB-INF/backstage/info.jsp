@@ -17,6 +17,9 @@
     <script src="js/cookie_util.js"></script>
     <script type="text/javascript">
     $(function(){
+    	var SettingsId = SetCookie("SettingsId",5);
+    	
+    	
     	// 获取参数userId
 		var userId=getCookie("userId");
 		//判断userId是否有效
@@ -80,15 +83,7 @@
           <div class="tips"></div>
         </div>
       </div>
-      <div class="form-group">
-        <div class="label">
-          <label>网站描述：</label>
-        </div>
-        <div class="field">
-          <textarea class="input" id="info_content" name="sdescription"></textarea>
-          <div class="tips"></div>
-        </div>
-      </div>
+    
       <div class="form-group">
         <div class="label">
           <label>联系人：</label>
@@ -171,6 +166,15 @@
           <div class="tips"></div>
         </div>
       </div>  
+        <div class="form-group">
+        <div class="label">
+          <label>网站描述：</label>
+        </div>
+        <div class="field">
+          <textarea class="input" id="info_content" name="sdescription"></textarea>
+          <div class="tips"></div>
+        </div>
+      </div>
       <div class="form-group">
         <div class="label">
           <label></label>

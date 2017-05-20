@@ -42,40 +42,6 @@
       <th width="10%">排序</th>
       <th width="15%">操作</th>
     </tr>
-   
-    <!-- <tr>
-      <td>1</td>     
-      <td><img src="images/11.jpg" alt="" width="120" height="50" /></td>     
-      <td>首页焦点图</td>
-      <td>描述文字....</td>
-      <td>1</td>
-      <td><div class="button-group">
-      <a class="button border-main" href="advpop.do"><span class="icon-edit"></span> 修改</a>
-      <a class="button border-red" href="javascript:void(0)" onclick="return del(1,1)"><span class="icon-trash-o"></span> 删除</a>
-      </div></td>
-    </tr> -->
-    <!-- <tr>
-      <td>2</td>     
-      <td><img src="images/11.jpg" alt="" width="120" height="50" /></td>     
-      <td>首页焦点图</td>
-      <td>描述文字....</td>
-      <td>1</td>
-      <td><div class="button-group">
-      <a class="button border-main" href="advpop.do"><span class="icon-edit"></span> 修改</a>
-      <a class="button border-red" href="javascript:void(0)" onclick="return del(1,1)"><span class="icon-trash-o"></span> 删除</a>
-      </div></td>
-    </tr>
-    <tr>
-      <td>3</td>     
-      <td><img src="images/11.jpg" alt="" width="120" height="50" /></td>     
-      <td>首页焦点图</td>
-      <td>描述文字....</td>
-      <td>1</td>
-      <td><div class="button-group">
-      <a class="button border-main" href="advpop.do"><span class="icon-edit"></span> 修改</a>
-      <a class="button border-red" href="javascript:void(0)" onclick="return del(1,1)"><span class="icon-trash-o"></span> 删除</a>
-      </div></td>
-    </tr> -->
     
   </table>
 </div>

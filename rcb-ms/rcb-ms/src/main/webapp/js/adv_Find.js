@@ -4,10 +4,30 @@ $(function(){
 	
 	//监听单击事件
 //	$("#cate_submit").click(addCate);
-	
+	//监听修改事件
+	$("#adv_table").on("click",".modify_button",modifyHomeImg);
 });
 
+function modifyHomeImg(){
+// 获取参数homeImgId
+var homeImgId=getCookie("homeImgId");
+
+//获取顶级tr
+var $tr = $(this).parent().parent().parent();
+//获取id
+var homeImgId = $tr.data("homeImgId");
+
+}
 function loadadv_find(){
+	//获取顶级tr
+	var $tr = $(this).parent().parent().parent();
+	//获取id
+	var homeImgId = $tr.data("homeImgId");
+	//保存cookie
+	addCookie("homeImgId",homeImgId,2);
+
+
+	
 	$.ajax({
 		url:path+"/adv/loadAdv.do",
 		type:"post",
@@ -15,25 +35,23 @@ function loadadv_find(){
 		dataType:"json",
 		success : function(result) {
 			if (result.state == 0){
-				//获取twoMenu集合
+				//获取homeImg集合
 				var homeImg=result.data;
 				console.log(homeImg);
-				alert(111111);
 				//循环处理
 				for(var i=0;i<homeImg.length;i++){
+					//获取id
 					var homeImgId = homeImg[i].id;
-					//获取
-					var homeImgTitle = homeImg[i].title;
-					//获取
+					//获取图片
 					var homeImgUrl = homeImg[i].url;
-					//获取
-					var homeImgLink = homeImg[i].link;
-					//获取
+					//获取标题
+					var homeImgTitle = homeImg[i].title;
+					//获取描述
 					var homeImgContent = homeImg[i].content;
-					//获取
+					//获取排序
 					var homeImgSeq = homeImg[i].seq;
 					
-					createAdv(homeImgId,homeImgTitle,homeImgUrl,homeImgLink,homeImgContent,homeImgSeq);
+					createAdv(homeImgId,homeImgUrl,homeImgTitle,homeImgContent,homeImgSeq);
 				}
 				
 			}
@@ -48,13 +66,13 @@ function createAdv(homeImgId,homeImgTitle,homeImgUrl,homeImgLink,homeImgContent,
 	var str="";
 	str+='<tr>';
 	str+='<td>';
-	str+=homeImgTitle;
+	str+=homeImgId;
 	str+='</td>';
 	str+='<td>';
 	str+=homeImgUrl;
 	str+='</td>';
 	str+='<td>';
-	str+=homeImgLink;
+	str+=homeImgTitle;
 	str+='</td>';
 	str+='<td>';
 	str+=homeImgContent;

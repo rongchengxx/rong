@@ -2,7 +2,7 @@ $(function(){
 	$("#setinfo_button").click(set_infoAction);
 });
 function set_infoAction(){
-	
+	var id=getCookie("SettingsId");
 	var infoTitle=$("#info_title").val().trim();
 	var infoLogo=$("#info_thumb").val().trim();
 	var infoUri=$("#info_uri").val().trim();
@@ -20,6 +20,7 @@ function set_infoAction(){
 				type:"post",
 				dataType:"json",
 				data:{
+//				"id":id,	
 				"title":infoTitle,
 				"logo":infoLogo,
 				"uri":infoUri,

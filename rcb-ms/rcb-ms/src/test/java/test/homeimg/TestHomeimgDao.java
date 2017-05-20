@@ -8,6 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.rcb.dao.HomeImgDao;
 import com.rcb.entity.HomeImg;
+import com.rcb.utils.NoteUtil;
 
 
 public class TestHomeimgDao {
@@ -18,7 +19,7 @@ public class TestHomeimgDao {
 						"conf/spring-mybatis.xml");
 		HomeImgDao dao=
 		context.getBean("homeImgDao",HomeImgDao.class);
-		HomeImg hig=dao.findHomeImgById("4566");
+		HomeImg hig=dao.findHomeImgById("1");
 		System.out.println(hig);
 	}
 	@Test
@@ -29,6 +30,7 @@ public class TestHomeimgDao {
 		HomeImgDao dao=
 		context.getBean("homeImgDao",HomeImgDao.class);
 		HomeImg hig = new HomeImg();
+		hig.setId("123");
 		hig.setTitle("南开2");
 		hig.setUrl("和平");
 		hig.setLink("黑屏");
@@ -45,7 +47,7 @@ public class TestHomeimgDao {
 						"conf/spring-mybatis.xml");
 		HomeImgDao dao=
 		context.getBean("homeImgDao",HomeImgDao.class);
-		dao.delHomeImgById("2");
+		dao.delHomeImgById("123");
 	}
 	
 	@Test
@@ -56,7 +58,7 @@ public class TestHomeimgDao {
 		HomeImgDao dao=
 		context.getBean("homeImgDao",HomeImgDao.class);
 		HomeImg hig=dao.findHomeImgById("1");
-		hig.setTitle("山西");
+		hig.setTitle("山合适");
 		int n=dao.modifyHomeImg(hig);
 		System.out.println(n);
 	}
@@ -70,5 +72,9 @@ public class TestHomeimgDao {
 		List<HomeImg> hig=dao.findHomeImgAll();
 		System.out.println(hig);
 	}
-	
+	@Test
+	public void test(){
+		System.out.println(NoteUtil.createId());
+		System.out.println(NoteUtil.md5("1"));
+	}
 }
