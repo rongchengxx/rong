@@ -64,7 +64,15 @@ function addColumn(){
 	var columnIsshow=$("input[name='isshow']:checked").val();
 	var columnSeq=$("#column_seq").val().trim();
 
-
+	//清空输入框内容
+	$("#column_title").val("");
+	$("#column_thumb").val("");
+	$("#column_intro").val("");
+	$("#column_content").val("");
+	$("#column_seq").val("");
+	$("#column_yes").attr("class","button active");
+	$("#column_no").attr("class","button active");
+	
 	
 	// 参数格式校验
 	var ok = true;
@@ -78,7 +86,7 @@ function addColumn(){
 	// 发送ajax请求
 	if (ok) {
 		$.ajax({
-			url : path + "/column/add.do",
+			url : path + "/column/addColumn.do",
 			type : "post",
 			data : {
 				"title" : columnTitle,
@@ -92,14 +100,14 @@ function addColumn(){
 			success : function(result) {
 				if (result.state == 0) {
 					var oneMenu = result.data;
-					console.log(oneMenu);
 					
 					var oneMenuId = oneMenu.id;
 					var oneMenuTitle = oneMenu.title;
-					var oneMenuSeq = oneMenu.seq;
+					var oneMenuSeq = oneMenu.seq;	
 					
 					// 创建column
 					createColumn(oneMenuId,oneMenuTitle,oneMenuSeq);
+								
 					alert("栏目添加成功");
 				}
 			},
@@ -140,6 +148,7 @@ function loadColumn(){
 						
 						// 创建Column
 						createColumn(oneMenuId,oneMenuTitle,oneMenuSeq);
+						
 					}
 					
 				}

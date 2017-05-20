@@ -90,12 +90,13 @@
         <div class="field">
           <div class="button-group radio">
           
-          <label class="button active">
+          <label class="button active" id="column_yes">
          	  <span class="icon icon-check"></span>             
               <input name="isshow" value="1" type="radio" checked="checked">是             
           </label>             
         
-          <label class="button active"><span class="icon icon-times"></span>          	
+          <label class="button active" id="column_no">
+              <span class="icon icon-times"></span>          	
               <input name="isshow" value="0"  type="radio" checked="checked">否
           </label>         
            </div>       

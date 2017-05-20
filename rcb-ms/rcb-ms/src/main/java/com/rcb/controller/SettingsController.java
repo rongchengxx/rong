@@ -19,7 +19,6 @@ import com.rcb.utils.JsonResult;
 		public String infox() {
 			return "info";
 		}
-<<<<<<< HEAD
 		@ResponseBody
 		@RequestMapping("/info/addsettings.do")
 		public Object addSettings(String title, String logo, String uri, String key_word, String contacts, int tel, int phone,
@@ -28,7 +27,6 @@ import com.rcb.utils.JsonResult;
 			Settings s2=service.addSettings(title, logo, uri, key_word, contacts, tel, phone, fax, qq, email, site, content);
 				return new JsonResult(s2);	
 		}
-=======
 		
 		/* 用到的jsp是info.jsp
 		 * 请在js文件夹下面创建js文件，在其中书写相应的内容
@@ -43,7 +41,6 @@ import com.rcb.utils.JsonResult;
 		}
 		
 		
->>>>>>> c70f3b5e1a856f6886648406e124ca217449975d
 }
 
 		
