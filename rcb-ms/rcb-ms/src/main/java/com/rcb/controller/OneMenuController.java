@@ -38,7 +38,7 @@ public class OneMenuController extends ExceptionController{
 		return new JsonResult(result);
 	}
 	//增加oneMenu
-	@RequestMapping("/column/add.do")
+	@RequestMapping("/column/addColumn.do")
 	@ResponseBody
 	public JsonResult addColume(String title,String thumb,String content,int seq,int isshow,String intro){
 		OneMenu result = oneMenuService.addOneMenu(title, thumb, content, seq, isshow, intro);

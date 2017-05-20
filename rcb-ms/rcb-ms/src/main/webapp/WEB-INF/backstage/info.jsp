@@ -13,7 +13,10 @@
     <script src="js/jquery.js"></script>
      <script src="js/basevalue.js"></script>
     <script src="js/pintuer.js"></script> 
+<<<<<<< HEAD
+=======
      <script src="js/setinfo.js"></script>
+>>>>>>> 292a367fef6fc1e8cde90a9b3acf922e9b1fd47e
     <script src="js/cookie_util.js"></script>
     <script type="text/javascript">
     $(function(){
@@ -39,7 +42,11 @@
           <label>网站标题：</label>
         </div>
         <div class="field">
+<<<<<<< HEAD
+          <input type="text" class="input" name="stitle" value="" />
+=======
           <input type="text" class="input" id="info_title" name="stitle" value="" />
+>>>>>>> 292a367fef6fc1e8cde90a9b3acf922e9b1fd47e
           <div class="tips"></div>
         </div>
       </div>

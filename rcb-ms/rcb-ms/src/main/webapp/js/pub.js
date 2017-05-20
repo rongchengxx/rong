@@ -14,6 +14,7 @@ function modifyPub(){
 	var columnId = getCookie("columnId")
 	//判断cookie是否有效
 	if(columnId==null){
+		alert("修改错误！");
 		window.location.href="column.do";
 	}
 
@@ -93,7 +94,6 @@ function loadPub(){
 				var pubContent=$("#pub_content").val(oneMenuContent);
 				var pubSeq=$("#pub_seq").val(oneMenuSeq);
 				
-				/*var pubIsshow=$("input[name='isshow']:checked").val(oneMenuIsshow);	active*/
 				if(oneMenuIsshow==0){
 					$("#pub_no").click();
 				}else if(oneMenuIsshow==1){

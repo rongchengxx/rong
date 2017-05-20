@@ -18,4 +18,7 @@ public interface TwoMenuService {
 	
 	//删除TwoMenu
 	public int delTwoMenuById(String id);
+	
+	//查找TwoMenu根据id
+	public TwoMenu findTwoMenuById(String id);
 }

@@ -44,6 +44,11 @@ public class TestTwoMenuService
 		System.out.println(row);
 	}
 	
+	@Test	//findTwoMenuById
+	public void test5(){
+		TwoMenu twoMenu = twoMenuService.findTwoMenuById("2");
+		System.out.println(twoMenu);
+	}
 }
 
 
