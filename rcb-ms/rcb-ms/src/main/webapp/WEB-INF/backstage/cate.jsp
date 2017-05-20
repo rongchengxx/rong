@@ -125,7 +125,7 @@ function del(id,mid){
           <label></label>
         </div>
         <div class="field">
-          <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+          <button class="button bg-main icon-check-square-o" type="submit" id="cate_button"> 提交</button>
         </div>
       </div>
     </form>

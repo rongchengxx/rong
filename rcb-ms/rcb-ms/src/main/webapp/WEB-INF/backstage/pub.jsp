@@ -13,16 +13,9 @@
     <script src="js/jquery.js"></script>
     <script src="js/pintuer.js"></script>  
         <script src="js/cookie_util.js"></script>
-    <script type="text/javascript">
-    $(function(){
-    	// 获取参数userId
-		var userId=getCookie("userId");
-		//判断userId是否有效
-		if(userId==null){
-			window.location.href="../rcb-ms";
-		}
-    });
-    </script> 
+        <script src="js/basevalue.js"></script>
+        <script src="js/pub.js"></script>
+     
 </head>
 <body>
 	<div class="panel admin-panel margin-top">
@@ -35,7 +28,7 @@
 	      <label>栏目名称：</label>
 	    </div>
 	    <div class="field">
-	      <input type="text" class="input w50" name="title" value="" data-validate="required:请输入标题" />         
+	      <input type="text" class="input w50" id="pub_title" name="title" value="" data-validate="required:请输入标题" />         
 	      <div class="tips"></div>
 	    </div>
 	  </div> 
@@ -58,7 +51,7 @@
 	      <label>关键字标题：</label>
 	    </div>
 	    <div class="field">
-	      <input type="text" class="input" name="s_title" value="" />         
+	      <input type="text" id="pub_intro" class="input" name="s_title" value="" />         
 	    </div>
 	  </div>
 	  
@@ -67,7 +60,7 @@
 	      <label>关键字描述：</label>
 	    </div>
 	    <div class="field">
-	      <textarea type="text" class="input" name="s_desc" style="height:100px;" ></textarea>        
+	      <textarea type="text" id="pub_content" class="input" name="s_desc" style="height:100px;" ></textarea>        
 	    </div>
 	 </div>
 
@@ -78,13 +71,13 @@
 	    <div class="field">
 	      <div class="button-group radio">
 	      
-	      <label class="button active">
+	      <label class="button " id="pub_yes">
 	     	  <span class="icon icon-check"></span>             
-	          <input name="isshow" value="1" type="radio" checked="checked">是             
+	          <input name="isshow" value="1" type="radio" >是             
 	      </label>             
 	    
-	      <label class="button active"><span class="icon icon-times"></span>          	
-	          <input name="isshow" value="0"  type="radio" checked="checked">否
+	      <label class="button" id="pub_no"><span class="icon icon-times"></span>          	
+	          <input name="isshow" value="0"  type="radio" >否
 	      </label>         
 	       </div>       
 	    </div>
@@ -94,7 +87,7 @@
 	      <label>排序：</label>
 	    </div>
 	    <div class="field">
-	      <input type="text" class="input w50" name="sort" value="0"  data-validate="required:,number:排序必须为数字" />
+	      <input type="text" id="pub_seq" class="input w50" name="sort" value="0"  data-validate="required:,number:排序必须为数字" />
 	      <div class="tips"></div>
 	    </div>
 	  </div>
@@ -103,7 +96,7 @@
 	      <label></label>
 	    </div>
 	    <div class="field">
-	      <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+	      <button class="button bg-main icon-check-square-o" id="pub_button" type="button"> 提交</button>
 	    </div>
 	  </div>
 	</form>

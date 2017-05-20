@@ -1,3 +1,4 @@
+
 $(function(){
 	$(".win-homepage").click(function(){ 
         if(document.all){

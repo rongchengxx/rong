@@ -45,36 +45,34 @@ public class OneMenuController extends ExceptionController{
 		return new JsonResult(result);
 	}
 	
+	//删除oneMenu
+	@RequestMapping("/column/delColume.do")
+	@ResponseBody
+	public JsonResult delColume(String id){
+		int row = oneMenuService.delOneMenuById(id);
+		return new JsonResult(row);
+	}
+	
+	//修改页面跳转
 	@RequestMapping("/pub.do")
 	public String pub() {
 		return "pub";
 	}
-/*	@RequestMapping("/sub.do")
-	public void sub(HttpServletRequest request) {
-		System.out.println("11");
-		MultipartHttpServletRequest req = (MultipartHttpServletRequest) request;
-		Iterator<String> names = req.getFileNames();
+
+	//修改页面load
+	@RequestMapping("/pub/loadPub.do")
+	@ResponseBody
+	public JsonResult loadPub(String id){
+		OneMenu oneMenu = oneMenuService.findOneMenuById(id);
+		return new JsonResult(oneMenu);
+	}
+	
+	//修改页面modify
+	@RequestMapping("/pub/modyfiPub.do")
+	@ResponseBody
+	public JsonResult modifyPub(String id,String title,String thumb,String content,int seq,int isshow,String intro){
+		int row = oneMenuService.modifyOneMenu(id, title, thumb, content, seq, isshow, intro);
+		return new JsonResult(row);
 		
-		while (names.hasNext()) {
-			String name = (String) names.next();// 获取文件域的name属性名=file.getName());
-			MultipartFile file = req.getFile(name);// 获取文件
-			String fileName = file.getOriginalFilename();// 文件名
-			System.out.println(fileName);
-			if (StringUtils.isNotBlank(fileName))// 确保提交来的表单中有file
-			{
-				try {
-					fileSaveSrc(file, name, projectPath);// 将文件保存
-					out.println(fileName+"图片保存成功");
-				} catch (IOException e) {
-					e.printStackTrace();
-					out.println("图片保存失败！！！"+e);
-					out.close();
-				}
-			}else{
-				out.println("请添加背景图片");
-				out.close();
-				return;
-			}
-		}
-	}*/
+	}
 }
