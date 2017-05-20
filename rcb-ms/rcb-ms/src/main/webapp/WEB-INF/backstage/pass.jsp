@@ -81,7 +81,7 @@
           <label></label>
         </div>
         <div class="field">
-          <button class="button bg-main icon-check-square-o" type="submit" id="pass_submit"> 提交</button>   
+          <button class="button bg-main icon-check-square-o" type="button" id="pass_submit"> 提交</button>   
         </div>
       </div>      
     </form>

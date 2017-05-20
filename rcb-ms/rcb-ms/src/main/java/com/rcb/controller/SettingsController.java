@@ -19,31 +19,31 @@ import com.rcb.utils.JsonResult;
 		public String infox() {
 			return "info";
 		}
-<<<<<<< HEAD
-		@ResponseBody
-		@RequestMapping("/info/addsettings.do")
+
+	/*	@ResponseBody
+		@RequestMapping("/info/modify.do")
 		public Object addSettings(String title, String logo, String uri, String key_word, String contacts, int tel, int phone,
 				int fax, int qq, String email, String site, String content){
 			
 			Settings s2=service.addSettings(title, logo, uri, key_word, contacts, tel, phone, fax, qq, email, site, content);
 				return new JsonResult(s2);	
-		}
-=======
+		}*/
 		
 		/* 用到的jsp是info.jsp
 		 * 请在js文件夹下面创建js文件，在其中书写相应的内容
 		 * 本方法请自行传递相应参数，参数请参考Service层的参数
 		 * 返回json对象用以判断是否成功
 		 * */
+
 		@ResponseBody
 		@RequestMapping("/info/modify.do")
-		public Object addSettings(){
-				//未完成 修改设置
-				return null;
+		public Object modifySettings(String title, String logo, String uri, String key_word, String contacts, int tel, int phone,
+				int fax, int qq, String email, String site, String content){
+			
+			Settings s2=service.modifySettings(title, logo, uri, key_word, contacts, tel, phone, fax, qq, email, site, content);
+			return new JsonResult(s2);	
+		
 		}
-		
-		
->>>>>>> c70f3b5e1a856f6886648406e124ca217449975d
 }
 
 		

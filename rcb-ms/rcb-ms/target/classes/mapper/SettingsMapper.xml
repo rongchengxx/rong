@@ -45,7 +45,7 @@
 		#{title},
 		#{logo},
 		#{uri},
-		#{keyWord},
+		#{key_word},
 		#{contacts},
 		#{tel},
 		#{phone},
@@ -56,7 +56,22 @@
 		#{content}
 	)
 	</insert>
-	 
+	<update id="modifySettings" parameterType="com.rcb.entity.Settings">
+	update settings 
+		set 
+		title=#{title},
+		logo=#{logo},
+		uri=#{uri},
+		key_word=#{key_word},
+		contacts=#{contacts},
+		tel=#{tel},
+		phone=#{phone},
+		fax=#{fax},
+		qq=#{qq},
+		email=#{email},
+		site=#{site},
+		content=#{content}
+	</update>
 </mapper>
 
 

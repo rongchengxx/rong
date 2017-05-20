@@ -28,7 +28,12 @@ public class TestHomeimgDao {
 						"conf/spring-mybatis.xml");
 		HomeImgDao dao=
 		context.getBean("homeImgDao",HomeImgDao.class);
-		HomeImg hig = new HomeImg("23", "127.0.0.1", "标题", 1, 5, "今天天气不错", "www.123.com", 2, 1);
+		HomeImg hig = new HomeImg();
+		hig.setTitle("南开2");
+		hig.setUrl("和平");
+		hig.setLink("黑屏");
+		hig.setContent("和平");
+		hig.setSeq(3);
 		dao.addHomeImg(hig);
 		
 		
@@ -40,7 +45,7 @@ public class TestHomeimgDao {
 						"conf/spring-mybatis.xml");
 		HomeImgDao dao=
 		context.getBean("homeImgDao",HomeImgDao.class);
-		dao.delHomeImgById("4566");
+		dao.delHomeImgById("2");
 	}
 	
 	@Test
@@ -51,8 +56,9 @@ public class TestHomeimgDao {
 		HomeImgDao dao=
 		context.getBean("homeImgDao",HomeImgDao.class);
 		HomeImg hig=dao.findHomeImgById("1");
-		hig.setTitle("盖");
-		dao.modifyHomeImg(hig);
+		hig.setTitle("山西");
+		int n=dao.modifyHomeImg(hig);
+		System.out.println(n);
 	}
 	@Test
 	public void findHomeImgAll(){
