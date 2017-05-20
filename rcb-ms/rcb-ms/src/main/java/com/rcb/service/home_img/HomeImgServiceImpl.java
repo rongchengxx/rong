@@ -17,25 +17,40 @@ public class HomeImgServiceImpl implements HomeImgService {
 		return hig;
 	}  
 
-	public int addHomeImg(HomeImg hig) {
-		int row = dao.addHomeImg(hig);
-		return row;
+	public HomeImg addHomeImg(HomeImg hig) {
+		dao.addHomeImg(hig);
+		return hig;
 		
 	}
 
-	public int delHomeImgById(String id) {
-		int n=dao.delHomeImgById(id);
-		return n;
+	public HomeImg delHomeImgById(String id) {
+		dao.delHomeImgById(id);
+		return null;
+		
 	}
 
-	public int modifyHomeImg(HomeImg hig) {
-		int m=dao.modifyHomeImg(hig);
-		return m;
+	public HomeImg modifyHomeImg(String id,String title, String url,String  link,String content,int seq) {
+//		HomeImg hig =dao.findHomeImgById(id);
+		
+		HomeImg hig= new HomeImg();
+		hig.setTitle(title);
+		hig.setUrl(url);
+		hig.setLink(link);
+		hig.setContent(content);
+		hig.setSeq(seq);
+		dao.modifyHomeImg(hig);
+		return hig;
 	}
 
 	public List<HomeImg> findHomeImgAll() {
 		 List<HomeImg> list=dao.findHomeImgAll();
 		return list;
 	}
+
+	public int modifyHomeImg(HomeImg hig) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 
 }

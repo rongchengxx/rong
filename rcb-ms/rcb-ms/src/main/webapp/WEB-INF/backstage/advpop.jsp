@@ -13,6 +13,8 @@
 <script src="js/jquery.js"></script>
 <script src="js/pintuer.js"></script>
     <script src="js/cookie_util.js"></script>
+    <script src="js/advpop_modify.js"></script>
+	<script src="js/basevalue.js"></script>
     <script type="text/javascript">
     $(function(){
     	// 获取参数userId
@@ -34,7 +36,7 @@
 	          <label>标题：</label>
 	        </div>
 	        <div class="field">
-	          <input type="text" class="input w50" value="" name="title" data-validate="required:请输入标题" />
+	          <input type="text" class="input w50" value="" id="advpop_title" name="title" data-validate="required:请输入标题" />
 	          <div class="tips"></div>
 	        </div>
 	      </div>
@@ -43,7 +45,7 @@
 	          <label>URL：</label>
 	        </div>
 	        <div class="field">
-	          <input type="text" class="input w50" name="url" value=""  />
+	          <input type="text" class="input w50"  id="advpop_url" name="url" value=""  />
 	          <div class="tips"></div>
 	        </div>
 	      </div>
@@ -52,7 +54,7 @@
 	          <label>图片：</label>
 	        </div>
 	        <div class="field">
-	          <input type="text" id="advpop_thumb" name="img" class="input tips" style="width:25%; float:left;"  value="" data-toggle="hover" data-place="right" data-image="" />
+	          <input type="text" id="advpop_thumb"  id="advpop_link" name="img" class="input tips" style="width:25%; float:left;"  value="" data-toggle="hover" data-place="right" data-image="" />
 	          <button type="button" class="btn btn-warning btn-s file-button" id="btn1" onclick="advpop_myfile.click();" style="float: left;">
 	            <span class="glyphicon glyphicon-ban-circle"></span>十上传
 	          </button>
@@ -65,7 +67,7 @@
 	          <label>描述：</label>
 	        </div>
 	        <div class="field">
-	          <textarea type="text" class="input" name="note" style="height:120px;" value=""></textarea>
+	          <textarea type="text" class="input" id="advpop_content" name="note" style="height:120px;" value=""></textarea>
 	          <div class="tips"></div>
 	        </div>
 	      </div>
@@ -74,7 +76,7 @@
 	          <label>排序：</label>
 	        </div>
 	        <div class="field">
-	          <input type="text" class="input w50" name="sort" value="0"  data-validate="required:,number:排序必须为数字" />
+	          <input type="text" class="input w50"  id="advpop_seq" name="sort" value="0"  data-validate="required:,number:排序必须为数字" />
 	          <div class="tips"></div>
 	        </div>
 	      </div>
@@ -83,7 +85,7 @@
 	          <label></label>
 	        </div>
 	        <div class="field">
-	          <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+	          <button class="button bg-main icon-check-square-o" type="button" id="advpop_button"> 提交</button>
 	        </div>
 	      </div>
 	    </form>

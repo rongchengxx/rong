@@ -11,7 +11,12 @@
     <link rel="stylesheet" href="css/pintuer.css">
     <link rel="stylesheet" href="css/admin.css">
     <script src="js/jquery.js"></script>
+     <script src="js/basevalue.js"></script>
     <script src="js/pintuer.js"></script> 
+<<<<<<< HEAD
+=======
+     <script src="js/setinfo.js"></script>
+>>>>>>> 292a367fef6fc1e8cde90a9b3acf922e9b1fd47e
     <script src="js/cookie_util.js"></script>
     <script type="text/javascript">
     $(function(){
@@ -34,7 +39,11 @@
           <label>网站标题：</label>
         </div>
         <div class="field">
+<<<<<<< HEAD
           <input type="text" class="input" name="stitle" value="" />
+=======
+          <input type="text" class="input" id="info_title" name="stitle" value="" />
+>>>>>>> 292a367fef6fc1e8cde90a9b3acf922e9b1fd47e
           <div class="tips"></div>
         </div>
       </div>
@@ -57,7 +66,7 @@
           <label>网站域名：</label>
         </div>
         <div class="field">
-          <input type="text" class="input" name="surl" value="" />
+          <input type="text" class="input" id="info_uri"  name="surl" value="" />
         </div>
       </div>
       <div class="form-group" style="display:none">
@@ -74,7 +83,7 @@
           <label>网站关键字：</label>
         </div>
         <div class="field">
-          <textarea class="input" name="skeywords" style="height:80px"></textarea>
+          <textarea class="input" id="info_key_word" name="skeywords" style="height:80px"></textarea>
           <div class="tips"></div>
         </div>
       </div>
@@ -83,7 +92,7 @@
           <label>网站描述：</label>
         </div>
         <div class="field">
-          <textarea class="input" name="sdescription"></textarea>
+          <textarea class="input" id="info_content" name="sdescription"></textarea>
           <div class="tips"></div>
         </div>
       </div>
@@ -92,7 +101,7 @@
           <label>联系人：</label>
         </div>
         <div class="field">
-          <input type="text" class="input" name="s_name" value="" />
+          <input type="text" class="input" id="info_contacts" name="s_name" value="" />
           <div class="tips"></div>
         </div>
       </div>
@@ -101,7 +110,7 @@
           <label>手机：</label>
         </div>
         <div class="field">
-          <input type="text" class="input" name="s_phone" value="" />
+          <input type="text" class="input" id="info_tel" name="s_phone" value="" />
           <div class="tips"></div>
         </div>
       </div>
@@ -110,7 +119,7 @@
           <label>电话：</label>
         </div>
         <div class="field">
-          <input type="text" class="input" name="s_tel" value="" />
+          <input type="text" class="input" id="info_phone" name="s_tel" value="" />
           <div class="tips"></div>
         </div>
       </div>
@@ -128,7 +137,7 @@
           <label>传真：</label>
         </div>
         <div class="field">
-          <input type="text" class="input" name="s_fax" value="" />
+          <input type="text" class="input" id="info_fax" name="s_fax" value="" />
           <div class="tips"></div>
         </div>
       </div>
@@ -137,7 +146,7 @@
           <label>QQ：</label>
         </div>
         <div class="field">
-          <input type="text" class="input" name="s_qq" value="" />
+          <input type="text" class="input" id="info_qq" name="s_qq" value="" />
           <div class="tips"></div>
         </div>
       </div>
@@ -156,7 +165,7 @@
           <label>Email：</label>
         </div>
         <div class="field">
-          <input type="text" class="input" name="s_email" value="" />
+          <input type="text" class="input" id="info_email" name="s_email" value="" />
           <div class="tips"></div>
         </div>
       </div>
@@ -165,7 +174,7 @@
           <label>地址：</label>
         </div>
         <div class="field">
-          <input type="text" class="input" name="s_address" value="" />
+          <input type="text" class="input" id="info_site" name="s_address" value="" />
           <div class="tips"></div>
         </div>
       </div>  
@@ -174,7 +183,7 @@
           <label></label>
         </div>
         <div class="field">
-          <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+          <button class="button bg-main icon-check-square-o" type="button" id="setinfo_button"> 提交</button>
         </div>
       </div>
     </form>

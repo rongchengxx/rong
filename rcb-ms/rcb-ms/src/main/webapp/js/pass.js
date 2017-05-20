@@ -39,10 +39,6 @@ function subAction(){
 				"newPassword":newPassword},
 				success:function(result){
 				if(result.state==0){
-					var user=result.data;
-					console.log(user);
-
-					
 					alert("修改密码成功！");
 				}
 					

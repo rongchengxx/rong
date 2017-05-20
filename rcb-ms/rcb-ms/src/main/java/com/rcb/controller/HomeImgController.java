@@ -1,5 +1,6 @@
 package com.rcb.controller;
 
+
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -8,10 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.rcb.dao.HomeImgDao;
-import com.rcb.dao.SettingsDao;
 import com.rcb.entity.HomeImg;
-import com.rcb.entity.Settings;
 import com.rcb.service.home_img.HomeImgService;
 import com.rcb.utils.JsonResult;
 
@@ -30,31 +28,46 @@ import com.rcb.utils.JsonResult;
 		public String advpop() {
 			return "advpop";
 		}
-		/*
 		@ResponseBody
-		@RequestMapping("/adv1.do")
+		@RequestMapping("/adv/add.do")
+		public Object add(String title,String url,String link,String content,int seq){
+			HomeImg hig= new HomeImg();
+			hig.setTitle(title);
+			hig.setUrl(url);
+			hig.setLink(link);
+			hig.setContent(content);
+			hig.setSeq(seq);
+			HomeImg h1=service.addHomeImg(hig);
+			return new JsonResult(h1);	
+		}
+		@ResponseBody
+		@RequestMapping("/advpop/modify.do")
+		public Object modify(String id,String title, String url,String  link,String content,int seq){
+//			HomeImg h1= new HomeImg();
+//			h1.setTitle(title);
+//			h1.setUrl(url);
+//			h1.setLink(link);
+//			h1.setContent(content);
+//			h1.setSeq(seq);
+			HomeImg hig=service.modifyHomeImg(id,title, url, link, content, seq);
+			return new JsonResult(hig);	
+		}
+		
+		@ResponseBody
+		@RequestMapping("/adv/delAdv.do")
+		public Object del(String id){
+				HomeImg h3=service.delHomeImgById(id);
+				return new JsonResult(h3);	
+		}
+		
+		@ResponseBody
+		@RequestMapping("/adv/loadAdv.do")
 		public Object findall(){
 			List<HomeImg> list=	service.findHomeImgAll();
 				return new JsonResult(list);	
 		}
-		@ResponseBody
-		@RequestMapping("/adv1.do")
-		public Object add(HomeImg  hig){
-			service.addHomeImg(hig);
-				return new JsonResult();	
-		}
-		@ResponseBody
-		@RequestMapping("/adv1.do")
-		public Object del(String id){
-			int n =	service.delHomeImgById(id);
-				return new JsonResult(n);	
-		}
-		@ResponseBody
-		@RequestMapping("/adv1.do")
-		public Object modify(HomeImg  hig){
-			int n=	service.modifyHomeImg(hig);
-				return new JsonResult(n);	
-		}
+		/*
+		
 		@ResponseBody
 		@RequestMapping("/adv1.do")
 		public Object findbyid(String id){

@@ -11,6 +11,13 @@
 <link rel="stylesheet" href="css/admin.css">
 <script src="js/jquery.js"></script>
 <script src="js/pintuer.js"></script>
+<script src="js/adv_Add.js"></script>
+<script src="js/basevalue.js"></script>
+<script src="js/adv_Find.js"></script>
+<script src="js/adv_Del.js"></script>
+<script src="js/advpop_modify.js"></script>
+
+
     <script src="js/cookie_util.js"></script>
     <script type="text/javascript">
     $(function(){
@@ -26,7 +33,7 @@
 <body>
 <div class="panel admin-panel">
   <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong></div>
-  <table class="table table-hover text-center">
+  <table class="table table-hover text-center" id="adv_table">
     <tr>
       <th width="10%">ID</th>
       <th width="20%">图片</th>
@@ -36,7 +43,7 @@
       <th width="15%">操作</th>
     </tr>
    
-    <tr>
+    <!-- <tr>
       <td>1</td>     
       <td><img src="images/11.jpg" alt="" width="120" height="50" /></td>     
       <td>首页焦点图</td>
@@ -46,8 +53,8 @@
       <a class="button border-main" href="advpop.do"><span class="icon-edit"></span> 修改</a>
       <a class="button border-red" href="javascript:void(0)" onclick="return del(1,1)"><span class="icon-trash-o"></span> 删除</a>
       </div></td>
-    </tr>
-    <tr>
+    </tr> -->
+    <!-- <tr>
       <td>2</td>     
       <td><img src="images/11.jpg" alt="" width="120" height="50" /></td>     
       <td>首页焦点图</td>
@@ -68,7 +75,7 @@
       <a class="button border-main" href="advpop.do"><span class="icon-edit"></span> 修改</a>
       <a class="button border-red" href="javascript:void(0)" onclick="return del(1,1)"><span class="icon-trash-o"></span> 删除</a>
       </div></td>
-    </tr>
+    </tr> -->
     
   </table>
 </div>
@@ -88,7 +95,7 @@ function del(id,mid){
           <label>标题：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" value="" name="title" data-validate="required:请输入标题" />
+          <input type="text" class="input w50" value="" id="advAdd_title" name="title" data-validate="required:请输入标题" />
           <div class="tips"></div>
         </div>
       </div>
@@ -97,7 +104,7 @@ function del(id,mid){
           <label>URL：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" name="url" value=""  />
+          <input type="text" class="input w50" id="advAdd_url" name="url" value=""  />
           <div class="tips"></div>
         </div>
       </div>
@@ -106,7 +113,7 @@ function del(id,mid){
           <label>图片：</label>
         </div>
         <div class="field">
-          <input type="text" id="adv_thumb" name="img" class="input tips" style="width:25%; float:left;"  value="" data-toggle="hover" data-place="right" data-image="" />
+          <input type="text" id="adv_thumb" id="advAdd_link" name="img" class="input tips" style="width:25%; float:left;"  value="" data-toggle="hover" data-place="right" data-image="" />
           <button type="button" class="btn btn-warning btn-s file-button" id="btn1" onclick="adv_myfile.click();" style="float: left;">
             <span class="glyphicon glyphicon-ban-circle"></span>十上传
           </button>
@@ -119,7 +126,7 @@ function del(id,mid){
           <label>描述：</label>
         </div>
         <div class="field">
-          <textarea type="text" class="input" name="note" style="height:120px;" value=""></textarea>
+          <textarea type="text" class="input" id="advAdd_content" name="note" style="height:120px;" value=""></textarea>
           <div class="tips"></div>
         </div>
       </div>
@@ -128,7 +135,7 @@ function del(id,mid){
           <label>排序：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" name="sort" value="0"  data-validate="required:,number:排序必须为数字" />
+          <input type="text" class="input w50" id="advAdd_seq" name="sort" value="0"  data-validate="required:,number:排序必须为数字" />
           <div class="tips"></div>
         </div>
       </div>
@@ -137,7 +144,7 @@ function del(id,mid){
           <label></label>
         </div>
         <div class="field">
-          <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+          <button class="button bg-main icon-check-square-o" type="button" id="adv_button"> 提交</button>
         </div>
       </div>
     </form>

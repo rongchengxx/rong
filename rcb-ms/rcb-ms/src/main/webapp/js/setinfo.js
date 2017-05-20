@@ -1,41 +1,40 @@
 $(function(){
-	$("#set_info").click(set_infoAction);
+	$("#setinfo_button").click(set_infoAction);
 });
 function set_infoAction(){
-	var title=$("#title").val().trim();
-	var logo=$("#logo").val().trim();
-	var uri=$("#uri").val().trim();
-	var key_word=$("#key_word").val().trim();
-	var account=$("#account").val().trim();
-	var contacts=$("#contacts").val().trim();
-	var tel=$("#tel").val().trim();
-	var phone=$("#phone").val().trim();
-	var fax=$("#fax").val().trim();
-	var qq=$("#qq").val().trim();
-	var email=$("#email").val().trim();
-	var site=$("#site").val().trim();
-	var content=$("#content").val().trim();
+	
+	var infoTitle=$("#info_title").val().trim();
+	var infoLogo=$("#info_thumb").val().trim();
+	var infoUri=$("#info_uri").val().trim();
+	var infoKey_word=$("#info_key_word").val().trim();
+	var infoContacts=$("#info_contacts").val().trim();
+	var infoTel=$("#info_tel").val().trim();
+	var infoPhone=$("#info_phone").val().trim();
+	var infoFax=$("#info_fax").val().trim();
+	var infoQq=$("#info_qq").val().trim();
+	var infoEmail=$("#info_email").val().trim();
+	var infoSite=$("#info_site").val().trim();
+	var infoContent=$("#info_content").val().trim();
 			$.ajax({
-				
-				url:path +"/info/addsettings.do",
+				url:path +"/info/modify.do",
 				type:"post",
 				dataType:"json",
-				data:{title:"title",logo:"logo",uri:"uri",
-					key_word:"key_word",contacts:"contacts",tel:"tel",phone:"phone",
-					fax:"fax",qq:"qq",email:"email",site:"site",content:"content"},
+				data:{
+				"title":infoTitle,
+				"logo":infoLogo,
+				"uri":infoUri,
+				"key_word":infoKey_word,
+				"contacts":infoContacts,
+				"tel":infoTel,
+				"phone":infoPhone,
+				"fax":infoFax,
+				"qq":infoQq,
+				"email":infoEmail,
+				"site":infoSite,
+				"content":infoContent
+				},
 				 success:function(result){
-					 console.log("111111");
 					if(result.state==0){//成功
-//						var user=result.data;
-//						
-//						addCookie("userId",user.id,2);
-//						addCookie("userAccount",user.account,2);
-//						window.location.href=path+"/index.do";
-//					}else if(result.state==2){//用户名错误
-//						$("#account_span").html(result.message);
-//					}else if(result.state==3){//密码错误
-//						$("#password_span").html(result.message);
-//					}
 						alert("设置成功！"); 	}
 				},
 				error:function(){
