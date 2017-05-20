@@ -52,4 +52,9 @@ public class TwoMenuServiceImpl implements TwoMenuService {
 		return row;
 	}
 
+	public TwoMenu findTwoMenuById(String id) {
+		TwoMenu towMenu = twoMenuDao.findTwoMenuById(id);
+		return towMenu;
+	}
+
 }

@@ -2,7 +2,7 @@ $(function(){
 	//自动加载
 	loadColumn();
 	
-	//监听单击事件
+	//绑定单击事件
 	$("#column_button").click(addColumn);
 	
 	//监听删除事件
@@ -69,7 +69,7 @@ function addColumn(){
 	$("#column_thumb").val("");
 	$("#column_intro").val("");
 	$("#column_content").val("");
-	$("#column_seq").val("");
+	$("#column_seq").val("0");
 	$("#column_yes").attr("class","button active");
 	$("#column_no").attr("class","button active");
 	
@@ -82,6 +82,7 @@ function addColumn(){
 	}
 	if (columnTitle == "") {
 		ok = false;
+		/*------------请输入标题--------------*/	
 	}
 	// 发送ajax请求
 	if (ok) {

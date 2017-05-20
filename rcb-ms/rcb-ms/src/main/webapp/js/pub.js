@@ -14,6 +14,7 @@ function modifyPub(){
 	var columnId = getCookie("columnId")
 	//判断cookie是否有效
 	if(columnId==null){
+		alert("修改错误！");
 		window.location.href="column.do";
 	}
 

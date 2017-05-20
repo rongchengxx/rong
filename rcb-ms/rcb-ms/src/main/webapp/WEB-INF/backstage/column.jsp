@@ -47,7 +47,7 @@
           <label>栏目名称：</label>
         </div>
         <div class="field">
-          <input type="text" id="column_title" class="input w50" name="title" value="" data-validate="required:请输入标题" />         
+          <input type="text" id="column_title" class="input w50" name="title" value=""/>         
           <div class="tips"></div>
         </div>
       </div> 

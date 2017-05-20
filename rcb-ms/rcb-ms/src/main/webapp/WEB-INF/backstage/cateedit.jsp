@@ -8,21 +8,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <meta name="renderer" content="webkit">
 <title></title>
-<link rel="stylesheet" href="css/pintuer.css">
-<link rel="stylesheet" href="css/admin.css">
-<script src="js/jquery.js"></script>
-<script src="js/pintuer.js"></script>
-    <script src="js/cookie_util.js"></script>
-    <script type="text/javascript">
-    $(function(){
-    	// 获取参数userId
-		var userId=getCookie("userId");
-		//判断userId是否有效
-		if(userId==null){
-			window.location.href="../rcb-ms";
-		}
-    });
-    </script> 
+		<link rel="stylesheet" href="css/pintuer.css">
+		<link rel="stylesheet" href="css/admin.css">
+		<script src="js/jquery.js"></script>
+		<script src="js/pintuer.js"></script>
+		<script src="js/cookie_util.js"></script>
+		<script src="js/basevalue.js"></script>
+        <script src="js/cateedit.js"></script>
+
 </head>
 <body>
 <div class="panel admin-panel margin-top">
@@ -34,12 +27,8 @@
           <label>上级分类：</label>
         </div>
         <div class="field">
-          <select name="pid" class="input w50">
-            <option value="">请选择分类</option>
-            <option value="">产品分类</option>
-            <option value="">产品分类</option>
-            <option value="">产品分类</option>
-            <option value="">产品分类</option>
+          <select name="pid" id="cateedit_oneMenu" class="input w50">
+            
           </select>
         </div>
       </div>        
@@ -48,7 +37,7 @@
           <label>栏目名称：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" name="title" value="" />
+          <input type="text" id="cateedit_title" class="input w50" name="title" value="" />
           <div class="tips"></div>
         </div>
       </div>    
@@ -70,7 +59,7 @@
           <label>关键字标题：</label>
         </div>
         <div class="field">
-          <input type="text" class="input" name="s_title" value=""/>         
+          <input type="text" id="cateedit_intro" class="input" name="s_title" value=""/>         
         </div>
       </div>
       
@@ -79,7 +68,7 @@
           <label>关键字描述：</label>
         </div>
         <div class="field">
-          <input type="text" class="input" name="s_desc" value=""/>        
+          <input type="text" id="cateedit_content" class="input" name="s_desc" value=""/>        
         </div>
       </div>
 	<div class="form-group">
@@ -89,12 +78,13 @@
 	   <div class="field">
 	     <div class="button-group radio">
 	     
-	     <label class="button active">
+	     <label class="button active" id="cateedit_yes">
 	    	  <span class="icon icon-check"></span>             
 	         <input name="isshow" value="1" type="radio" checked="checked">是             
 	     </label>             
 	   
-	     <label class="button active"><span class="icon icon-times"></span>          	
+	     <label class="button active" id="cateedit_no">
+	     	 <span class="icon icon-times"></span>          	
 	         <input name="isshow" value="0"  type="radio" checked="checked">否
 	     </label>         
 	      </div>       
@@ -105,7 +95,7 @@
           <label>排序：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" name="sort" value="1"  data-validate="number:排序必须为数字" />
+          <input type="text" id="cateedit_seq" class="input w50" name="sort" value="1"  data-validate="number:排序必须为数字" />
           <div class="tips"></div>
         </div>
       </div>
@@ -114,7 +104,7 @@
           <label></label>
         </div>
         <div class="field">
-          <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+          <button class="button bg-main icon-check-square-o" type="button" id="cateedit_button"> 提交</button>
         </div>
       </div>
     </form>

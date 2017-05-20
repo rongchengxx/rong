@@ -29,13 +29,8 @@
     
   </table>
 </div>
-<script type="text/javascript">
-function del(id,mid){
-	if(confirm("您确定要删除吗?")){			
-		
-	}
-}
-</script>
+
+
 <div class="panel admin-panel margin-top">
   <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>添加内容</strong></div>
   <div class="body-content">
@@ -45,12 +40,9 @@ function del(id,mid){
           <label>上级分类：</label>
         </div>
         <div class="field">
-          <select name="pid" class="input w50">
+          <select id="cate_oneMenu" name="pid" class="input w50">
             <option value="">请选择分类</option>
-            <option value="">产品分类</option>
-            <option value="">产品分类</option>
-            <option value="">产品分类</option>
-            <option value="">产品分类</option>
+            <!-- 插入oneMenu的title -->
           </select>
 
         </div>
@@ -60,7 +52,7 @@ function del(id,mid){
           <label>栏目名称：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" name="title" />
+          <input type="text" id="cate_title" class="input w50" name="title" />
           <div class="tips"></div>
         </div>
       </div>
@@ -82,7 +74,7 @@ function del(id,mid){
           <label>关键字标题：</label>
         </div>
         <div class="field">
-          <input type="text" class="input" name="s_title" />
+          <input type="text" id="cate_intro" class="input" name="s_title" />
         </div>
       </div>
       <div class="form-group">
@@ -90,7 +82,7 @@ function del(id,mid){
           <label>关键字描述：</label>
         </div>
         <div class="field">
-          <input type="text" class="input" name="s_desc"/>
+          <input type="text" id="cate_content" class="input" name="s_desc"/>
         </div>
       </div>
    	 <div class="form-group">
@@ -100,12 +92,13 @@ function del(id,mid){
 	    <div class="field">
 	      <div class="button-group radio">
 	      
-	      <label class="button active">
+	      <label class="button active" id="cate_yes">
 	     	  <span class="icon icon-check"></span>             
 	          <input name="isshow" value="1" type="radio" checked="checked">是             
 	      </label>             
 	    
-	      <label class="button active"><span class="icon icon-times"></span>          	
+	      <label class="button active" id="cate_no">
+	          <span class="icon icon-times"></span>          	
 	          <input name="isshow" value="0"  type="radio" checked="checked">否
 	      </label>         
 	       </div>       
@@ -116,7 +109,7 @@ function del(id,mid){
           <label>排序：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" name="sort" value="0"  data-validate="number:排序必须为数字" />
+          <input type="text" id="cate_seq" class="input w50" name="sort" value="0"  data-validate="number:排序必须为数字" />
           <div class="tips"></div>
         </div>
       </div>
@@ -125,7 +118,7 @@ function del(id,mid){
           <label></label>
         </div>
         <div class="field">
-          <button class="button bg-main icon-check-square-o" type="submit" id="cate_button"> 提交</button>
+          <button class="button bg-main icon-check-square-o" type="button" id="cate_button"> 提交</button>
         </div>
       </div>
     </form>
