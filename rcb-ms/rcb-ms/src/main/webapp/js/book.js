@@ -148,12 +148,15 @@ function reload(json) {
 		books += '</tr>';
 	}
 	books += '<tr id = "page_tr">';
-	books += '<td colspan="8"><div class="pagelist"> <a class="bookpage" onclick="loadBook('+(now_page-1)+')">上一页</a>';
+	books += '<td colspan="8"><div class="pagelist"><a class="bookpage" onclick="loadBook(1)">首页</a> <a class="bookpage" onclick="loadBook('+(now_page-1)+')"><</a>';
 	
-	if(max_page>3){
-		if(now_page>=3&&now_page!=max_page){
-			books += '<a class="bookpage" onclick="loadBook('+(now_page-1)+')">'+(now_page-1)+'</a><a class="bookpage" onclick="loadBook('+now_page+')">'+now_page+'</a><a class = "bookpage" onclick="loadBook('+(now_page+1)+')">'+(now_page+1)+'</a>';
-			books += '... &nbsp; &nbsp;<input id="page_tz"/> <a class="bookpage" onclick="tiaozhuan()">跳转</a>';
+	if(max_page>5){
+		if(now_page<=3){
+			books += '<a class="bookpage" onclick="loadBook(1)">1</a><a class="bookpage" onclick="loadBook(2)">2</a><a class="bookpage" onclick="loadBook(3)">3</a><a class="bookpage" onclick="loadBook(4)">4</a><a class = "bookpage" onclick="loadBook(5)">5</a>...';
+		}else if(now_page>=4 && now_page<=max_page-3){
+			books += '...<a class="bookpage" onclick="loadBook('+(now_page-2)+')">'+(now_page-2)+'</a><a class="bookpage" onclick="loadBook('+(now_page-1)+')">'+(now_page-1)+'</a>';
+			books += '<a class="bookpage" onclick="loadBook('+now_page+')">'+now_page+'</a>';
+			books += '<a class = "bookpage" onclick="loadBook('+(now_page+1)+')">'+(now_page+1)+'</a><a class = "bookpage" onclick="loadBook('+(now_page+2)+')">'+(now_page+2)+'</a>...';
 			/*if(now_page<max_page){
 				books += '<a class="bookpage" onclick="loadBook('+(now_page-2)+')">'+(now_page-2)+'</a><a class="bookpage" onclick="loadBook('+(now_page-1)+')">'+(now_page-1)+'</a><a class = "bookpage" onclick="loadBook('+now_page+')">'+now_page+'</a>';
 				books += '...<input id="page_tz"/><input type="button" value="跳转" onclick="tiaozhuan()"/>';
@@ -161,13 +164,8 @@ function reload(json) {
 				books += '<a class="bookpage" onclick="loadBook('+(now_page-2)+')">'+(now_page-2)+'</a><a class="bookpage" onclick="loadBook('+(now_page-1)+')">'+(now_page-1)+'</a><a class = "bookpage" onclick="loadBook('+now_page+')">'+now_page+'</a>';
 				books += '<input id="page_tz"/><input type="button" value="跳转" onclick="tiaozhuan()"/>';
 			}*/
-		}else if(now_page==max_page){
-			books += '<a class="bookpage" onclick="loadBook('+(now_page-2)+')">'+(now_page-2)+'</a><a class="bookpage" onclick="loadBook('+(now_page-1)+')">'+(now_page-1)+'</a><a class = "bookpage" onclick="loadBook('+now_page+')">'+now_page+'</a>';
-			books += '<input id="page_tz"/> <a class="bookpage" onclick="tiaozhuan()">跳转</a>';
-		}
-		else{
-			books += '<a class="bookpage" onclick="loadBook(1)">1</a><a class = "bookpage" onclick="loadBook(2)">2</a><a class = "bookpage" onclick="loadBook(3)">3</a>';
-			books += '... &nbsp; &nbsp;<input id="page_tz"/> <a class="bookpage" onclick="tiaozhuan()">跳转</a>';
+		}else if(now_page>max_page-3){
+			books += '...<a class="bookpage" onclick="loadBook('+(max_page-4)+')">'+(max_page-4)+'</a><a class="bookpage" onclick="loadBook('+(max_page-3)+')">'+(max_page-3)+'</a><a class="bookpage" onclick="loadBook('+(max_page-2)+')">'+(max_page-2)+'</a><a class="bookpage" onclick="loadBook('+(max_page-1)+')">'+(max_page-1)+'</a><a class = "bookpage" onclick="loadBook('+max_page+')">'+max_page+'</a>';
 		}
 	}else{
 		var i = 1;
@@ -181,7 +179,7 @@ function reload(json) {
 		}
 	}
 	
-	books += '<a class="bookpage" onclick="loadBook('+(now_page+1)+')">下一页</a><a class="bookpage" onclick="loadBook('+max_page+')">尾页</a> </div></td>';
+	books += '<a class="bookpage" onclick="loadBook('+(now_page+1)+')">></a><a class="bookpage" onclick="loadBook('+max_page+')">尾页</a> <input id="page_tz"/> <a class="bookpage" onclick="tiaozhuan()">跳转</a></div></td>';
 	books += '</tr>';
 	booktable.append(books);
 	$(".bookpage:contains('"+now_page+"')").addClass("now_page");
