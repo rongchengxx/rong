@@ -17,19 +17,20 @@ public class GbookServiceImpl implements GbookService {
 		return n;
 	}
 
-	public int delGbooksById(String... ids) {
+	public int delGbooksById(String[] id) {
 	
-		int m = 0;
-		for (int i = 0; i < ids.length; i++) {
-			dao.delGbookById(ids[i]);
-			m++;
-		}
-			return m;
-		}
+		int m = dao.delGbooksById(id);
+		return m;
+	}
 
 	public List<Gbook> findGbookByPage(int page) {
 		List<Gbook> list=dao.findGbookByPage(page);
 		return list;
+	}
+
+	public String findGbookMaxPage() {
+		String p = dao.findGbookMaxPage();
+		return p;
 	}
 
 
