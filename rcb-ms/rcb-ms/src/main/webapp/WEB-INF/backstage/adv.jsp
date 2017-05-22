@@ -11,24 +11,10 @@
 <link rel="stylesheet" href="css/admin.css">
 <script src="js/jquery.js"></script>
 <script src="js/pintuer.js"></script>
-<script src="js/adv_Add.js"></script>
 <script src="js/basevalue.js"></script>
-<script src="js/adv_Find.js"></script>
-<script src="js/adv_Del.js"></script>
-<script src="js/advpop_modify.js"></script>
-
-
-    <script src="js/cookie_util.js"></script>
-    <script type="text/javascript">
-    $(function(){
-    	// 获取参数userId
-		var userId=getCookie("userId");
-		//判断userId是否有效
-		if(userId==null){
-			window.location.href="../rcb-ms";
-		}
-    });
-    </script> 
+<script src="js/adv.js"></script>
+<script src="js/cookie_util.js"></script>
+    
 </head>
 <body>
 <div class="panel admin-panel">
@@ -36,7 +22,7 @@
   <table class="table table-hover text-center" id="adv_table">
     <tr>
       <th width="10%">ID</th>
-      <th width="20%">图片</th>
+      <th width="20%">URL</th>
       <th width="15%">名称</th>
       <th width="20%">描述</th>
       <th width="10%">排序</th>
@@ -62,6 +48,7 @@ function del(id,mid){
         </div>
         <div class="field">
           <input type="text" class="input w50" value="" id="advAdd_title" name="title" data-validate="required:请输入标题" />
+          <span id="advAdd_title_span"></span>	
           <div class="tips"></div>
         </div>
       </div>
@@ -71,6 +58,7 @@ function del(id,mid){
         </div>
         <div class="field">
           <input type="text" class="input w50" id="advAdd_url" name="url" value=""  />
+          <span id="advAdd_url_span"></span>
           <div class="tips"></div>
         </div>
       </div>
@@ -83,6 +71,7 @@ function del(id,mid){
           <button type="button" class="btn btn-warning btn-s file-button" id="btn1" onclick="adv_myfile.click();" style="float: left;">
             <span class="glyphicon glyphicon-ban-circle"></span>十上传
           </button>
+          <span id="advAdd_link_span"></span>
           <input type="file" id="adv_myfile" uploader="uploader" nv-file-select="" onchange="input1.value=this.value" style="/* display: block; */" class="file-btn">
           <div class="tipss">图片尺寸：1920*500</div>
         </div>
@@ -93,6 +82,7 @@ function del(id,mid){
         </div>
         <div class="field">
           <textarea type="text" class="input" id="advAdd_content" name="note" style="height:120px;" value=""></textarea>
+          <span id="advAdd_content_span"></span>
           <div class="tips"></div>
         </div>
       </div>
@@ -102,6 +92,7 @@ function del(id,mid){
         </div>
         <div class="field">
           <input type="text" class="input w50" id="advAdd_seq" name="sort" value="0"  data-validate="required:,number:排序必须为数字" />
+          <span id="advAdd_seq_span"></span>
           <div class="tips"></div>
         </div>
       </div>

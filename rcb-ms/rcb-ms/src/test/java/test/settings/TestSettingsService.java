@@ -22,17 +22,17 @@ public class TestSettingsService{
 	}
 	@Test 
 	public void test1(){
-		Settings s1=service.addSettings("这家伙", "127.0.0.1", "io55", "长方", "孙膑", 65655, 7777777, 556565, 1234567, "123@qq.com", "北京", "我是内容，风景不错");
-		System.out.println(s1);
+		Settings n=service.addSettings("1","这家伙", "127.0.0.1", "io55", "长方", "孙膑", 65655, 7777777, 556565, 1234567, "123@qq.com", "北京", "我是内容，风景不错");
+		System.out.println(n);
 	}
 	@Test 
 	public void test2(){
-		Settings sett=service.findSettingsById("进");
+		Settings sett=service.findSettingsByUserId("5");
 		System.out.println(sett);
 	}
 	@Test 
 	public void test3(){
-		Boolean b=service.modifySettings("1","这人", "127.0.0.1", "io55", "长方", "孙膑", 65655, 7777777, 556565, 1234567, "123@qq.com", "北京", "我是内容，风景不错");
+		int b=service.modifySettings("32","5", "今日", "复", "mingri", "明日", "何其多", 1234567, 222, 333, 4444, "123@qq.com", "彩虹", "ddffd");
 		System.out.println(b);
 	}
 }

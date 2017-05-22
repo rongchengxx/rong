@@ -9,23 +9,17 @@ public class HomeImg implements Serializable{
 	private String id;//首页图片表ID varchar(32)
 	private String url;//图片地址 varchar(255)
 	private String title;//标题 varchar(255)
-	private int seq;//排序  int 11
-	private int type;//类型（） int 1
+	private Integer seq;//排序  int 11
+	private Integer type;//类型（） int 1
 	private String content;//内容 text
 	private String link;//链接 varchar(255)
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	private int source;//来源 int 1
-	private int isshow;//是否显示 int 1
+	private Integer source;//来源 int 1
+	private Integer isshow;//是否显示 int 1
 	public HomeImg() {
 		// TODO Auto-generated constructor stub
 	}
-	public HomeImg(String id, String url, String title, int seq, int type, String content, String link, int source,
-			int isshow) {
+	public HomeImg(String id, String url, String title, Integer seq, Integer type, String content, String link, Integer source,
+			Integer isshow) {
 		super();
 		this.id = id;
 		this.url = url;
@@ -36,6 +30,12 @@ public class HomeImg implements Serializable{
 		this.link = link;
 		this.source = source;
 		this.isshow = isshow;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getUrl() {
 		return url;
@@ -49,13 +49,13 @@ public class HomeImg implements Serializable{
 	public void setUrl(String url) {
 		this.url = url;
 	}
-	public int getSeq() {
+	public Integer getSeq() {
 		return seq;
 	}
 	public void setSeq(int seq) {
 		this.seq = seq;
 	}
-	public int getType() {
+	public Integer getType() {
 		return type;
 	}
 	public void setType(int type) {
@@ -73,13 +73,13 @@ public class HomeImg implements Serializable{
 	public void setLink(String link) {
 		this.link = link;
 	}
-	public int getSource() {
+	public Integer getSource() {
 		return source;
 	}
 	public void setSource(int source) {
 		this.source = source;
 	}
-	public int getIsshow() {
+	public Integer getIsshow() {
 		return isshow;
 	}
 	public void setIsshow(int isshow) {
