@@ -28,7 +28,7 @@
 		order by time desc
 		limit #{page},2
 	</select>
-	<select id="findGbookMaxPage" resultType="String">select count(id) from gbook</select>	
+	<select id="findGbookCount" resultType="String">select count(id) from gbook</select>	
 </mapper>
 
 

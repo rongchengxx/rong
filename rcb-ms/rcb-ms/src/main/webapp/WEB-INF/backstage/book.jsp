@@ -16,6 +16,7 @@
 </head>
 <body>
 <form id = "fm1">
+	<input type="hidden" name="now_page" /> 
   <div class="panel admin-panel">
     <div class="panel-head"><strong class="icon-reorder"> 留言管理</strong></div>
     <div class="padding border-bottom">

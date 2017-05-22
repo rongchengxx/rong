@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class GbookController {
+	//分页每页的条数
+	int p = 2;
+	
 	@Resource
 	private GbookService service;
 	
@@ -40,19 +43,16 @@ public class GbookController {
 	@RequestMapping("/book/delBook.do")
 	@ResponseBody
 	public JsonResult delBook(String id,String now_page) {
-		System.out.println("id"+id);
 		int n = service.delGbookById(id);
-		System.out.println("条数"+n);
 		return loadBooks(now_page);
 	}
 	//删除多条留言
 	@RequestMapping("/book/delBooks.do")
 	@ResponseBody
-	public JsonResult delBooks(String[] id) {
-		System.out.println("id"+id[0]+id[1]);
+	public JsonResult delBooks(String[] id,String now_page) {
 		int n = service.delGbooksById(id);
-		System.out.println("条数"+n);
-		return loadBooks("1");
+		System.out.println(now_page);
+		return loadBooks(now_page);
 	}
 	//根据页码检索留言
 	@RequestMapping("/book/loadBook.do")
@@ -63,20 +63,21 @@ public class GbookController {
 	
 	//根据页码检索留言
 	public JsonResult loadBooks(String page) {
-		String max_page = service.findGbookMaxPage();
-		if(new Integer(page)>new Integer(max_page)){
-			page = max_page;
+		int max_page = (int) Math.ceil(new Double(service.findGbookCount())/p);
+		if(max_page == 0){
+			return new JsonResult();
 		}
-		System.out.println("page"+page);
-		List<Gbook> gbooks = service.findGbookByPage(new Integer(page)*2-2);
+		if(new Integer(page)>max_page){
+			page = max_page+"";
+		}
+		List<Gbook> gbooks = service.findGbookByPage(new Integer(page)*p-p);
 		Iterator<Gbook> it = gbooks.iterator();
 		/*while (it.hasNext()) {
 			Gbook gb = (Gbook) it.next();
 			System.out.println("条数"+gb.toString());
 		}*/
 		JsonResult jr = new JsonResult(gbooks);
-		jr.setMessage(Math.ceil(new Double(max_page)/2)+"");
-		System.out.println(jr);
+		jr.setMessage(max_page+"");
 		return jr;
 	}
 	

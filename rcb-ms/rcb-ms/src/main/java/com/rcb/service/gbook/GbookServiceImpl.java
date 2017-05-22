@@ -17,7 +17,7 @@ public class GbookServiceImpl implements GbookService {
 		return n;
 	}
 
-	public int delGbooksById(String[] id) {
+	public int delGbooksById(String... id) {
 	
 		int m = dao.delGbooksById(id);
 		return m;
@@ -28,8 +28,8 @@ public class GbookServiceImpl implements GbookService {
 		return list;
 	}
 
-	public String findGbookMaxPage() {
-		String p = dao.findGbookMaxPage();
+	public String findGbookCount() {
+		String p = dao.findGbookCount();
 		return p;
 	}
 

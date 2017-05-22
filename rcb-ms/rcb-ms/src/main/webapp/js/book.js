@@ -21,6 +21,8 @@ function del(id){
 			dataType : "json",
 			success : function(result) {
 				alert("删除成功!!!");
+				max_page = result.message;
+				if(now_page > max_page){now_page = max_page;}
 				reload(result.data);
 			},
 			error : function() {
@@ -30,15 +32,21 @@ function del(id){
 	}
 }
 
-function dels(){
-	var formData = $("input[name='id']");
+function dels(id){
+	//var formData = $("input[name='id']");
 	$.ajax({
 		url : "book/delBooks.do",
 		type : "post",
-		data : formData,
+		data :/*formData*/{
+				"id":id,
+				"now_page" : now_page
+		},
+		traditional :true,
 		dataType : "json",
 		success : function(result) {
 			alert("删除成功!!!");
+			max_page = result.message;
+			if(now_page > max_page){now_page = max_page;}
 			reload(result.data);
 		},
 		error : function() {
@@ -69,14 +77,20 @@ function checkAll() {
 }
 function DelSelect(){
 	var Checkbox=false;
+	//var id;
+	var dropIds = new Array();
 	 $("input[name='id']").each(function(){
+		 dropIds.push($(this).val());
+		 //id+="id="+$(this).val()+"&";
+		 //alert($(this).val());
+		 
 	  if (this.checked==true) {		
 		Checkbox=true;	
 	  }
 	});
 	if (Checkbox){
 		var t=confirm("您确认要删除选中的内容吗？");
-		if (t==true){ dels();}
+		if (t==true){ dels(dropIds);}
 	}
 	else{
 		alert("请选择您要删除的内容!");
@@ -84,7 +98,7 @@ function DelSelect(){
 	}
 }
 function tiaozhuan(){
-	var page = $("#page_tz").val();
+	var page = new Number($("#page_tz").val());
 	loadBook(page);
 }
 function loadBook(page) {
@@ -137,17 +151,23 @@ function reload(json) {
 	books += '<td colspan="8"><div class="pagelist"> <a class="bookpage" onclick="loadBook('+(now_page-1)+')">上一页</a>';
 	
 	if(max_page>3){
-		if(now_page>3){
-			if(now_page<max_page){
+		if(now_page>=3&&now_page!=max_page){
+			books += '<a class="bookpage" onclick="loadBook('+(now_page-1)+')">'+(now_page-1)+'</a><a class="bookpage" onclick="loadBook('+now_page+')">'+now_page+'</a><a class = "bookpage" onclick="loadBook('+(now_page+1)+')">'+(now_page+1)+'</a>';
+			books += '... &nbsp; &nbsp;<input id="page_tz"/> <a class="bookpage" onclick="tiaozhuan()">跳转</a>';
+			/*if(now_page<max_page){
 				books += '<a class="bookpage" onclick="loadBook('+(now_page-2)+')">'+(now_page-2)+'</a><a class="bookpage" onclick="loadBook('+(now_page-1)+')">'+(now_page-1)+'</a><a class = "bookpage" onclick="loadBook('+now_page+')">'+now_page+'</a>';
 				books += '...<input id="page_tz"/><input type="button" value="跳转" onclick="tiaozhuan()"/>';
 			}else{
 				books += '<a class="bookpage" onclick="loadBook('+(now_page-2)+')">'+(now_page-2)+'</a><a class="bookpage" onclick="loadBook('+(now_page-1)+')">'+(now_page-1)+'</a><a class = "bookpage" onclick="loadBook('+now_page+')">'+now_page+'</a>';
 				books += '<input id="page_tz"/><input type="button" value="跳转" onclick="tiaozhuan()"/>';
-			}
-		}else{
+			}*/
+		}else if(now_page==max_page){
+			books += '<a class="bookpage" onclick="loadBook('+(now_page-2)+')">'+(now_page-2)+'</a><a class="bookpage" onclick="loadBook('+(now_page-1)+')">'+(now_page-1)+'</a><a class = "bookpage" onclick="loadBook('+now_page+')">'+now_page+'</a>';
+			books += '<input id="page_tz"/> <a class="bookpage" onclick="tiaozhuan()">跳转</a>';
+		}
+		else{
 			books += '<a class="bookpage" onclick="loadBook(1)">1</a><a class = "bookpage" onclick="loadBook(2)">2</a><a class = "bookpage" onclick="loadBook(3)">3</a>';
-			books += '...<input id="page_tz"/><input type="button" value="跳转" onclick="tiaozhuan()"/>';
+			books += '... &nbsp; &nbsp;<input id="page_tz"/> <a class="bookpage" onclick="tiaozhuan()">跳转</a>';
 		}
 	}else{
 		var i = 1;
