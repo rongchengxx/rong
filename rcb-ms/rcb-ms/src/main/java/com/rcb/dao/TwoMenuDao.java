@@ -19,4 +19,7 @@ public interface TwoMenuDao {
 	
 	//删除TwoMenu
 	public int delTwoMenuById(String id);
+			
+	//查找TwoMenu根据oneMenuId
+	public List<TwoMenu> findTwoMenuByOneMenuId(String oneMenuID);
 }

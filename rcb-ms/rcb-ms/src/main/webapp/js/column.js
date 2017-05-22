@@ -39,9 +39,13 @@ function deleteColumn(){
 			data:{"id":oneMenuId},
 			dataType:"json",
 			success:function(result){
+				console.log(12);
+
 				if(result.state==0){
 					$tr.remove();
 					alert("删除栏目成功");
+				}else if(result.state==4){//存在子集，无法删除
+					alert(result.message);
 				}
 			},
 			error:function(){

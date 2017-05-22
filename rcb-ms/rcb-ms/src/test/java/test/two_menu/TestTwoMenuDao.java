@@ -61,6 +61,12 @@ public class TestTwoMenuDao {
 		
 	}
 	
+	@Test	//findTwoMenuByOneMenuId
+	public void test6(){
+		List<TwoMenu> list = dao.findTwoMenuByOneMenuId("1ce6fc7b-f7c3-4e67-b218-2ad2a4a69e8a");
+		System.out.println(list);
+	}
+	
 }
 
 

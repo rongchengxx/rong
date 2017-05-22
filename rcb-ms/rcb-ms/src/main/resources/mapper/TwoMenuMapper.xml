@@ -93,6 +93,24 @@
 		where id=#{id}
 	</delete>
 	
+	<select id="findTwoMenuByOneMenuId" 
+			parameterType="String"
+			resultType="Map">
+			  
+		select  
+			id,
+			one_menu_id as oneMenuId,
+			title,
+			thumb,
+			content,
+			seq,
+			isshow,
+			intro 			
+		from 
+			two_menu 
+		where one_menu_id=#{oneMenuID}
+		
+	</select>
 </mapper>
 
 

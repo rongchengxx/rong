@@ -7,7 +7,10 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.rcb.dao.OneMenuDao;
+import com.rcb.dao.TwoMenuDao;
 import com.rcb.entity.OneMenu;
+import com.rcb.entity.TwoMenu;
+import com.rcb.exception.ForeignKeysException;
 import com.rcb.utils.CreateUUID;
 
 @Service("oneMenuService")
@@ -15,6 +18,8 @@ public class OneMenuServiceImpl implements OneMenuService {
 
 	@Resource
 	private OneMenuDao oneMenuDao;
+	@Resource
+	private TwoMenuDao twoMenuDao;
 	
 	//查找OneMenu所有对象
 	public List<OneMenu> findOneMenuAll() {
@@ -44,9 +49,17 @@ public class OneMenuServiceImpl implements OneMenuService {
 	}
 
 	//删除OneMenu,返回行数
-	public int delOneMenuById(String id) {
-		int row = oneMenuDao.delOneMenuById(id);
-		return row;
+	public int delOneMenuById(String id) throws ForeignKeysException{
+		
+		List<TwoMenu> list = twoMenuDao.findTwoMenuByOneMenuId(id);
+		if(list.isEmpty() || list == null){
+			int row = oneMenuDao.delOneMenuById(id);
+			return row;
+		}else{
+			throw new ForeignKeysException("存在子集菜单，无法删除！");
+		}
+		
+		
 	}
 
 	//查找OneMenu根据id，返回OneMenu对象
