@@ -134,7 +134,7 @@ function reload(json) {
 		books += '</tr>';
 	}
 	books += '<tr id = "page_tr">';
-	books += '<td colspan="8"><div class="pagelist"> <a onclick="loadBook('+(now_page-1)+')">上一页</a>';
+	books += '<td colspan="8"><div class="pagelist"> <a class="bookpage" onclick="loadBook('+(now_page-1)+')">上一页</a>';
 	
 	if(max_page>3){
 		if(now_page>3){
@@ -161,7 +161,7 @@ function reload(json) {
 		}
 	}
 	
-	books += '<a onclick="loadBook('+(now_page+1)+')">下一页</a><a  onclick="loadBook('+max_page+')">尾页</a> </div></td>';
+	books += '<a class="bookpage" onclick="loadBook('+(now_page+1)+')">下一页</a><a class="bookpage" onclick="loadBook('+max_page+')">尾页</a> </div></td>';
 	books += '</tr>';
 	booktable.append(books);
 	$(".bookpage:contains('"+now_page+"')").addClass("now_page");
