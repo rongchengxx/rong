@@ -3,9 +3,10 @@
  "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
 
 <mapper namespace="com.rcb.dao.SettingsDao">
-	<select id="findSettingsById" parameterType="String" resultType="com.rcb.entity.Settings">
+	<select id="findSettingsByUserId" parameterType="String" resultType="com.rcb.entity.Settings">
 	select 
 		id,
+		user_id as userId,
 		title,
 		logo,
 		uri,
@@ -18,7 +19,8 @@
 		email,
 		site,
 		content
- 	from settings  where id=#{id}  
+ 	from settings 
+	where user_id=#{userId}
 	
 	</select>
 	
@@ -26,6 +28,7 @@
 	insert into settings 
 	(
 		id,
+		user_id as userId,
 		title,
 		logo,
 		uri,
@@ -42,6 +45,7 @@
 	values
 	(
 		#{id},
+		#{userId}
 		#{title},
 		#{logo},
 		#{uri},
@@ -59,6 +63,7 @@
 	<update id="modifySettings" parameterType="com.rcb.entity.Settings">
 	update settings 
 		set 
+		id=#{id},
 		title=#{title},
 		logo=#{logo},
 		uri=#{uri},
@@ -71,7 +76,7 @@
 		email=#{email},
 		site=#{site},
 		content=#{content}
-		where id=#{id}
+		where user_id=#{userId}
 	</update>
 </mapper>
 

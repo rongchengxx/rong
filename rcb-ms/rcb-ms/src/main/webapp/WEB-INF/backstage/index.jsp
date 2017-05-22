@@ -39,7 +39,7 @@
         <span class="icon-wrench"></span> 
         清除缓存
       </a> &nbsp;&nbsp;
-      <a class="button button-little bg-red" href="login.html">
+      <a class="button button-little bg-red" href="admin.html">
         <span class="icon-power-off"></span>
         退出登录
       </a> 

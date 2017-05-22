@@ -19,7 +19,7 @@
 	
 	</select>	
 	
-	 <insert id="addHomeImg" parameterType="com.rcb.entity.HomeImg">
+	 <!-- <insert id="addHomeImg" parameterType="com.rcb.entity.HomeImg">
 	insert into home_img 
 	(
 		id,
@@ -43,6 +43,27 @@
 		#{link},
 		#{source},
 		#{isshow}
+	)
+	</insert> -->
+	
+	<insert id="addHomeImg" parameterType="com.rcb.entity.HomeImg">
+	insert into home_img 
+	(
+		id,
+		url,
+		title,
+		seq,
+		content,
+		link
+	)
+	values
+	(
+		#{id},
+		#{url},
+		#{title},
+		#{seq},
+		#{content},
+		#{link}
 	)
 	</insert>
 	 
