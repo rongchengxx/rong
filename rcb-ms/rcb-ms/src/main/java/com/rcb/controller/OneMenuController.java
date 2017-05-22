@@ -1,18 +1,16 @@
 package com.rcb.controller;
 
-import java.util.Iterator;
 import java.util.List;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.rcb.entity.OneMenu;
+import com.rcb.exception.ForeignKeysException;
 import com.rcb.service.one_menu.OneMenuService;
 import com.rcb.utils.JsonResult;
 
@@ -22,6 +20,14 @@ import com.rcb.utils.JsonResult;
 public class OneMenuController extends ExceptionController{
 	@Resource
 	private OneMenuService oneMenuService;
+
+	@ExceptionHandler(ForeignKeysException.class)
+	@ResponseBody
+	public JsonResult fkexp(ForeignKeysException e){
+		e.printStackTrace();
+		return new JsonResult(4,e);
+	}
+	
 	//跳转页面
 	@RequestMapping("/column.do")
 	public String colume() {
@@ -52,6 +58,7 @@ public class OneMenuController extends ExceptionController{
 		int row = oneMenuService.delOneMenuById(id);
 		return new JsonResult(row);
 	}
+	
 	
 	//修改页面跳转
 	@RequestMapping("/pub.do")
