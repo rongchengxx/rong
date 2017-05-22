@@ -7,7 +7,15 @@
 	 <delete id="delGbookById" parameterType="String" >
 	 delete  from gbook where id=#{id}
 	 </delete>
-	 <select id="findGbookByPage" parameterType="int" resultType="Map">
+	 
+	 <delete id="delGbooksById" parameterType="String" >
+	 delete  from gbook where id in 
+	 								<foreach item="item" index="index" collection="array" open="(" separator="," close=")">  
+				                    	#{item}  
+               						</foreach>
+	 </delete>
+	 
+	 <select id="findGbookByPage" parameterType="int" resultType="com.rcb.entity.Gbook">
 	select 
 		id,
 		name,
@@ -17,12 +25,10 @@
 		content,
 		time
 	 	from gbook  
-		order by 
-		time asc
-		limit #{page},10
-	
-	</select>	
-	 
+		order by time desc
+		limit #{page},2
+	</select>
+	<select id="findGbookMaxPage" resultType="String">select count(id) from gbook</select>	
 </mapper>
 
 
