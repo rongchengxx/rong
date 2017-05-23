@@ -8,7 +8,10 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.rcb.dao.SinglePageDao;
+import com.rcb.dao.TwoMenuDao;
 import com.rcb.entity.SinglePage;
+import com.rcb.entity.TwoMenu;
+import com.rcb.exception.TwoMenuNotFoundException;
 import com.rcb.utils.CreateUUID;
 
 @Service("singlePageService")
@@ -16,6 +19,8 @@ public class SinglePageServiceImpl implements SinglePageService {
 
 	@Resource
 	private SinglePageDao singlePageDao;
+	@Resource
+	private TwoMenuDao twoMenuDao;
 	
 	//查找SinglePage根据page
 	//page:从第几条内容开始
@@ -26,13 +31,23 @@ public class SinglePageServiceImpl implements SinglePageService {
 	}
 
 	//增加SinglePage,返回行数
-	public SinglePage addSinglePage(String oneMenuId,String twoMenuId,String title,String picture,String narration,String content,String keyWord,String keyWordTitle,String keyWordDesc,Timestamp createTime,int seq,String author,int clicks,int isshow) {
+	public SinglePage addSinglePage(String oneMenuId,String twoMenuId,String title,String picture,String narration,String content,String keyWord,String keyWordTitle,String keyWordDesc,Timestamp createTime,int seq,String author,int clicks,int isshow) 
+			throws TwoMenuNotFoundException{
 		String id = CreateUUID.createId();
+		
+		/*if(twoMenuId=="" || twoMenuId.trim().isEmpty()){
+			List<TwoMenu> list = twoMenuDao.findTwoMenuByOneMenuId(oneMenuId);
+			if(list.size()!=0){
+				throw new TwoMenuNotFoundException("请选择二级菜单");
+			}
+		}*/
+		
+		
 		if(createTime==null || createTime.equals("")){
 			createTime = new Timestamp(System.currentTimeMillis());
 		}
 		SinglePage singlePage = new SinglePage(id, oneMenuId, twoMenuId, title, picture, narration, content, keyWord, keyWordTitle, keyWordDesc, seq, createTime, author, clicks, isshow);
-		int row = singlePageDao.addSinglePage(singlePage);
+		singlePageDao.addSinglePage(singlePage);
 		return singlePage;
 	}
 

@@ -1105,3 +1105,9 @@ a:focus,a:hover{color:#0ae;} /*链接-悬浮颜色*/
 	font-size: 16px;
 	color: #fff;
 }
+.tips{
+	padding-left: 240px  !important;
+	height: 40px !important;
+	line-height: 35px !important; 
+	color: #f00 !important; 
+}

@@ -39,8 +39,11 @@
           <label>标题：</label>
         </div>
         <div class="field">
-          <input type="text" id="add_title" class="input w50" value="" name="title" data-validate="required:请输入标题" />
-          <div class="tips"></div>
+          <input type="text" id="add_title" class="input w50" value="" name="title" />
+          <div class="tips" style="padding-left: 240px;
+	height: 40px;
+	line-height: 35px;
+	color: #f00;"></div>
         </div>
       </div>
       <div class="form-group">
@@ -100,6 +103,7 @@
         <div class="field">
           	
 		  <textarea name="content" id="add_content" class="input"  style="padding: 0;"></textarea>
+		  <div class="tips"></div>
 		  <script>
 		    var editor;
 		    KindEditor.ready(function(K) {
@@ -140,7 +144,7 @@
           <label>排序：</label>
         </div>
         <div class="field">
-          <input type="text" id="add_seq" class="input w50" name="sort" value="0"  data-validate="number:排序必须为数字" />
+          <input type="text" id="add_seq" class="input w50" name="sort" value="0"  />
           <div class="tips"></div>
         </div>
       </div>
@@ -168,7 +172,7 @@
           <label>点击次数：</label>
         </div>
         <div class="field">
-          <input type="text" id="add_clicks" class="input w50" name="views" value="" data-validate="member:只能为数字"  />
+          <input type="text" id="add_clicks" class="input w50" name="views" value="0" />
           <div class="tips"></div>
         </div>
       </div>
@@ -187,7 +191,8 @@
           <label class="button active" id="add_no">
               <span class="icon icon-times"></span>          	
               <input name="isshow" value="0"  type="radio" checked="checked">否
-          </label>         
+          </label>
+           <div class="tips"></div>   
            </div>       
         </div>
      </div>

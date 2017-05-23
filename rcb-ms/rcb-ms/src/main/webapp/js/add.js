@@ -9,10 +9,13 @@ $(function(){
 
 function addAdd(){
 	// 获取请求参数
+	var userId = getCookie("userId");
 	var addTitle = $("#add_title").val().trim();
 	var addThumb = $("#add_thumb").val().trim();
 	var addOneMenuTitle = $("#add_oneMenu").find("option:selected").text();
+	var addOneMenuID = $("#add_oneMenu").find("option:selected").data("oneMenuId");
 	var addTwoMenuTitle = $("#add_twoMenu").find("option:selected").text();
+	var addTwoMenuID = $("#add_twoMenu").find("option:selected").data("twoMenuId");
 	var addNarration = $("#add_narration").val().trim();
 	var addContent = editor.text();
 	var addKeyWordTitle = $("#add_keyWord_title").val().trim();
@@ -23,21 +26,22 @@ function addAdd(){
 	var addAuthor = $("#add_author").val().trim();
 	var addClicks = $("#add_clicks").val().trim();
 	var addIsshow = $("input[name='isshow']:checked").val();
-	console.log(addTitle,addThumb,addOneMenuTitle,addTwoMenuTitle,
+	
+/*	console.log(userId,addTitle,addThumb,addOneMenuTitle,
+			addOneMenuID,addTwoMenuTitle,addTwoMenuID,
 			addNarration,addContent,addKeyWordTitle,
 			addKeyWord,addKeyWordDesc,addSeq,
-			addCreateTime,addAuthor,addClicks,addIsshow);
+			addCreateTime,addAuthor,addClicks,addIsshow);*/
 
 	//清空输入框内容
 	$("#add_title").val("");
 	$("#add_thumb").val("");
 	$("#add_oneMenu").find("option").eq(0).prop("selected",true);
-	
 	//清空二级菜单
 	$("#add_twoMenu").empty();
 	//插入请选择分类
 	$("#add_twoMenu").append("<option value=''>请选择分类</option>");
-	
+	//清空输入框内容
 	$("#add_narration").val("");
 	$("#add_content").val("");
 	$("#add_keyWord_title").val("");
@@ -46,57 +50,99 @@ function addAdd(){
 	$("#add_seq").val("0");
 	$("#add_createTime").val("");
 	$("#add_author").val("");
-	$("#add_clicks").val("");
+	$("#add_clicks").val("0");
 	$("#add_yes").attr("class","button active");
 	$("#add_no").attr("class","button active");
-	
-	
-	/*
+	//清空提示信息
+	$("#add_title").next().text("");
+	$("#add_oneMenu").next().text("");
+	$("#add_narration").next().text("");
+	$("#add_content").next().text("");
+	$("#add_seq").next().text("");
+	$("#add_createTime").next().text("");
+	$("#add_no").next().text("");
 	// 参数格式校验
 	var ok = true;
+	//账号不为空
 	if (userId == null) {
 		window.location.href = "../rcb-ms";
 		ok = false;
 	}
-	if (columnTitle == "") {
+	//标题不为空
+	if (addTitle == "") {
 		ok = false;
-		------------请输入标题--------------	
+		$("#add_title").next().text("标题不能为空");
 	}
+	//一级菜单不为空
+	if (addOneMenuTitle == "请选择分类") {
+		ok = false;
+		$("#add_oneMenu").next().text("一级菜单不能为空");
+	}
+	
+	//描述不为空
+	if (addNarration == "") {
+		ok = false;
+		$("#add_narration").next().text("描述不能为空");
+	}
+	//内容不为空
+	if (addContent == "") {
+		ok = false;
+		$("#add_content").next().text("内容不能为空");
+	}
+	//排序不为空
+	if (addSeq == "" || addSeq == 0) {
+		ok = false;
+		$("#add_seq").next().text("请输入排序");
+	}
+	//发布日期不为空
+	if (addCreateTime == ""){
+		ok = false;
+		$("#add_createTime").next().text("请选择发布日期");
+	}
+/*	//显示不为空
+	if ($("#add_yes").attr("class")=="button active" && $("#add_no").attr("class")=="button active"){
+		ok = false;
+		$("#add_no").next().text("请选择");
+	}*/
 	// 发送ajax请求
 	if (ok) {
 		$.ajax({
-			url : path + "/column/addColumn.do",
+			url : path + "/add/addAdd.do",
 			type : "post",
 			data : {
-				"title" : columnTitle,
-				"thumb" : columnThumb,
-				"content" : columnContent,
-				"seq" : columnSeq,
-				"isshow" : columnIsshow,
-				"intro" : columnIntro
+				"oneMenuId" : addOneMenuID, 
+				"twoMenuId" : addTwoMenuID, 
+				"title" : addTitle, 
+				"picture" : addThumb, 
+				"narration" : addNarration, 
+				"content" : addContent, 
+				"keyWord" : addKeyWord, 
+				"keyWordTitle" : addKeyWordTitle, 
+				"keyWordDesc" : addKeyWordDesc, 
+				"createTime" : addCreateTime,
+				"seq" : addSeq, 
+				"author" : addAuthor, 
+				"clicks" : addClicks, 
+				"isshow" : addIsshow
+				
 			},
 			dataType : "json",
 			success : function(result) {
 				if (result.state == 0) {
-					var oneMenu = result.data;
-					
-					var oneMenuId = oneMenu.id;
-					var oneMenuTitle = oneMenu.title;
-					var oneMenuSeq = oneMenu.seq;	
-					
-					// 创建column
-					createColumn(oneMenuId,oneMenuTitle,oneMenuSeq);
-								
-					alert("栏目添加成功");
-				}
+					var singlePage = result.data;
+	
+					alert("内容添加成功");
+				}/*else if(result.state == 5){
+					alert(result.message);
+				}*/
 			},
 			error : function() {
-				alert("栏目添加失败!!!");
+				alert("内容添加失败!!!");
 			}
 		});
 	}
 	
-*/}
+}
 
 function loadTwoMenu(){
 	var addOneMenu = $("#add_oneMenu").find("option:selected").data("oneMenuId");
