@@ -30,14 +30,14 @@ public class TestHomeimgDao {
 		HomeImgDao dao=
 		context.getBean("homeImgDao",HomeImgDao.class);
 		HomeImg hig = new HomeImg();
-		hig.setId("6");
-		hig.setTitle("天津");
-		hig.setUrl("192.168.1.1");
-		hig.setLink("我是图片");
-		hig.setContent("和平xxxxxx");
-		hig.setSeq(100);
-		int n=dao.addHomeImg(hig);
-		System.out.println(n);
+		hig.setId("123");
+		hig.setTitle("南开2");
+		hig.setUrl("和平");
+		hig.setLink("黑屏");
+		hig.setContent("和平");
+		hig.setSeq(3);
+		dao.addHomeImg(hig);
+		
 		
 	}
 	@Test

@@ -63,7 +63,7 @@ public class GbookController {
 	
 	//根据页码检索留言
 	public JsonResult loadBooks(String page) {
-		int max_page = (int) Math.ceil(new Double(service.findGbookCount())/p);
+		int max_page = (int) Math.ceil(new Double(service.findGbookCount()));
 		if(max_page == 0){
 			return new JsonResult();
 		}

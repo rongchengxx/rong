@@ -16,25 +16,20 @@ public class HomeImgServiceImpl implements HomeImgService {
 		HomeImg hig=dao.findHomeImgById(id);
 		return hig;
 	}  
-	public int addHomeImg(String id,String title, String url, String link, String content, Integer seq) {
-		HomeImg h1= new HomeImg();
-		h1.setId(id);
-		h1.setTitle(title);
-		h1.setUrl(url);
-		h1.setLink(link);
-		h1.setContent(content);
-		h1.setSeq(seq);
-		int n=dao.addHomeImg(h1);
-		return n;
-	}
+
+	public HomeImg addHomeImg(HomeImg hig) {
+		dao.addHomeImg(hig);
+		return hig;
 		
+	}
+
 	public HomeImg delHomeImgById(String id) {
 		dao.delHomeImgById(id);
 		return null;
 		
 	}
 
-	public int modifyHomeImg(String id,String title, String url,String  link,String content,Integer seq) {
+	public int modifyHomeImg(String id,String title, String url,String  link,String content,int seq) {
 		HomeImg hig =dao.findHomeImgById(id);
 		hig.setTitle(title);
 		hig.setUrl(url);

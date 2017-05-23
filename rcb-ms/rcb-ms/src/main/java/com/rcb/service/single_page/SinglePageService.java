@@ -1,5 +1,6 @@
 package com.rcb.service.single_page;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import com.rcb.entity.SinglePage;
@@ -11,10 +12,10 @@ public interface SinglePageService {
 	public List<SinglePage> findSinglePageByPage(int page);
 		
 	//增加SinglePage
-	public int addSinglePage(String oneMenuId,String twoMenuId,String title,String picture,String sortTitle,String narration,String content,String keyWord,String keyWordTitle,String keyWordDesc,int seq,String author,int clicks,int isshow);
+	public SinglePage addSinglePage(String oneMenuId,String twoMenuId,String title,String picture,String narration,String content,String keyWord,String keyWordTitle,String keyWordDesc,Timestamp createTime,int seq,String author,int clicks,int isshow);
 	
 	//修改SinglePage
-	public int modifySinglePage(String id,String oneMenuId,String twoMenuId,String title,String picture,String sortTitle,String narration,String content,String keyWord,String keyWordTitle,String keyWordDesc,int seq,String author,int clicks,int isshow);
+	public int modifySinglePage(String id,String oneMenuId,String twoMenuId,String title,String picture,String narration,String content,String keyWord,String keyWordTitle,String keyWordDesc,Timestamp createTime,int seq,String author,int clicks,int isshow);
 	
 	//删除SinglePage
 	public int delSinglePageById(String id);

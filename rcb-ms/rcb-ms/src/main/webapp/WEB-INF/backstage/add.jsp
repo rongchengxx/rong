@@ -10,21 +10,24 @@
 <title></title>
 <link rel="stylesheet" href="css/pintuer.css">
 <link rel="stylesheet" href="css/admin.css">
-<script type="text/javascript"src="ueditor/ueditor.config.js"></script>  
-<script type="text/javascript"src="ueditor/ueditor.all.js"></script> 
+<style>
+    form {
+      margin: 0;
+    }
+    textarea {
+      display: block;
+    }
+  </style>
+  <link rel="stylesheet" href="editor/themes/default/default.css" />
+  <script charset="utf-8" src="editor/kindeditor-min.js"></script>
+  <script charset="utf-8" src="editor/lang/zh_CN.js"></script>
+
 <script src="js/jquery.js"></script>
 <script src="js/pintuer.js"></script>
     <script src="js/cookie_util.js"></script>
-    <script type="text/javascript">
-    $(function(){
-    	// 获取参数userId
-		var userId=getCookie("userId");
-		//判断userId是否有效
-		if(userId==null){
-			window.location.href="../rcb-ms";
-		}
-    });
-    </script> 
+    <script src="js/basevalue.js"></script>
+    <script src="js/add.js"></script>
+    
 </head>
 <body>
 <div class="panel admin-panel">
@@ -36,7 +39,7 @@
           <label>标题：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" value="" name="title" data-validate="required:请输入标题" />
+          <input type="text" id="add_title" class="input w50" value="" name="title" data-validate="required:请输入标题" />
           <div class="tips"></div>
         </div>
       </div>
@@ -54,29 +57,39 @@
         </div>
       </div>     
       
-      <if condition="$iscid eq 1">
-        <div class="form-group">
-          <div class="label">
-            <label>分类标题：</label>
-          </div>
-          <div class="field">
-            <select name="cid" class="input w50">
-              <option value="">请选择分类</option>
-              <option value="">产品分类</option>
-              <option value="">产品分类</option>
-              <option value="">产品分类</option>
-              <option value="">产品分类</option>
-            </select>
-            <div class="tips"></div>
-          </div>
+   
+      <div class="form-group">
+        <div class="label">
+          <label>一级菜单：</label>
         </div>
-      </if>
+        <div class="field">
+          <select name="cid" class="input w50" id="add_oneMenu">
+            <option value="">请选择分类</option>
+            <!-- 内容 -->
+          </select>
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>二级菜单：</label>
+        </div>
+        <div class="field">
+          <select name="cid" class="input w50" id="add_twoMenu">
+            <option value="">请选择分类</option>
+            <!-- 内容 -->
+          </select>
+          <div class="tips"></div>
+        </div>
+      </div>
+      
+      
       <div class="form-group">
         <div class="label">
           <label>描述：</label>
         </div>
         <div class="field">
-          <textarea class="input" name="note" style=" height:90px;"></textarea>
+          <textarea class="input" id="add_narration" name="note" style=" height:90px;"></textarea>
           <div class="tips"></div>
         </div>
       </div>
@@ -85,26 +98,25 @@
           <label>内容：</label>
         </div>
         <div class="field">
-          <textarea name="content" class="input" id="myEditor" style="padding: 0;"></textarea>
-          <script type="text/javascript">  
-            UEDITOR_CONFIG.UEDITOR_HOME_URL = './ueditor/'; //一定要用这句话，否则你需要去ueditor.config.js修改路径的配置信息  
-            UE.getEditor('myEditor',{
-              // initialFrameWidth:2000,
-              initialFrameHeight:400
-            });  
-            
-          </script>  
-          <div class="tips"></div>
+          	
+		  <textarea name="content" id="add_content" class="input"  style="padding: 0;"></textarea>
+		  <script>
+		    var editor;
+		    KindEditor.ready(function(K) {
+		      editor = K.create('textarea[name="content"]', {
+		        allowFileManager : true
+		      });
+		    });
+		  </script>
         </div>
       </div>
-     
       <div class="clear"></div>
       <div class="form-group">
         <div class="label">
           <label>关键字标题：</label>
         </div>
         <div class="field">
-          <input type="text" class="input" name="s_title" value="" />
+          <input type="text" id="add_keyWord_title" class="input" name="s_title" value="" />
         </div>
       </div>
       <div class="form-group">
@@ -112,7 +124,7 @@
           <label>内容关键字：</label>
         </div>
         <div class="field">
-          <input type="text" class="input" name="s_keywords" value=""/>
+          <input type="text" id="add_keyWord" class="input" name="s_keywords" value=""/>
         </div>
       </div>
       <div class="form-group">
@@ -120,7 +132,7 @@
           <label>关键字描述：</label>
         </div>
         <div class="field">
-          <textarea type="text" class="input" name="s_desc" style="height:80px;"></textarea>
+          <textarea type="text" id="add_keyWord_desc" class="input" name="s_desc" style="height:80px;"></textarea>
         </div>
       </div>
       <div class="form-group">
@@ -128,7 +140,7 @@
           <label>排序：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" name="sort" value="0"  data-validate="number:排序必须为数字" />
+          <input type="text" id="add_seq" class="input w50" name="sort" value="0"  data-validate="number:排序必须为数字" />
           <div class="tips"></div>
         </div>
       </div>
@@ -138,7 +150,7 @@
         </div>
         <div class="field"> 
           <script src="js/laydate/laydate.js"></script>
-          <input type="text" class="laydate-icon input w50" name="datetime" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" value=""  data-validate="required:日期不能为空" style="padding:10px!important; height:auto!important;border:1px solid #ddd!important;" />
+          <input type="text" id="add_createTime" class="laydate-icon input w50" name="datetime" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" value="" style="padding:10px!important; height:auto!important;border:1px solid #ddd!important;" />
           <div class="tips"></div>
         </div>
       </div>
@@ -147,7 +159,7 @@
           <label>作者：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" name="authour" value=""  />
+          <input type="text" id="add_author" class="input w50" name="authour" value=""  />
           <div class="tips"></div>
         </div>
       </div>
@@ -156,16 +168,35 @@
           <label>点击次数：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" name="views" value="" data-validate="member:只能为数字"  />
+          <input type="text" id="add_clicks" class="input w50" name="views" value="" data-validate="member:只能为数字"  />
           <div class="tips"></div>
         </div>
       </div>
       <div class="form-group">
         <div class="label">
+          <label>显示：</label>
+        </div>
+        <div class="field">
+          <div class="button-group radio">
+          
+          <label class="button active" id="add_yes">
+         	  <span class="icon icon-check"></span>             
+              <input name="isshow" value="1" type="radio" checked="checked">是             
+          </label>             
+        
+          <label class="button active" id="add_no">
+              <span class="icon icon-times"></span>          	
+              <input name="isshow" value="0"  type="radio" checked="checked">否
+          </label>         
+           </div>       
+        </div>
+     </div>
+      <div class="form-group">
+        <div class="label">
           <label></label>
         </div>
         <div class="field">
-          <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+          <button class="button bg-main icon-check-square-o" type="button" id="add_button"> 提交</button>
         </div>
       </div>
     </form>

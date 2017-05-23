@@ -26,34 +26,34 @@ public class SinglePageServiceImpl implements SinglePageService {
 	}
 
 	//增加SinglePage,返回行数
-	public int addSinglePage(String oneMenuId,String twoMenuId,String title,String picture,String sortTitle,String narration,String content,String keyWord,String keyWordTitle,String keyWordDesc,int seq,String author,int clicks,int isshow) {
+	public SinglePage addSinglePage(String oneMenuId,String twoMenuId,String title,String picture,String narration,String content,String keyWord,String keyWordTitle,String keyWordDesc,Timestamp createTime,int seq,String author,int clicks,int isshow) {
 		String id = CreateUUID.createId();
-		Timestamp createTime = new Timestamp(System.currentTimeMillis()); 
-		SinglePage singlePage = new SinglePage(id, oneMenuId, twoMenuId, title, picture, sortTitle, narration, content, keyWord, keyWordTitle, keyWordDesc, seq, createTime, null, author, clicks, isshow);
+		if(createTime==null || createTime.equals("")){
+			createTime = new Timestamp(System.currentTimeMillis());
+		}
+		SinglePage singlePage = new SinglePage(id, oneMenuId, twoMenuId, title, picture, narration, content, keyWord, keyWordTitle, keyWordDesc, seq, createTime, author, clicks, isshow);
 		int row = singlePageDao.addSinglePage(singlePage);
-		return row;
+		return singlePage;
 	}
 
 	//修改SinglePage,返回行数
-	public int modifySinglePage(String id,String oneMenuId,String twoMenuId,String title,String picture,String sortTitle,String narration,String content,String keyWord,String keyWordTitle,String keyWordDesc,int seq,String author,int clicks,int isshow) {
+	public int modifySinglePage(String id,String oneMenuId,String twoMenuId,String title,String picture,String narration,String content,String keyWord,String keyWordTitle,String keyWordDesc,Timestamp createTime,int seq,String author,int clicks,int isshow) {
 		
-		Timestamp changeTime = new Timestamp(System.currentTimeMillis()); 
 
 		SinglePage singlePage = singlePageDao.findSinglePageById(id);
 		singlePage.setOneMenuId(oneMenuId);
 		singlePage.setTwoMenuId(twoMenuId);
 		singlePage.setTitle(title);
 		singlePage.setPicture(picture);
-		singlePage.setSortTitle(sortTitle);
 		singlePage.setNarration(narration);
 		singlePage.setContent(content);
 		singlePage.setKeyWord(keyWord);
 		singlePage.setKeyWordTitle(keyWordTitle);
 		singlePage.setKeyWordDesc(keyWordDesc);
 		singlePage.setSeq(seq);
-		singlePage.setChangeTime(changeTime);
+		singlePage.setCreateTime(createTime);
 		singlePage.setAuthor(author);
-		singlePage.setclicks(clicks);
+		singlePage.setClicks(clicks);
 		singlePage.setIsshow(isshow);
 		
 		int row = singlePageDao.modifySinglePage(singlePage);

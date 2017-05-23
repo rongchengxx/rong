@@ -21,4 +21,7 @@ public interface TwoMenuService {
 	
 	//查找TwoMenu根据id
 	public TwoMenu findTwoMenuById(String id);
+	
+	//查找TwoMenu根据oneMenuId
+	public List<TwoMenu> findTwoMenuByOneMenuId(String oneMenuID);
 }

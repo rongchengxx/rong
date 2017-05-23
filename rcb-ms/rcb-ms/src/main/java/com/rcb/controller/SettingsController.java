@@ -19,21 +19,15 @@ import com.rcb.utils.JsonResult;
 		public String infox() {
 			return "info";
 		}
-		@ResponseBody
-		@RequestMapping("/info/findInfo.do")
-		public Object findSettingsByUserId(String userId){
-			Settings s2=service.findSettingsByUserId(userId);
-				return new JsonResult(s2);	
-		}
 
-		@ResponseBody
-		@RequestMapping("/info/add.do")
-		public Object addSettings(String userId,String title, String logo, String uri, String key_word, String contacts, int tel, int phone,
+	/*	@ResponseBody
+		@RequestMapping("/info/modify.do")
+		public Object addSettings(String title, String logo, String uri, String key_word, String contacts, int tel, int phone,
 				int fax, int qq, String email, String site, String content){
 			
-			Settings s2=service.addSettings(userId,title, logo, uri, key_word, contacts, tel, phone, fax, qq, email, site, content);
+			Settings s2=service.addSettings(title, logo, uri, key_word, contacts, tel, phone, fax, qq, email, site, content);
 				return new JsonResult(s2);	
-		}
+		}*/
 		
 		/* 用到的jsp是info.jsp
 		 * 请在js文件夹下面创建js文件，在其中书写相应的内容
@@ -42,11 +36,11 @@ import com.rcb.utils.JsonResult;
 		 * */
 
 		@ResponseBody
-		@RequestMapping("/info/modifyInfo.do")
-		public Object modifySettings(String id,String userId,String title, String logo, String uri, String key_word, String contacts, int tel, int phone,
+		@RequestMapping("/info/modify.do")
+		public Object modifySettings(String id,String title, String logo, String uri, String key_word, String contacts, int tel, int phone,
 				int fax, int qq, String email, String site, String content){
 			
-			int b1=service.modifySettings(id,userId,title, logo, uri, key_word, contacts, tel, phone, fax, qq, email, site, content);
+			Boolean b1=service.modifySettings(id,title, logo, uri, key_word, contacts, tel, phone, fax, qq, email, site, content);
 			return new JsonResult(b1);	
 		
 		}

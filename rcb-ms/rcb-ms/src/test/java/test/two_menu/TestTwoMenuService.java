@@ -49,6 +49,12 @@ public class TestTwoMenuService
 		TwoMenu twoMenu = twoMenuService.findTwoMenuById("2");
 		System.out.println(twoMenu);
 	}
+	
+	@Test	//findTwoMenuByOneMenuId
+	public void test6(){
+		List<TwoMenu> list = twoMenuService.findTwoMenuByOneMenuId("5eeac4cb-e7cf-4adb-97f7-69352fe05107");
+		System.out.println(list);
+	}
 }
 
 

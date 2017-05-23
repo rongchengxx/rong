@@ -10,11 +10,24 @@
 <title></title>
 <link rel="stylesheet" href="css/pintuer.css">
 <link rel="stylesheet" href="css/admin.css">
-<script type="text/javascript"src="ueditor/ueditor.config.js"></script>  
-<script type="text/javascript"src="ueditor/ueditor.all.js"></script> 
+
+<style>
+    form {
+      margin: 0;
+    }
+    textarea {
+      display: block;
+    }
+  </style>
+ <link rel="stylesheet" href="editor/themes/default/default.css" />
+ <script charset="utf-8" src="editor/kindeditor-min.js"></script>
+ <script charset="utf-8" src="editor/lang/zh_CN.js"></script>
+
 <script src="js/jquery.js"></script>
 <script src="js/pintuer.js"></script>
     <script src="js/cookie_util.js"></script>
+    <script src="js/basevalue.js"></script>
+    
     <script type="text/javascript">
     $(function(){
     	// 获取参数userId
@@ -85,16 +98,15 @@
           <label>内容：</label>
         </div>
         <div class="field">
-          <textarea name="content" class="input" id="myEditor" style="padding: 0;"></textarea>
-          <script type="text/javascript">  
-            UEDITOR_CONFIG.UEDITOR_HOME_URL = './ueditor/'; //一定要用这句话，否则你需要去ueditor.config.js修改路径的配置信息  
-            UE.getEditor('myEditor',{
-              // initialFrameWidth:2000,
-              initialFrameHeight:400
-            });  
-            
-          </script>  
-          <div class="tips"></div>
+          	 <textarea name="content" class="input"  style="padding: 0;"></textarea>
+			  <script>
+			    var editor;
+			    KindEditor.ready(function(K) {
+			      editor = K.create('textarea[name="content"]', {
+			        allowFileManager : true
+			      });
+			    });
+			  </script>
         </div>
       </div>
      
@@ -165,7 +177,7 @@
           <label></label>
         </div>
         <div class="field">
-          <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+          <button class="button bg-main icon-check-square-o" type="button" id="amend_button"> 提交</button>
         </div>
       </div>
     </form>

@@ -30,7 +30,7 @@ public class TestSinglePageDao {
 	@Test	//addSinglePage
 	public void test2(){
 		
-		SinglePage singlePage = new SinglePage("003", "0000", "0000", "title", null, null, "asd", null, null, null, null, 0, null, null, null, 0, 0);
+		SinglePage singlePage = new SinglePage("003", "003", "003", "003", "003", "003", "003", "003", "003", "003", 1, null, "003", 1, 1);
 		int rows = dao.addSinglePage(singlePage);
 		System.out.println(rows);
 		
@@ -39,7 +39,7 @@ public class TestSinglePageDao {
 	@Test	//findSinglePageById
 	public void test3(){
 		
-		SinglePage singlePage = dao.findSinglePageById("001");
+		SinglePage singlePage = dao.findSinglePageById("003");
 		System.out.println(singlePage);
 		
 	}
@@ -48,7 +48,7 @@ public class TestSinglePageDao {
 	@Test	//modifySinglePage
 	public void test4(){
 		
-		SinglePage singlePage = dao.findSinglePageById("002");
+		SinglePage singlePage = dao.findSinglePageById("003");
 		singlePage.setTitle("asgsad");
 		int rows = dao.modifySinglePage(singlePage);
 		System.out.println(rows);
@@ -58,7 +58,7 @@ public class TestSinglePageDao {
 	@Test	//deleteSinglePageById
 	public void test5(){
 		
-		int rows = dao.delSinglePageById("002");
+		int rows = dao.delSinglePageById("003");
 		System.out.println(rows);
 		
 	}

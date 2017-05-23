@@ -66,5 +66,11 @@ public class TwoMenuController {
 		int row = twoMenuService.modifyTwoMenu(id, oneMenuId, title, thumb, content, seq, isshow, intro);
 		return new JsonResult(row);
 	}
-	
+	//根据oneMenu查找twoMenu
+	@RequestMapping("/cateedit/findTwoMenuByOneMenu.do")
+	@ResponseBody
+	public JsonResult findTwoMenuByOneMenu(String oneMenuId){
+		List<TwoMenu> list = twoMenuService.findTwoMenuByOneMenuId(oneMenuId);
+		return new JsonResult(list);
+	}
 }

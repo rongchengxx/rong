@@ -57,4 +57,9 @@ public class TwoMenuServiceImpl implements TwoMenuService {
 		return towMenu;
 	}
 
+	public List<TwoMenu> findTwoMenuByOneMenuId(String oneMenuID) {
+		List<TwoMenu> list = twoMenuDao.findTwoMenuByOneMenuId(oneMenuID);
+		return list;
+	}
+
 }

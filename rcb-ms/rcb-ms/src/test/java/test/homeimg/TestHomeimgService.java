@@ -26,7 +26,7 @@ public class TestHomeimgService {
 	}
 	@Test 
 	public void test1(){
-		HomeImg hig=service.findHomeImgById("1");
+		HomeImg hig=service.findHomeImgById("2");
 		System.out.println(hig);
 	}
 	@Test 
@@ -36,9 +36,9 @@ public class TestHomeimgService {
 	}
 	@Test 
 	public void test3(){
-//		HomeImg hig = new HomeImg();
-		service.addHomeImg("9","北京", "欢迎 ", "ni", "人民", 1);
-//		System.out.println(h1);
+		HomeImg hig = new HomeImg("33", "127.0.0.1", "标题", 1, 5, "今天天气不错", "www.123.com", 2, 1);
+		HomeImg h1=service.addHomeImg(hig);
+		System.out.println(h1);
 		}
 	@Test 
 	public void test4(){

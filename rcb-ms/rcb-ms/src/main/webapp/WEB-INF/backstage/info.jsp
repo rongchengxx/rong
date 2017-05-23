@@ -15,7 +15,19 @@
     <script src="js/pintuer.js"></script> 
      <script src="js/setinfo.js"></script>
     <script src="js/cookie_util.js"></script>
-
+    <script type="text/javascript">
+    $(function(){
+    	var SettingsId = SetCookie("SettingsId",5);
+    	
+    	
+    	// 获取参数userId
+		var userId=getCookie("userId");
+		//判断userId是否有效
+		if(userId==null){
+			window.location.href="/rcb-ms";
+		}
+    });
+    </script> 
 </head>
 <body>
 <div class="panel admin-panel">
@@ -28,7 +40,6 @@
         </div>
         <div class="field">
           <input type="text" class="input" id="info_title" name="stitle" value="" />
-          <span id="infoTitle_span"></span>
           <div class="tips"></div>
         </div>
       </div>
@@ -38,7 +49,6 @@
         </div>
         <div class="field">
           <input type="text" id="info_thumb" name="img" class="input tips" style="width:25%; float:left;"  value=""  data-toggle="hover" data-place="right" data-image="" />
-        <!--    <span id="infoLogo_span"></span> -->
           <button type="button" class="btn btn-warning btn-s file-button" id="btn1" onclick="info_myfile.click();" style="float: left;">
             <span class="glyphicon glyphicon-ban-circle"></span>十上传
           </button>
@@ -53,7 +63,6 @@
         </div>
         <div class="field">
           <input type="text" class="input" id="info_uri"  name="surl" value="" />
-          <span id="infoUri_span"></span>
         </div>
       </div>
       <div class="form-group" style="display:none">
@@ -71,8 +80,7 @@
         </div>
         <div class="field">
           <textarea class="input" id="info_key_word" name="skeywords" style="height:80px"></textarea>
-         	<span id="infoKey_word_span"></span>
-         	 <div class="tips"></div>
+          <div class="tips"></div>
         </div>
       </div>
     
@@ -82,17 +90,6 @@
         </div>
         <div class="field">
           <input type="text" class="input" id="info_contacts" name="s_name" value="" />
-          <span id="infoContacts_span"></span>
-          <div class="tips"></div>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="label">
-          <label>电话：</label>
-        </div>
-        <div class="field">
-          <input type="text" class="input" id="info_tel" name="s_phone" value="" />
-          <span id="infoTel_span"></span>
           <div class="tips"></div>
         </div>
       </div>
@@ -101,8 +98,16 @@
           <label>手机：</label>
         </div>
         <div class="field">
+          <input type="text" class="input" id="info_tel" name="s_phone" value="" />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>电话：</label>
+        </div>
+        <div class="field">
           <input type="text" class="input" id="info_phone" name="s_tel" value="" />
-          <span id="infoPhone_span"></span>
           <div class="tips"></div>
         </div>
       </div>
@@ -121,7 +126,6 @@
         </div>
         <div class="field">
           <input type="text" class="input" id="info_fax" name="s_fax" value="" />
-          <span id="infoFax_span"></span>
           <div class="tips"></div>
         </div>
       </div>
@@ -131,7 +135,6 @@
         </div>
         <div class="field">
           <input type="text" class="input" id="info_qq" name="s_qq" value="" />
-          <span id="infoQq_span"></span>
           <div class="tips"></div>
         </div>
       </div>
@@ -151,7 +154,6 @@
         </div>
         <div class="field">
           <input type="text" class="input" id="info_email" name="s_email" value="" />
-          <span id="infoEmail_span"></span>
           <div class="tips"></div>
         </div>
       </div>
@@ -161,7 +163,6 @@
         </div>
         <div class="field">
           <input type="text" class="input" id="info_site" name="s_address" value="" />
-          <span id="infoSite_span"></span>
           <div class="tips"></div>
         </div>
       </div>  
@@ -171,7 +172,6 @@
         </div>
         <div class="field">
           <textarea class="input" id="info_content" name="sdescription"></textarea>
-          <span id="infoContent_span"></span>
           <div class="tips"></div>
         </div>
       </div>
