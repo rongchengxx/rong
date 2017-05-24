@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.rcb.entity.OneMenu;
 import com.rcb.exception.ForeignKeysException;
 import com.rcb.service.one_menu.OneMenuService;
+import com.rcb.service.one_menu.OneMenuServiceImpl;
 import com.rcb.utils.JsonResult;
 
 
@@ -27,7 +28,7 @@ public class OneMenuController extends ExceptionController{
 		e.printStackTrace();
 		return new JsonResult(4,e);
 	}
-	
+
 	//跳转页面
 	@RequestMapping("/column.do")
 	public String colume() {

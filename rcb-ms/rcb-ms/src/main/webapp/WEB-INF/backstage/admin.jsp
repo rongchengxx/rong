@@ -1,3 +1,4 @@
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -17,7 +18,33 @@
     <script src="js/cookie_util.js"></script>
     <script src="js/basevalue.js"></script>
     
-
+<script type="text/javascript">
+	$(function() {
+		flushValidateCode();//进入页面就刷新生成验证码
+	});
+	/* 刷新生成验证码 */
+	function flushValidateCode() {
+		var validateImgObject = document.getElementById("codeValidateImg");
+		validateImgObject.src = "${pageContext.request.contextPath}/getSysManageLoginCode.do?time="
+				+ new Date();
+	}
+	
+	/*校验验证码输入是否正确*/
+	function checkImg(code){
+	    var url = "${pageContext.request.contextPath}/checkimagecode.do";
+	    $.get(url,{"validateCode":code},function(data){
+	         if(data=="ok"){
+	        	 $("#code_img").html("验证码正确");
+	        }if(data=="empty"){  
+	        	$("#code_img").html("验证码为空");
+	        }if(data=="error"){
+				$("#code_img").html("验证码错误");
+				 window.location.href=path+"/admin.do"; 
+	          	 flushValidateCode();
+	        }
+	    });
+	}
+</script>
     
 </head>
 <body>
@@ -47,14 +74,16 @@
                         </div>
                     </div>
                     <span style="color:red;display:block;height:20px;" id="password_span"></span>
-                    <div>
-                        <div class="field">
-                            <input type="text" class="input input-big" name="code" placeholder="填写右侧的验证码" />
-                           <img src="images/passcode.jpg" alt="" width="100" height="32" class="passcode" style="height:43px;cursor:pointer;" onclick="this.src=this.src+'?'">  
-                                                   
-                        </div>
-                    </div>
-                    <span style="color:red;"></span>
+                   <div>
+							<div class="field">
+									<input type="text" class="input input-big" name="validateCode" onblur="checkImg(this.value)"
+									id="ImgCode" placeholder="填写右侧的验证码" /> 
+									<img id="codeValidateImg" onClick="javascript:flushValidateCode();"
+									width="100" height="32" class="passcode"
+									style="height: 43px; cursor: pointer;" />
+							</div>
+						</div>
+						 <span style="color: red; display: block;" id="code_img"></span> 
                 </div> 
                 <div style="padding:30px;"><input type="submit" id="login" class="button button-block bg-main text-big input-big" value="登录">
                 </div>

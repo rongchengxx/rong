@@ -44,7 +44,7 @@ public class TestOneMenuService
 	}
 	@Test  //findOneMenuById
 	public void test5(){
-		OneMenu oneMenu = oneMenuService.findOneMenuById("111");
+		OneMenu oneMenu = oneMenuService.findOneMenuById("1");
 		System.out.println(oneMenu);
 	}
 	

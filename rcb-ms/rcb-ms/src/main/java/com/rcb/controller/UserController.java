@@ -44,8 +44,10 @@ public class UserController
 	public String toIndex(){
 		return "index";
 	}
-
-	
+	@RequestMapping("/admin.do")
+	public String Admin(){
+		return "admin";
+	}
 	@RequestMapping("/pass.do")
 	public String pass(){
 		return "pass";
