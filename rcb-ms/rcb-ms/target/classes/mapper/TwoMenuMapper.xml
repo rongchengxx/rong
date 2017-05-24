@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.rcb.dao.TwoMenuDao">
+	<select id="findTwoMenuAll" 
+			resultType="Map">
+			  
+			  
+			 select
+			   t.id,
+			   t.one_menu_id,
+			   CONCAT(t.title,'(',o.title,')') as title,
+			   t.thumb,
+			   t.content,
+			   t.seq,
+			   t.isshow,
+		       t.intro
+			 from 
+			  	two_menu as t  
+			 left join 
+			  	one_menu as o  
+			 on 
+			  	(t.one_menu_id = o.id)
+		
+	</select>
+	
+	<insert id="addTwoMenu" 
+			parameterType="com.rcb.entity.TwoMenu">
+			  
+		insert into two_menu 
+		(  
+			id,
+			one_menu_id,
+			title,
+			thumb,
+			content,
+			seq,
+			isshow,
+			intro 
+		)			
+		values 
+		(
+			#{id},
+			#{oneMenuId},
+			#{title},
+			#{thumb},
+			#{content},
+			#{seq},
+			#{isshow},
+			#{intro}
+		) 
+		
+	</insert>
+	
+	<select id="findTwoMenuById" 
+			parameterType="String"
+			resultType="com.rcb.entity.TwoMenu">
+			  
+		select  
+			id,
+			one_menu_id as oneMenuId,
+			title,
+			thumb,
+			content,
+			seq,
+			isshow,
+			intro 			
+		from 
+			two_menu 
+		where id=#{id}
+		
+	</select>
+	
+	<update id="modifyTwoMenu" 
+			parameterType="com.rcb.entity.TwoMenu">
+		   
+		update two_menu set
+			one_menu_id=#{oneMenuId},
+			title=#{title},
+			thumb=#{thumb},
+			content=#{content},
+			seq=#{seq},
+			isshow=#{isshow},
+			intro=#{intro}
+		where id=#{id}
+		
+	</update>
+	
+	<delete id="delTwoMenuById"
+			parameterType="String">
+		delete from two_menu 
+		where id=#{id}
+	</delete>
+	
+	<select id="findTwoMenuByOneMenuId" 
+			parameterType="String"
+			resultType="Map">
+			  
+		select  
+			id,
+			one_menu_id as oneMenuId,
+			title,
+			thumb,
+			content,
+			seq,
+			isshow,
+			intro 			
+		from 
+			two_menu 
+		where one_menu_id=#{oneMenuID}
+		
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
