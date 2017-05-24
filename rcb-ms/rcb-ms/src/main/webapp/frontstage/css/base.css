@@ -1,0 +1,53 @@
+body,p,pre,form,input,h1,h2,h3,h4,h5,h6,ul,li,ol,dl,dd,dt{
+	margin:0;
+	padding:0;
+	list-style:none;
+	font-style: normal;
+    font-weight: normal;
+    font-family: "\5FAE\8F6F\96C5\9ED1",tahoma;
+}
+ul,li,ol,dl,dd,dt{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+a{
+	text-decoration: none;
+	color: #333;
+}
+img{
+	border:0;
+	vertical-align: middle;
+}
+*{
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent=rgba(0,0,0,0);
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.over{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.overmore{
+    text-overflow:ellipsis; 
+    overflow:hidden;
+    display:-webkit-box; 
+    -webkit-line-clamp:3; 
+    -webkit-box-orient: vertical;
+}
+body,html{
+	height: 100%;
+}
+body{
+	box-orient: vertical;
+    background:#F4F4F4;
+}
+.center-section{
+	flex:auto;
+	overflow: auto;
+} 

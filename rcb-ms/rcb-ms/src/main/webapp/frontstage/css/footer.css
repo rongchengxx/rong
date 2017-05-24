@@ -1,0 +1,184 @@
+/*$底部联系我们开始*/
+.footer-box{
+	width: 100%;
+	background: #F4F4F4;
+	padding: 40px 0 10px;
+}
+.footer-box .footer-width{
+	width: 1200px;
+	margin: 0 auto;
+	min-width: 1200px;
+}
+.footer-box .footer-width .footer-ajax{
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+	margin-bottom: 30px;
+}
+.footer-box .footer-width .footer-ajax .footer-ajax-input{
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+.footer-ajax-input label{
+	width: 50%;
+	float: left;
+}
+.footer-ajax-input label>input{
+	width: 95%;
+	margin-right: 5%;
+	height: 40px;
+	margin-bottom: 12px;
+	border-radius: 8px;
+	outline: none;
+	background: #ddd;
+	border: 0;
+	padding-left: 10px;
+	font-size: 16px;
+	color: #666;
+}
+.footer-ajax-input label>input:last-child{
+	margin-bottom: 0;
+}
+.footer-ajax-input textarea{
+	width: 50%;
+	float: right;
+	border-radius: 8px;
+	outline: none;
+	background: #ddd;
+	border: 0;
+	height: 145px;
+	overflow: auto;
+	padding: 10px;
+	font-size: 18px;
+	resize: none;
+	color: #666;
+}
+.footer-ajax-input form>input{
+	width: 100%;
+	height: 40px;
+	margin-top: 12px;
+	border-radius: 8px;
+	background: #ddd;
+	outline: none;
+	border: 0;
+	color: #666;
+	font-size: 18px;
+	cursor: pointer;
+}
+.footer-ajax-input form>input:hover{
+	background: #666;
+	color: #fff;
+}
+.footer-box .footer-width .footer-ajax .footer-ajax-contact{
+	width: 50%;
+	height: 100%;
+	float: right;
+	padding-left: 100px;
+	color: #666;
+}
+.footer-ajax-contact h3{
+	font-size: 20px;
+	color: #666;
+	margin-bottom: 5px;
+}
+.footer-ajax-contact p{
+	font-size: 40px;
+	margin-bottom: 5px;
+}
+.footer-ajax-contact span{
+	font-size: 20px;
+}
+.footer-ajax-contact .span2{
+	padding-left: 140px;
+}
+.footer-ajax-contact>a{
+	display: block;
+	width: 380px;
+	height: 40px;
+	border-radius: 20px;
+	background: #ccc;
+	text-align: center;
+	line-height: 40px;
+	font-weight: 300;
+	font-size: 20px;
+	margin-top: 5px;
+}
+/*$底部联系我们结束*/
+
+
+
+
+
+
+
+/*$底部结尾开始*/
+.footer-ending-box{
+	width: 100%;
+	background: #EBEBEB;
+	border-bottom: 1px solid #D8D8D8;
+	border-top: 1px solid #D8D8D8;
+	padding-bottom: 50px;
+}
+.footer-ending{
+	width: 1200px;
+	margin: 0 auto;
+	height: 200px;
+	padding: 30px 0;
+}
+.footer-ending .ending-link{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 14px;
+	color: rgb(51, 51, 51);
+}
+.footer-ending .ending-link>i{
+	display: inline-block;
+	width: 1px;
+	background: #D4CDCD;
+	height: 10px;
+}
+.footer-ending .ending-link>a{
+	margin: 0 20px;
+}
+.footer-ending .ending-name{
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 14px;
+}
+.footer-ending .ending-contact{
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 14px;
+}
+.footer-ending .ending-QR-code{
+	height: 80px;
+	font-size: 14px;
+	text-align: center;
+}
+.footer-ending .ending-QR-code>img{
+	height: 100%;
+}
+/*$底部结尾结束*/
+
+
+
+
+
+/*$qq右边固定定位开始*/
+.qq-box{
+	position: fixed;
+	right: 0;
+	height: 150px;
+	top: 50%;
+	z-index: 9999999999;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+/*$qq右边固定定位结束*/
+
+

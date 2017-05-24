@@ -1,0 +1,173 @@
+$page页面的图片开始*/
+.page-img-box{
+	width: 100%;
+	min-width: 1200px;
+}
+.page-img-box>img{
+	width: 100%;
+}
+/*$page页面的图片结束*/
+
+
+
+
+
+
+/*$page页面的内容开始*/
+.page-content-box{
+	width: 1200px;
+	margin: 50px auto;
+}
+.page-content-box:after{
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+}
+.page-content-box .page-list{
+	float: left;
+	width: 15%;
+}
+.page-content-box .page-content{
+	float: right;
+	width: 75%;
+}
+.page-content-box .page-list>h3{
+	height: 80px;
+	line-height: 80px;
+	font-size: 24px;
+	border-bottom: 1px solid #E6E6E6;
+	padding-left: 10px;
+	margin-bottom: 20px;
+}
+.page-content-box .page-list>ul{
+	width: 100%;
+}
+.page-content-box .page-list>ul>li{
+	width: 100%;
+	height: 50px;
+	border-bottom: 1px solid #E6E6E6;
+	text-align: left;
+	line-height: 50px;
+}
+.page-content-box .page-list>ul>li>a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding-left: 10px;
+	background: #f4f4f4;
+	transition: background .5s linear,padding-left .5s linear;
+}
+.page-content-box .page-list>ul>li>a:hover{
+	background: #19B4EA;
+	padding-left: 20px;
+	color: #fff;
+}
+.page-content-box .page-content .froth{
+	height: 80px;
+	line-height: 80px;
+	font-size: 14px;
+	text-align: right;
+	border-bottom: 1px solid #E6E6E6;
+	padding-right: 10px;
+	margin-bottom: 20px;
+}
+.page-content-box .page-content .froth>a:hover{
+	text-decoration: underline;
+}
+.page-content-box .page-content .page-content-text{
+	width: 100%;
+	padding: 0 10px;
+}
+
+/*新闻页面开始*/
+.page-content-box .page-content .page-content-text>.page-news{
+	width: 100%;
+	height: 80px;
+	border-bottom: 1px dashed #E6E6E6;
+	padding-left: 10px;
+}
+.page-content-box .page-content .page-content-text>.page-news:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.page-content-box .page-content .page-content-text>.page-news>a{
+	float: left;
+	margin-top: 10px;
+	width: 50%;
+	margin-bottom: 10px;
+	overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.page-content-box .page-content .page-content-text>.page-news>a:hover{
+	text-decoration: underline;
+}
+.page-content-box .page-content .page-content-text>.page-news>span{
+	float: right;
+	width: 15%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.page-content-box .page-content .page-content-text>.page-news>p{
+	width: 80%;
+	overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+/*新闻页面结束*/
+/*案例页面开始*/
+.page-content-box .page-content .page-content-text>.page-case{
+	width: 30%;
+	height: 260px;
+	margin: 15px 1.666666666669%;
+	float: left;
+	border: 1px solid #E6E6E6;
+	padding: 10px;
+	text-align: center;
+	transition: all 0.5s;
+	cursor: pointer;
+}
+.page-content-box .page-content .page-content-text>.page-case:hover{
+	border:1px solid #000;
+
+}
+.page-content-box .page-content .page-content-text:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.page-content-box .page-content .page-content-text>.page-case .caseli-img{
+	width: 100%;
+	height: 80%;
+	overflow: hidden;
+}
+.page-content-box .page-content .page-content-text>.page-case .caseli-img>img{
+	width: 100%;
+	height: 100%;
+}
+.page-content-box .page-content .page-content-text>.page-case>a{
+	line-height: 50px;
+}
+.page-content-box .page-content .page-content-text>.page-case>a:hover{
+	text-decoration: underline;
+}
+/*案例页面结束*/
+
+/*详情页内容开始*/
+.page-content-box .page-content .page-content-text>.page-show{
+	width: 100%;
+}
+.page-content-box .page-content .page-content-text>.page-show>h3{
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 80px;
+	margin: 30px 0 20px;
+}
+.page-content-box .page-content .page-content-text>.page-show>.page-show-text{
+	font-size: 14px;
+}
+/*详情页内容结束*/
+/*$page页面的内容结束
