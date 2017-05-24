@@ -6,19 +6,23 @@ import com.rcb.service.gbook.GbookService;
 import com.rcb.utils.JsonResult;
 import com.rcb.dao.GbookDao;
 
+import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Properties;
 
 import javax.annotation.Resource;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class GbookController {
-	//分页每页的条数
-	int p = 2;
+	//分页相关
+	@Value("#{paging}")
+	private Properties pagingProp;
 	
 	@Resource
 	private GbookService service;
@@ -63,15 +67,31 @@ public class GbookController {
 	
 	//根据页码检索留言
 	public JsonResult loadBooks(String page) {
-		int max_page = (int) Math.ceil(new Double(service.findGbookCount()));
+		int rows =3;
+		Enumeration<Object> keys = pagingProp.keys();
+	    while (keys.hasMoreElements()) {
+	    	String pagingKey = "rows";
+	    	String key = null;
+			try {
+				key = new String(keys.nextElement().toString().getBytes("UTF-8"), "UTF-8");
+				if(pagingKey.equals(key)){
+					rows = new Integer(new String(pagingProp.getProperty(key).getBytes("UTF-8"), "UTF-8"));
+				}
+			} catch (Exception e) {
+				rows = 5;
+				e.printStackTrace();
+			}
+	    }
+		
+		int max_page = (int) Math.ceil(new Double(service.findGbookCount())/rows);
 		if(max_page == 0){
 			return new JsonResult();
 		}
 		if(new Integer(page)>max_page){
 			page = max_page+"";
 		}
-		List<Gbook> gbooks = service.findGbookByPage(new Integer(page)*p-p);
-		Iterator<Gbook> it = gbooks.iterator();
+		List<Gbook> gbooks = service.findGbookByPage(new Integer(page)*rows-rows,rows);
+		//Iterator<Gbook> it = gbooks.iterator();
 		/*while (it.hasNext()) {
 			Gbook gb = (Gbook) it.next();
 			System.out.println("条数"+gb.toString());
