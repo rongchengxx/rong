@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.rcb.dao.HomeImgDao">
+	
+	<select id="findHomeImgById" parameterType="String" resultType="com.rcb.entity.HomeImg">
+	select 
+		id,
+		url,
+		title,
+		seq,
+		type,
+		content,
+		link,
+		source,
+		isshow
+	 from home_img  where id=#{id}  
+	
+	</select>	
+	
+	 <insert id="addHomeImg" parameterType="com.rcb.entity.HomeImg">
+	insert into home_img 
+	(
+		id,
+		url,
+		title,
+		seq,
+		type,
+		content,
+		link,
+		source,
+		isshow
+	)
+	values
+	(
+		#{id},
+		#{url},
+		#{title},
+		#{seq},
+		#{type},
+		#{content},
+		#{link},
+		#{source},
+		#{isshow}
+	)
+	</insert>
+	 
+	 <delete id="delHomeImgById" parameterType="String">
+	 delete  from home_img where id=#{id}
+	 </delete>
+	 <update id="modifyHomeImg" parameterType="com.rcb.entity.HomeImg">
+	 update home_img set
+	 	id=#{id},
+		url=#{url},
+		title=#{title},
+		seq=#{seq},
+		type=#{type},
+		content=#{content},
+		link=#{link},
+		source=#{source},
+		isshow=#{isshow}
+		where id=#{id}
+	 </update> 
+	 <select id="findHomeImgAll" resultType="Map">
+	select
+		id,
+		url,
+		title,
+		seq,
+		type,
+		content,
+		link,
+		source,
+		isshow
+	 	from 
+	 	home_img  
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
